@@ -1,0 +1,305 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ShadeView",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#types" },
+    { "include": "#properties" },
+    { "include": "#macosOrPragma" },
+    { "include": "#unity" },
+    { "include": "#functions" }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.shadeview",
+          "match": "\\b(true|false)\\b"
+        },
+        {
+          "name": "source.macros.shadeview",
+          "match": "(#[\\s]*?define)\\s+?([_A-Za-z0-9]+)",
+          "captures": {
+            "1": { "name": "keyword.control.shadeview" },
+            "2": { "name": "support.class.structures.shadeview" }
+          }
+        },
+        {
+          "name": "source.shadeview",
+          "match": "(inline)\\s+([_A-Za-z0-9]+)\\s+?([_A-Za-z0-9]+)\\s*\\(",
+          "captures": {
+            "1": { "name": "keyword.type.shadeview" },
+            "2": { "name": "support.class.structures.shadeview" },
+            "3": { "name": "support.function.shadeview" }
+          }
+        },
+        {
+          "name": "keyword.control.shadeview",
+          "match": "[#]?[\\s]*?\\b(if|while|for|return|inline|in|inout|out|break|elif|endif|else|define|undef|defined|ifndef|ifdef|static|const|void|continue|do|true|false|switch|case|default)\\b"
+        },
+        {
+          "name": "keyword.hlsl.shadeview",
+          "match": "\\b(kernel|shared|snorm|stateblock|stateblock_state|vertexfragment|volatile|unorm|unsigned|pixelfragment|PixelShader|PointStream|precise|packoffset|groupshared|unroll|loop|fastopt|allow_uav_condition|numthreads|fxgroup|GeometryShader|fxgroup|export|extern|Hullshader|InputPatch|interface|lineadj|linear|LineStream|matrix|min16float|min10float|min16int|min12int|min16uint|NULL|globallycoherent)\\b"
+        },
+        {
+          "name": "keyword.other.shadeview",
+          "match": "\\b(?i:Shader|SubShader|Tags|Fallback|Properties|Pass|CGPROGRAM|ENDCG|CGINCLUDE|HLSLPROGRAM|ENDHLSL|HLSLINCLUDE)\\b"
+        },
+        {
+          "name": "support.constant.property-value.bindchannels.shadeview",
+          "match": "(:)(\\s*?)\\b(?i:Vertex|Normal|Vector|Tangent|TexCoord(\\d?)|SV_POSITION|BLENDWEIGHT|POSITION|TEXUNIT(\\d?)|SV_TARGET|SV_CULLDISTANCE|Color(\\d?))\\b"
+        },
+        {
+          "name": "keyword.operator.shadeview",
+          "match": "[\\+\\-\\*/&\\|\\!\\?:=><%\\^]"
+        },
+        {
+          "name": "keyword.other.bettershader.shadeview",
+          "match": "\\b((BEGIN|END)_[_A-Z]+)\\b"
+        }
+      ]
+    },
+    "properties": {
+      "patterns": [
+        {
+          "name": "source.shadeview",
+          "match": "(,)\\s*?\\b([Rr]ange|[Ff]loat|[Ii]nt|[Cc]olor|[Vv]ector|2D|3D|[Cc]ube|[Aa]ny)\\b",
+          "captures": {
+            "1": { "name": "source.shadeview" },
+            "2": { "name": "keyword.type.shadeview" }
+          }
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "source.shadeview",
+          "match": "(\\[)(\\d+)(\\])",
+          "captures": {
+            "1": { "name": "source.shadeview" },
+            "2": { "name": "constant.numeric.shadeview" },
+            "3": { "name": "source.shadeview" }
+          }
+        },
+        {
+          "name": "source.shadeview",
+          "match": "(\\[)[\\w\\d_ \\s]+(\\])",
+          "captures": {
+            "1": { "name": "source.shadeview" },
+            "2": { "name": "source.shadeview" }
+          }
+        },
+        {
+          "name": "source.shadeview",
+          "match": "(\\[)([\\w\\d_\\s]+)\\(([\\w\\d_\\s]+)\\)(\\])",
+          "captures": {
+            "1": { "name": "source.shadeview" },
+            "2": { "name": "support.function.shadeview" },
+            "3": { "name": "source.shadeview" },
+            "4": { "name": "source.shadeview" }
+          }
+        },
+        {
+          "name": "keyword.struct.shadeview",
+          "match": "struct\\s+?([a-zA-Z0-9_]+)",
+          "captures": {
+            "1": { "name": "support.class.structures.shadeview" }
+          }
+        },
+        {
+          "name": "keyword.other.shadeview",
+          "match": "\\b(?i:uniform|struct|sampler|sampler2D|sampler3D|samplerCUBE|string|triangle|triangleadj|vector|((float|int|uint|bool|half|fixed|double)(\\d*?|\\d*?x\\d*?)))\\b"
+        },
+        {
+          "name": "source.shadeview",
+          "match": "([_A-Za-z0-9]+)\\s+?([_A-Za-z0-9]+)(\\s+)?\\(",
+          "captures": {
+            "1": { "name": "support.class.structures.shadeview" },
+            "2": { "name": "support.function.shadeview" }
+          }
+        },
+        {
+          "name": "source.shadeview",
+          "match": "([_A-Za-z0-9]+)\\s+?([_A-Za-z0-9]+)",
+          "captures": {
+            "1": { "name": "support.class.structures.shadeview" }
+          }
+        },
+        {
+          "name": "source.shadeview",
+          "match": "([_A-Za-z0-9]+)\\s*?<([_A-Za-z0-9]+)>",
+          "captures": {
+            "1": { "name": "support.class.structures.shadeview" },
+            "2": { "name": "keyword.type.shadeview" }
+          }
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.shadeview",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.shadeview",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-dash.shadeview",
+          "begin": "//",
+          "end": "$"
+        },
+        {
+          "name": "comment.block.shadeview",
+          "begin": "/\\*",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.comment.shadeview" }
+          },
+          "end": "\\*/",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.comment.shadeview" }
+          }
+        }
+      ]
+    },
+    "macosOrPragma": {
+      "patterns": [
+        {
+          "name": "keyword.other.shadeview",
+          "begin": "#(\\s*?)(?i:pragma|include)",
+          "end": "$"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.shadeview",
+          "match": "\\b(([0-9]+[\\.-]?[0-9fFhHdDuU]*)|(e-[0-9fFhHdDuU]*))\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "source.shadeview",
+          "begin": "([_A-Za-z0-9]+)(::)([_A-Za-z0-9]+)\\s*",
+          "end": "\\(",
+          "captures": {
+            "1": { "name": "support.class.structures.shadeview" },
+            "2": { "name": "keyword.operator.shadeview" },
+            "3": { "name": "support.function.shadeview" }
+          }
+        },
+        {
+          "name": "meta.method.shadeview",
+          "match": "\\b([A-Za-z0-9_]*)\\b\\s*\\(",
+          "captures": {
+            "1": { "name": "support.function.shadeview" }
+          }
+        }
+      ]
+    },
+    "unity": {
+      "patterns": [
+        {
+          "name": "support.variable.transformations.shadeview",
+          "match": "\\b(UNITY_MATRIX_MVP|UNITY_MATRIX_MV|UNITY_MATRIX_V|UNITY_MATRIX_P|UNITY_MATRIX_VP|UNITY_MATRIX_T_MV|UNITY_MATRIX_IT_MV|_Object2World|_World2Object|unity_ObjectToWorld|unity_WorldToObject)\\b"
+        },
+        {
+          "name": "support.variable.camera.shadeview",
+          "match": "\\b(_WorldSpaceCameraPos|_ProjectionParams|_ScreenParams|_ZBufferParams|unity_OrthoParams|unity_CameraProjection|unity_CameraInvProjection|unity_CameraWorldClipPlanes)\\b"
+        },
+        {
+          "name": "support.variable.time.shadeview",
+          "match": "\\b(_Time|_SinTime|_CosTime|unity_DeltaTime)\\b"
+        },
+        {
+          "name": "support.variable.lighting.shadeview",
+          "match": "\\b(_LightColor0|_WorldSpaceLightPos0|_LightMatrix0|unity_4LightPosX0|unity_4LightPosY0|unity_4LightPosZ0|unity_4LightAtten0|unity_LightColor|_LightColor|unity_LightPosition|unity_LightAtten|unity_SpotDirection)\\b"
+        },
+        {
+          "name": "support.variable.fog.shadeview",
+          "match": "\\b(unity_AmbientSky|unity_AmbientEquator|unity_AmbientGround|UNITY_LIGHTMODEL_AMBIENT|unity_FogColor|unity_FogParams)\\b"
+        },
+        {
+          "name": "support.variable.various.shadeview",
+          "match": "\\b(unity_LODFade)\\b"
+        },
+        {
+          "name": "support.variable.preprocessor.targetplatform.shadeview",
+          "match": "\\b(SHADER_API_D3D9|SHADER_API_D3D11|SHADER_API_GLCORE|SHADER_API_OPENGL|SHADER_API_GLES|SHADER_API_GLES3|SHADER_API_METAL|SHADER_API_D3D11_9X|SHADER_API_PSSL|SHADER_API_XBOXONE|SHADER_API_PSP2|SHADER_API_WIIU|SHADER_API_MOBILE|SHADER_API_GLSL)\\b"
+        },
+        {
+          "name": "support.variable.preprocessor.targetmodel.shadeview",
+          "match": "\\b(SHADER_TARGET)\\b"
+        },
+        {
+          "name": "support.variable.preprocessor.unityversion.shadeview",
+          "match": "\\b(UNITY_VERSION)\\b"
+        },
+        {
+          "name": "support.variable.preprocessor.platformdifference.shadeview",
+          "match": "\\b(UNITY_BRANCH|UNITY_FLATTEN|UNITY_NO_SCREENSPACE_SHADOWS|UNITY_NO_LINEAR_COLORSPACE|UNITY_NO_RGBM|UNITY_NO_DXT5nm|UNITY_FRAMEBUFFER_FETCH_AVAILABLE|UNITY_USE_RGBA_FOR_POINT_SHADOWS|UNITY_ATTEN_CHANNEL|UNITY_HALF_TEXEL_OFFSET|UNITY_UV_STARTS_AT_TOP|UNITY_MIGHT_NOT_HAVE_DEPTH_Texture|UNITY_NEAR_CLIP_VALUE|UNITY_VPOS_TYPE|UNITY_CAN_COMPILE_TESSELLATION|UNITY_COMPILER_HLSL|UNITY_COMPILER_HLSL2GLSL|UNITY_COMPILER_CG|UNITY_REVERSED_Z)\\b"
+        },
+        {
+          "name": "support.variable.preprocessor.texture2D.shadeview",
+          "match": "\\b(UNITY_PASS_FORWARDBASE|UNITY_PASS_FORWARDADD|UNITY_PASS_DEFERRED|UNITY_PASS_SHADOWCASTER|UNITY_PASS_PREPASSBASE|UNITY_PASS_PREPASSFINAL)\\b"
+        },
+        {
+          "name": "support.class.structures.shadeview",
+          "match": "\\b(appdata_base|appdata_tan|appdata_full|appdata_img)\\b"
+        },
+        {
+          "name": "support.class.surface.shadeview",
+          "match": "\\b(SurfaceOutputStandardSpecular|SurfaceOutputStandard|SurfaceOutput|Input)\\b"
+        },
+        {
+          "name": "storage.type.structure.shadeview",
+          "match": "\\b(?i:Shader|Properties|SubShader|Pass|Category)\\b"
+        },
+        {
+          "name": "keyword.other.shadeview",
+          "match": "\\b(Name|Tags|Fallback|CustomEditor|Cull|ZWrite|ZTest|Offset|Blend|BlendOp|ColorMask|AlphaToMask|LOD|Lighting|Stencil|Ref|ReadMask|WriteMask|Comp|CompBack|CompFront|Fail|ZFail|UsePass|GrabPass|Dependency|Material|Fog|Mode|Density|SeparateSpecular|SetTexture|Combine|ConstantColor|Matrix|AlphaTest|ColorMaterial|BindChannels|Bind)\\b"
+        },
+        {
+          "name": "support.constant.property-value.shadeview",
+          "match": "\\b(?i:Back|Front|On|Off|AmbientAndDiffuse)\\b"
+        },
+        {
+          "name": "support.constant.property-value.comparisonfunction.shadeview",
+          "match": "\\b(?i:Less|Greater|LEqual|GEqual|Equal|NotEqual|Always|Never)\\b"
+        },
+        {
+          "name": "support.constant.property-value.stenciloperation.shadeview",
+          "match": "\\b(?i:Keep|Zero|Replace|IncrSat|DecrSat|Invert|IncrWrap|DecrWrap)\\b"
+        },
+        {
+          "name": "support.constant.property-value.texturecombiners.shadeview",
+          "match": "\\b(?i:Previous|Primary|Texture|Constant|Lerp|Double|Quad)\\b"
+        },
+        {
+          "name": "support.constant.property-value.fog.shadeview",
+          "match": "\\b(?i:Global|Linear|Exp2|Exp)\\b"
+        },
+        {
+          "name": "support.constant.property-value.blendoperations.shadeview",
+          "match": "\\b(?i:Add|Sub|RevSub|Min|Max|LogicalClear|LogicalSet|LogicalCopyInverted|LogicalCopy|LogicalNoop|LogicalInvert|LogicalAnd|LogicalNand|LogicalOr|LogicalNor|LogicalXor|LogicalEquiv|LogicalAndReverse|LogicalAndInverted|LogicalOrReverse|LogicalOrInverted)\\b"
+        },
+        {
+          "name": "support.constant.property-value.blendfactors.shadeview",
+          "match": "\\b(?i:One|Zero|SrcColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.shader"
+}

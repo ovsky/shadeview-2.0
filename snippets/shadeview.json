@@ -1,0 +1,140 @@
+{
+  "Version": 1,
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (int ${1:index} = 0; ${1:index} < ${2:length}; ${1:index}++) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "For Loop"
+  },
+  "if": {
+    "prefix": "if",
+    "body": ["if (${1:condition}) {", "\t$0", "}"]
+  },
+  "if..else": {
+    "prefix": "ifelse",
+    "body": ["if (${1:condition}) {", "\t$0", "} else {", "\t$0", "}"]
+  },
+  "Shader": {
+    "prefix": "shader",
+    "body": ["Shader \"${1:name}\" {", "\t$0", "}"]
+  },
+  "SubShader": {
+    "prefix": "subshader",
+    "body": ["SubShader {", "\t$0", "}"]
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": ["struct ${1:name} {", "\t$0", "}"]
+  },
+  "Property": {
+    "prefix": "props",
+    "body": ["Properties {", "\t$0", "}"]
+  },
+  "Property 2D": {
+    "prefix": "prop2d",
+    "body": ["${1:Property} (\"${2:Description}\", 2D) = \"white\" {}"]
+  },
+  "Property Cube": {
+    "prefix": "propcube",
+    "body": ["${1:Property} (\"${2:Description}\", Cube) = \"\" {}"]
+  },
+  "Property Color": {
+    "prefix": "propc",
+    "body": ["${1:Property} (\"${2:Description}\", Color) = (1, 1, 1, 1)"]
+  },
+  "Property Vector": {
+    "prefix": "propv",
+    "body": ["${1:Property} (\"${2:Description}\", Vector) = (1, 1, 1, 1)"]
+  },
+  "Property Float": {
+    "prefix": "propf",
+    "body": ["${1:Property} (\"${2:Description}\", Float) = ${3:defaultValue}"]
+  },
+  "Property Range": {
+    "prefix": "proprange",
+    "body": [
+      "${1:Property} (\"${2:Description}\", Range(${3:min}, ${4:max})) = ${5:defaultValue}"
+    ]
+  },
+  "Tags { \"RenderType\" = \"Transparent\" \"Queue\" = \"Transparent\" }": {
+    "prefix": "tagstt",
+    "body": [
+      "Tags { \"RenderType\" = \"Transparent\" \"Queue\" = \"Transparent\" }"
+    ]
+  },
+  "Tags": {
+    "prefix": "tags",
+    "body": ["Tags { \"RenderType\" = \"${1}\" }"]
+  },
+  "Blend one one": {
+    "prefix": "blend1_1",
+    "body": ["Blend One One"]
+  },
+  "Blend SrcAlpha OneMinusSrcAlpha": {
+    "prefix": "blendsa_1-sa",
+    "body": ["Blend SrcAlpha OneMinusSrcAlpha"]
+  },
+  "Blend One OneMinusSrcAlpha": {
+    "prefix": "blend1_1-sa",
+    "body": ["Blend One OneMinusSrcAlpha"]
+  },
+  "Blend OneMinusDstColor One": {
+    "prefix": "blend1-dc_1",
+    "body": ["Blend OneMinusDstColor One"]
+  },
+  "Blend DstColor Zero": {
+    "prefix": "blenddc_0",
+    "body": ["Blend DstColor Zero"]
+  },
+  "Blend DstColor SrcColor": {
+    "prefix": "blenddc_sc",
+    "body": ["Blend DstColor SrcColor"]
+  },
+  "CGPROGRAM...ENCG": {
+    "prefix": "cgp",
+    "body": ["CGPROGRAM", "\t$0", "ENDCG"]
+  },
+  "HLSLPROGRAM...ENDHLSL": {
+    "prefix": "hlp",
+    "body": ["HLSLPROGRAM", "\t$0", "ENDHLSL"]
+  },
+  "GLSLPROGRAM...ENCGLSL": {
+    "prefix": "glp",
+    "body": ["GLSLPROGRAM", "\t$0", "ENDGLSL"]
+  },
+  "region": {
+    "prefix": "region",
+    "body": ["//#region ${1:Descrption}", "\t$0", "//#endregion"]
+  },
+  "region2": {
+    "prefix": "region2",
+    "body": ["//region ${1:Descrption}", "\t$0", "//endregion"]
+  },
+  "Fallback": {
+    "prefix": "fallback",
+    "body": ["Fallback \"${1:name}\""]
+  },
+  "include": {
+    "prefix": "inc",
+    "body": ["#include \"$0\""]
+  },
+  "#include \"UnityCG.cginc\"": {
+    "prefix": "incucg",
+    "body": ["#include \"UnityCG.cginc\""]
+  },
+  "include \"Packages\"": {
+    "prefix": "incpkg",
+    "body": ["#include \"Packages$0\""]
+  },
+  "#include \"Lighting.cginc\"": {
+    "prefix": "inclight",
+    "body": ["#include \"Lighting.cginc\""]
+  },
+  "#include \"AutoLight.cginc\"": {
+    "prefix": "incautolight",
+    "body": ["#include \"AutoLight.cginc\""]
+  }
+}

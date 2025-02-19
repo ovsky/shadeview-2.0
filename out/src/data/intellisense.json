@@ -1,0 +1,261 @@
+{
+  "Version": 1,
+  "ItemKind": 9,
+  "Items": {
+    "blend": {
+      "documentation": "Blending is used to make transparent objects.",
+      "values": {
+        "One": "",
+        "Zero": "",
+        "SrcColor": "",
+        "SrcAlpha": "",
+        "DstColor": "",
+        "DstAlpha": "",
+        "OneMinusSrcColor": "",
+        "OneMinusSrcAlpha": "",
+        "OneMinusDstColor": "",
+        "OneMinusDstAlpha": ""
+      },
+      "operation": 2
+    },
+    "zwrite": {
+      "documentation": "How should depth testing be performed. Default is LEqual (draw objects in from or at the distance as existing objects; hide objects behind them).",
+      "values": {
+        "On": "",
+        "Off": ""
+      }
+    },
+    "ztest": {
+      "documentation": "How should depth testing be performed. Default is LEqual (draw objects in from or at the distance as existing objects; hide objects behind them).",
+      "values": {
+        "Less": "",
+        "Greater": "",
+        "LEqual": "",
+        "GEqual": "",
+        "Equal": "",
+        "NotEqual": "",
+        "Always": ""
+      }
+    },
+    "cull": {
+      "documentation": "Controls which sides of polygons should be culled (not drawn)",
+      "values": {
+        "Back": "Don’t render polygons facing away from the viewer (default).",
+        "Front": "Don’t render polygons facing towards the viewer. Used for turning objects inside-out.",
+        "Off": "Disables culling - all faces are drawn. Used for special effects."
+      }
+    },
+    "comp": {
+      "documentation": "The function used to compare the reference value to the current contents of the buffer. Default: always.",
+      "values": {
+        "Greater": "Only render pixels whose reference value is greater than the value in the buffer.",
+        "GEqual": "Only render pixels whose reference value is greater than or equal to the value in the buffer.",
+        "Less": "Only render pixels whose reference value is less than the value in the buffer.",
+        "LEqual": "Only render pixels whose reference value is less than or equal to the value in the buffer.",
+        "Equal": "Only render pixels whose reference value equals the value in the buffer.",
+        "NotEqual": "Only render pixels whose reference value differs from the value in the buffer.",
+        "Always": "Make the stencil test always pass.",
+        "Never": "Make the stencil test always fail."
+      }
+    },
+    "fail": {
+      "documentation": "What to do with the contents of the buffer if the stencil test fails. Default: keep.",
+      "values": {
+        "Keep": "Keep the current contents of the buffer.",
+        "Zero": "Write 0 into the buffer.",
+        "Replace": "Write the reference value into the buffer.",
+        "IncrSat": "Increment the current value in the buffer. If the value is 255 already, it stays at 255.",
+        "DecrSat": "Decrement the current value in the buffer. If the value is 0 already, it stays at 0.",
+        "Invert": "Negate all the bits.",
+        "IncrWrap": "Increment the current value in the buffer. If the value is 255 already, it becomes 0.",
+        "DecrWrap": "Decrement the current value in the buffer. If the value is 0 already, it becomes 255."
+      }
+    },
+    "zfail": {
+      "documentation": "What to do with the contents of the buffer if the stencil test passes, but the depth test fails. Default: keep.",
+      "values": {
+        "Keep": "Keep the current contents of the buffer.",
+        "Zero": "Write 0 into the buffer.",
+        "Replace": "Write the reference value into the buffer.",
+        "IncrSat": "Increment the current value in the buffer. If the value is 255 already, it stays at 255.",
+        "DecrSat": "Decrement the current value in the buffer. If the value is 0 already, it stays at 0.",
+        "Invert": "Negate all the bits.",
+        "IncrWrap": "Increment the current value in the buffer. If the value is 255 already, it becomes 0.",
+        "DecrWrap": "Decrement the current value in the buffer. If the value is 0 already, it becomes 255."
+      }
+    },
+    "offset": {
+      "documentation": "Allows you specify a depth offset with two parameters. factor and units.",
+      "values": {}
+    },
+    "name": {
+      "documentation": "Gives the PassName name to the current pass. Note that internally the names are turned to uppercase.",
+      "values": {}
+    },
+    "lighting": {
+      "documentation": "For the settings defined in the Material block to have any effect, you must enable Lighting with the Lighting On command. If lighting is off instead, the color is taken straight from the Color command.",
+      "values": {
+        "On": "",
+        "Off": ""
+      }
+    },
+    "separatespecular": {
+      "documentation": "This command makes specular lighting be added to the end of the shader pass, so specular lighting is unaffected by texturing. Only has effect when Lighting On is used.",
+      "values": {
+        "On": "",
+        "Off": ""
+      }
+    },
+    "alphatest": {
+      "documentation": "The alpha test is a last chance to reject a pixel from being written to the screen. Note: AlphaTest commands have no effect when fragment programs are used; on most platforms alpha testing is done in the shader using HLSL clip() function. It is advisable to use programmable shaders these days instead of SetTexture commands.",
+      "values": {
+        "Off": "Render all pixels (default)",
+        "Greater": "Only render pixels whose alpha is greater than AlphaValue.",
+        "GEqual": "Only render pixels whose alpha is greater than or equal to AlphaValue.",
+        "Less": "Only render pixels whose alpha value is less than AlphaValue.",
+        "LEqual": "Only render pixels whose alpha value is less than or equal to from AlphaValue.",
+        "Equal": "Only render pixels whose alpha value equals AlphaValue.",
+        "NotEqual": "Only render pixels whose alpha value differs from AlphaValue.",
+        "Always": "Render all pixels. This is functionally equivalent to AlphaTest Off.",
+        "Never": "Don’t render any pixels."
+      }
+    },
+    "mode": {
+      "documentation": "Defines fog mode. Default is global, which translates to Off or Exp2 depending whether fog is turned on in Render Settings.",
+      "values": {
+        "Off": "",
+        "Global": "",
+        "Linear": "",
+        "Exp": "",
+        "Exp2": ""
+      }
+    },
+    "bind": {
+      "documentation": "Specifies that vertex data source maps to hardware target.",
+      "values": {
+        "Vertex": "vertex position",
+        "Normal": "vertex normal",
+        "Tangent": "vertex tangent",
+        "Texcoord": "",
+        "Texcoord0": "",
+        "Texcoord1": "",
+        "Color": "vertex color"
+      }
+    }
+  },
+  "Tags": {
+    "RenderType": {
+      "documentation": "All built-in Unity shaders have a “RenderType” tag set that can be used when rendering with replaced shaders",
+      "values": {
+        "Opaque": "Most of the shaders (Normal, Self Illuminated, Reflective, terrain shaders).",
+        "Transparent": "Most of semitransparent shaders (Transparent, Particle, Font, terrain additive pass shaders).",
+        "TransparentCutout": "Masked transparency shaders (Transparent Cutout, two pass vegetation shaders).",
+        "Background": "Skybox shaders.",
+        "Overlay": "GUITexture, Halo, Flare shaders.",
+        "TreeOpaque": "Terrain engine tree bark",
+        "TreeTransparentCutout": "Terrain engine tree leaves.",
+        "TreeBillboard": "Terrain engine billboarded trees.",
+        "Grass": "Terrain engine grass",
+        "GrassBillboard": "Terrain engine billboarded grass."
+      }
+    },
+    "Queue": {
+      "documentation": "Determine in which order your objects are drawn using the Queue tag.",
+      "values": {
+        "Background": "This render queue is rendered before any others. You’d typically use this for things that really need to be in the background",
+        "Geometry": "This is default value and is used for most objects. Opaque geometry uses this queue.",
+        "AlphaTest": "Alpha tested geometry uses this queue. It’s a separate queue from Geometry one since it’s more efficient to render alpha-tested objects after all solid ones are draw",
+        "Transparent": "this render queue is rendered after Geometry and AlphaTest, in back-to-front order. Anything alpha-blended (i.e. shaders that don’t write to depth buffer) should go here (glass, particle effects).",
+        "Overlay": "this render queue is meant for overlay effects. Anything rendered last should go here (e.g. lens flares)."
+      }
+    },
+    "DisableBatching": {
+      "documentation": "Some shaders (mostly ones that do object-space vertex deformations) do not work when Draw Call Batching is used – that’s because batching transforms all geometry into world space, so “object space” is lost. DisableBatching tag can be used to incidate that",
+      "values": {
+        "True": "Always disables batching for this shader",
+        "False": "Does not disable batching; this is default"
+      }
+    },
+    "ForceNoShadowCasting": {
+      "documentation": "If ForceNoShadowCasting tag is given and has a value of “True”, then an object that is rendered using this subshader will never cast shadows. This is mostly useful when you are using shader replacement on transparent objects and you do not wont to inherit a shadow pass from another subshader.",
+      "values": {
+        "True": "An object that is rendered using this subshader will never cast shadows.",
+        "False": "Cast shadows"
+      }
+    },
+    "IgnoreProjector": {
+      "documentation": "If IgnoreProjector tag is given and has a value of “True”, then an object that uses this shader will not be affected by Projectors. This is mostly useful on semitransparent objects, because there is no good way for Projectors to affect them.",
+      "values": {
+        "True": "An object that uses this shader will not be affected by Projectors.",
+        "False": "Does not ingore projector"
+      }
+    },
+    "CanUseSpriteAtlas": {
+      "documentation": "Set CanUseSpriteAtlas tag to “False” if the shader is meant for sprites, and will not work when they are packed into atlases (see Sprite Packer).",
+      "values": {
+        "True": "Can use Sprite Atlas",
+        "False": "Set CanUseSpriteAtlas tag to “False” if the shader is meant for sprites, and will not work when they are packed into atlases (see Sprite Packer)."
+      }
+    },
+    "PreviewType": {
+      "documentation": "PreviewType indicates how the material inspector preview should display the material. By default materials are displayed as spheres, but PreviewType can also be set to “Plane” (will display as 2D) or “Skybox” (will display as skybox).",
+      "values": {
+        "Plane": "Display as Plane",
+        "Sphere": "Display as Sphere",
+        "Skybox": "Display as skybox"
+      }
+    },
+    "LightMode": {
+      "documentation": "This tag must be inside Pass section and not inside SubShader. LightMode tag defines Pass’ role in the lighting pipeline",
+      "values": {
+        "Always": "Always rendered; no lighting is applied.",
+        "ForwardBase": "Used in Forward rendering, ambient, main directional light, vertex/SH lights and lightmaps are applied.",
+        "ForwardAdd": "Used in Forward rendering; additive per-pixel lights are applied, one pass per light.",
+        "Deferred": "Used in Deferred Shading; renders g-buffer.",
+        "ShadowCaster": "Renders object depth into the shadowmap or a depth texture.",
+        "MotionVectors": "Used to calculate per-object motion vectors.",
+        "PrepassBase": "Used in legacy Deferred Lighting, renders normals and specular exponent.",
+        "PrepassFinal": "Used in legacy Deferred Lighting, renders final color by combining textures, lighting and emission.",
+        "Vertex": "Used in legacy Vertex Lit rendering when object is not lightmapped; all vertex lights are applied.",
+        "VertexLMRGBM": "Used in legacy Vertex Lit rendering when object is lightmapped; on platforms where lightmap is RGBM encoded (PC & console).",
+        "VertexLM": "Used in legacy Vertex Lit rendering when object is lightmapped; on platforms where lightmap is double-LDR encoded (mobile platforms).",
+        "Meta": "This Pass is not used during regular rendering, only for lightmap baking or Enlighten Realtime Global Illumination."
+      }
+    },
+    "PassFlags": {
+      "documentation": "This tag must be inside Pass section and not inside SubShader. A pass can indicate flags that change how rendering pipeline passes data to it. This is done by using PassFlags tag, with a value that is space-separated flag names.",
+      "values": {
+        "OnlyDirectional": "When used in ForwardBase pass type, this flag makes it so that only the main directional light and ambient/lightprobe data is passed into the shader. This means that data of non-important lights is not passed into vertex-light or spherical harmonics shader variables. See Forward rendering for details."
+      }
+    },
+    "RequireOptions": {
+      "documentation": "This tag must be inside Pass section and not inside SubShader. A pass can indicate that it should only be rendered when some external conditions are met. This is done by using RequireOptions tag, whose value is a string of space separated options. ",
+      "values": {
+        "SoftVegetation": "Render this pass only if Soft Vegetation is on in Quality Settings."
+      }
+    },
+    "RenderPipeline": {
+      "documentation": "Type of render pipeline",
+      "values": {
+        "UniversalPipeline": "Universal Render Pipeline"
+      }
+    }
+  },
+  "PropertyDrawers": {
+    "HideInInspector": "Does not show the property value in the material inspector.",
+    "NoScaleOffset": "Material inspector will not show texture tiling/offset fields for texture properties with this attribute.",
+    "Normal": "Indicates that a texture property expects a normal-map.",
+    "HDR": "Indicates that a texture property expects a high-dynamic range (HDR) texture.",
+    "Gamma": "Indicates that a float/vector property is specified as sRGB value in the UI (just like colors are), and possibly needs conversion according to color space used. ",
+    "PerRendererData": "Indicates that a texture property will be coming from per-renderer data in the form of a MaterialPropertyBlock. Material inspector changes the texture slot UI for these properties.",
+    "MainTexture": "Indicates that a property is the main texture for a Material. By default, Unity considers a texture with the property name name _MainTex as the main texture. Use this attribute if your texture has a different property name, but you want Unity to consider it the main texture. If you use this attribute more than once, Unity uses the first property and ignores subsequent ones.",
+    "MainColor": "Indicates that a property is the main color for a Material. By default, Unity considers a color with the property name name _Color as the main color. Use this attribute if your color has a different property name, but you want Unity to consider it the main color. If you use this attribute more than once, Unity uses the first property and ignores subsequent ones",
+    "Toggle": "Show toogle in Material Ispector",
+    "Enum": "Show dropdown in Material Ispector",
+    "KeywordEnum": "Shwo dropdown in Material Ispector",
+    "PowerSlider": "Show slider in Material Ispector",
+    "IntRange": "Show slider in Material Ispector",
+    "Space": "Add Sapce to between the property and another in Material Ispector",
+    "Header": "Show header label in Material Ispector"
+  }
+}

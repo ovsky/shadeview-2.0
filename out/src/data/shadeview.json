@@ -1,0 +1,212 @@
+{
+	"Version": 1,
+	"For Loop": {
+		"prefix": "for",
+		"body": [
+			"for (int ${1:index} = 0; ${1:index} < ${2:length}; ${1:index}++) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Creates a standard 'for' loop structure."
+	},
+	"if": {
+		"prefix": "if",
+		"body": [
+			"if (${1:condition}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Generates an 'if' conditional block."
+	},
+	"if..else": {
+		"prefix": "ifelse",
+		"body": [
+			"if (${1:condition}) {",
+			"\t$0",
+			"} else {",
+			"\t$0",
+			"}"
+		],
+		"description": "Creates an 'if-else' conditional structure."
+	},
+	"Shader": {
+		"prefix": "shader",
+		"body": [
+			"Shader \"${1:name}\" {",
+			"\t$0",
+			"}"
+		],
+		"description": "Defines a Unity shader with the given name."
+	},
+	"SubShader": {
+		"prefix": "subshader",
+		"body": [
+			"SubShader {",
+			"\t$0",
+			"}"
+		],
+		"description": "Inserts a 'SubShader' block inside a shader."
+	},
+	"struct": {
+		"prefix": "struct",
+		"body": [
+			"struct ${1:name} {",
+			"\t$0",
+			"}"
+		],
+		"description": "Defines a new structure with specified fields."
+	},
+	"Property": {
+		"prefix": "props",
+		"body": [
+			"Properties {",
+			"\t$0",
+			"}"
+		],
+		"description": "Creates a 'Properties' block for shader properties."
+	},
+	"Property 2D": {
+		"prefix": "prop2d",
+		"body": [
+			"${1:Property} (\"${2:Description}\", 2D) = \"white\" {}"
+		],
+		"description": "Declares a 2D texture property."
+	},
+	"Property Cube": {
+		"prefix": "propcube",
+		"body": [
+			"${1:Property} (\"${2:Description}\", Cube) = \"\" {}"
+		],
+		"description": "Defines a cube texture property."
+	},
+	"Property Color": {
+		"prefix": "propc",
+		"body": [
+			"${1:Property} (\"${2:Description}\", Color) = (1, 1, 1, 1)"
+		],
+		"description": "Declares a color property with default RGBA values."
+	},
+	"Property Vector": {
+		"prefix": "propv",
+		"body": [
+			"${1:Property} (\"${2:Description}\", Vector) = (1, 1, 1, 1)"
+		],
+		"description": "Defines a vector property with default values."
+	},
+	"Property Float": {
+		"prefix": "propf",
+		"body": [
+			"${1:Property} (\"${2:Description}\", Float) = ${3:defaultValue}"
+		],
+		"description": "Creates a floating-point property with a default value."
+	},
+	"Property Range": {
+		"prefix": "proprange",
+		"body": [
+			"${1:Property} (\"${2:Description}\", Range(${3:min}, ${4:max})) = ${5:defaultValue}"
+		],
+		"description": "Defines a ranged float property with specified minimum, maximum, and default values."
+	},
+	"Tags { \"RenderType\" = \"Transparent\" \"Queue\" = \"Transparent\" }": {
+		"prefix": "tagstt",
+		"body": [
+			"Tags { \"RenderType\" = \"Transparent\" \"Queue\" = \"Transparent\" }"
+		],
+		"description": "Specifies rendering and queue tags for transparent objects."
+	},
+	"Tags": {
+		"prefix": "tags",
+		"body": [
+			"Tags { \"RenderType\" = \"${1}\" }"
+		],
+		"description": "Defines shader tags with custom render type."
+	},
+	"Blend one one": {
+		"prefix": "blend1_1",
+		"body": [
+			"Blend One One"
+		],
+		"description": "Applies an additive blending mode (One, One)."
+	},
+	"Blend SrcAlpha OneMinusSrcAlpha": {
+		"prefix": "blendsa_1-sa",
+		"body": [
+			"Blend SrcAlpha OneMinusSrcAlpha"
+		],
+		"description": "Sets blending to alpha blend mode (SrcAlpha, OneMinusSrcAlpha)."
+	},
+	"Blend One OneMinusSrcAlpha": {
+		"prefix": "blend1_1-sa",
+		"body":[
+			"Blend One OneMinusSrcAlpha"
+		],
+		"description": "Applies blend mode for premultiplied alpha (One, OneMinusSrcAlpha)."
+	},
+	"Blend OneMinusDstColor One": {
+		"prefix": "blend1-dc_1",
+		"body": [
+			"Blend OneMinusDstColor One"
+		],
+		"description": "Blends using destination color inverse (OneMinusDstColor, One)."
+	},
+	"Blend DstColor Zero": {
+		"prefix": "blenddc_0",
+		"body":[
+			"Blend DstColor Zero"
+		],
+		"description": "Blends using destination color (DstColor, Zero)."
+	},
+	"Blend DstColor SrcColor": {
+		"prefix": "blenddc_sc",
+		"body": [
+			"Blend DstColor SrcColor"
+		],
+		"description": "Blends destination color with source color (DstColor, SrcColor)."
+	},
+	"CGPROGRAM...ENCG": {
+		"prefix": "cgp",
+		"body": [
+			"CGPROGRAM",
+			"\t$0",
+			"ENDCG"
+		],
+		"description": "Creates a CGPROGRAM block with code enclosed between CGPROGRAM and ENDCG."
+	},
+	"GLSLPROGRAM...ENCGLSL": {
+		"prefix": "glp",
+		"body": [
+			"GLSLPROGRAM",
+			"\t$0",
+			"ENDGLSL"
+		],
+		"description": "Defines a GLSLPROGRAM block for GLSL shader code."
+	},
+	"Fallback": {
+		"prefix": "fallback",
+		"body": [
+			"Fallback \"${1:name}\""
+		],
+		"description": "Specifies a fallback shader to be used if the current shader cannot be rendered."
+	},
+	"#include \"UnityCG.cginc\"": {
+		"prefix": "incucg",
+		"body": [
+			"#include \"UnityCG.cginc\""
+		],
+		"description": "Includes the UnityCG.cginc file for common shader functions."
+	},
+	"#include \"Lighting.cginc\"": {
+		"prefix": "inclight",
+		"body": [
+			"#include \"Lighting.cginc\""
+		],
+		"description": "Includes the Lighting.cginc file for lighting calculations."
+	},
+	"#include \"AutoLight.cginc\"": {
+		"prefix": "incautolight",
+		"body": [
+			"#include \"AutoLight.cginc\""
+		],
+		"description": "Includes the AutoLight.cginc file for automatic light handling."
+	}
+}

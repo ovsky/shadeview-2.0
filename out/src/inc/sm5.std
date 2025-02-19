@@ -1,0 +1,1634 @@
+// Copyright @ AWWSKY 2024 - present
+//
+// https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/d3d11-graphics-reference-sm5-objects
+//
+//
+
+/// Output buffer that appears as a stream the shader may append to. 
+/// Only structured buffers can take T types that are structures.
+struct AppendStructuredBuffer<T>
+{
+    /// Appends a value to the end of the buffer.
+    void Append(in T value) { }
+
+    /// Gets the resource dimensions.
+    void GetDimensions(out uint numStructs, out uint stride) { }
+};
+
+/// Buffer type as it exists in Shader Model 4 plus resource variables and buffer info.
+struct Buffer<T>
+{
+    /// Gets the length of the buffer.
+    void GetDimensions(out uint dim) { }
+
+    /// Reads buffer data and returns status of the operation.
+    /// The return type matches the type in the declaration for the Buffer object.
+    T Load(in int Location, out uint Status) { }
+};
+
+/// A read-only buffer that is indexed in bytes.
+struct ByteAddressBuffer
+{
+    /// Gets one value.
+    uint Load(in int address) { }
+
+    /// Gets one value and the status of the operation.
+    uint Load(in int Location, out uint Status) { }
+
+    /// Gets two values.
+    uint2 Load2(in uint address) { }
+
+    /// Gets two values and the status of the operation.
+    uint2 Load2(in int Location, out uint Status) { }
+
+    /// Gets three values.
+    uint3 Load3(in uint address) { }
+
+    /// Gets three values and the status of the operation.
+    uint3 Load3(in int Location, out uint Status) { }
+
+    /// Gets four values.
+    uint4 Load4(in uint address) { }
+
+    /// Gets four values and the status of the operation.
+    uint4 Load4(in int Location, out uint Status) { }
+};
+
+/// An input buffer that appears as a stream the shader 
+/// may pull values from. Only structured buffers can take T types that are structures.
+struct ConsumeStructuredBuffer<T>
+{
+    /// Removes a value from the end of the buffer.
+    T Consume() {}
+
+    /// Gets the resource dimensions.
+    void GetDimensions( out uint numStructs, out uint stride) { }
+};
+
+/// Represents an array of control points that are available to the hull shader as inputs.
+struct InputPatch<T, T1>
+{
+    /// The number of control points.
+    uint Length;
+};
+
+/// Represents an array of output control points that are available 
+/// to the hull shader's patch-constant function as well as the domain shader.
+struct OutputPatch<T, T1>
+{
+    /// The number of control points.
+    uint Length;
+};
+
+/// A read/write buffer.
+struct RWBuffer<T>
+{
+    /// Gets the length of the buffer.
+    void GetDimensions(out uint dim) { }
+
+    /// Reads buffer data. The return type matches the type in the declaration for the RWBuffer object.
+    T Load(in int Location) { }
+
+    /// Reads buffer data and returns status of the operation.
+    T Load(in int  Location, out uint Status) { }
+};
+
+/// A read/write buffer that indexes in bytes.
+struct RWByteAddressBuffer
+{
+    /// Gets the length of the buffer.
+    void GetDimensions(out uint dim) { }
+
+    /// Adds the value, atomically.
+    void InterlockedAdd(in UINT dest, in UINT value, out UINT original_value) { }
+
+    /// Ands the value, atomically.
+    void InterlockedAnd(in UINT dest, in UINT value, out UINT original_value) { }
+
+    /// Compares the input to the comparison value and exchanges the result, atomically.
+    void InterlockedCompareExchange(in UINT dest, in UINT compare_value, in UINT value, out UINT original_value) { }
+
+    /// Compares the input to the comparison value, atomically
+    void InterlockedCompareStore(in UINT dest, in UINT compare_value, in UINT value) { }
+
+    /// Exchanges a value, atomically.
+    void InterlockedExchange(in UINT dest, in UINT value, out UINT original_value) { }
+
+    /// Finds the maximum value, atomically.
+    void InterlockedMax(in UINT dest, in UINT value, out UINT original_value) { }
+
+    /// Finds the minimum value, atomically.
+    void InterlockedMin(in UINT dest, in UINT value, out UINT original_value) { }
+
+    /// Performs an atomic OR on the value.
+    void InterlockedOr(in UINT dest, in UINT value, out UINT original_value) { }
+
+    /// Performs an atomic XOR on the value.
+    void InterlockedXor(in UINT dest, in UINT value, out UINT original_value) { }
+
+    /// Gets one value.
+    uint Load(in int address) { }
+
+    /// Gets one value and the status of the operation.
+    uint Load(in int Location, out uint Status) { }
+
+    /// Gets two values.
+    uint2 Load2(in uint address) { }
+
+    /// Gets two values and the status of the operation.
+    uint2 Load2(in int Location, out uint Status) { }
+
+    /// Gets three values.
+    uint3 Load3(in uint address) { }
+
+    /// Gets three values and the status of the operation.
+    uint3 Load3(in int Location, out uint Status) { }
+
+    /// Gets four values.
+    uint4 Load4(in uint address) { }
+
+    /// Gets four values and the status of the operation.
+    uint4 Load4(in int Location, out uint Status) { }
+
+    /// Sets one value.
+    void Store(in uint address, in uint value) { }
+
+    /// Sets two values.
+    void Store2(in uint address, in uint2 values) { }
+
+    /// Sets three values.
+    void Store3(in uint address, in uint3 values) { }
+
+    /// Sets four values.
+    void Store4(in uint address, in uint4 values) { }
+};
+
+/// A read/write buffer that can take a T type that is a structure.
+struct RWStructuredBuffer<T>
+{
+    /// Decrements the object's hidden counter.
+    uint DecrementCounter() { }
+
+    /// Gets the resource dimensions.
+    void GetDimensions(out uint numStructs, out uint stride) { }
+
+    /// Increments the object's hidden counter.
+    uint IncrementCounter() { }
+
+    /// Reads buffer data. The return type matches the type in the declaration for the RWStructuredBuffer object.
+    T Load(in int Location) { }
+
+    /// Reads buffer data and returns status about the operation. 
+    /// The return type matches the type in the declaration for the RWStructuredBuffer object.
+    T Load(in int  Location, out uint Status) { }
+};
+
+/// A read/write resource.
+struct RWTexture1D<T>
+{
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out UINT Width) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width);
+
+    /// Reads texture data.
+    /// The return type matches the type in the declaration for the RWTexture1D object.
+    T Load(in int Location) { }
+
+    /// Reads texture data and returns status about the operation.
+    /// The return type matches the type in the declaration for the RWTexture1D object.
+    T Load(in int  Location, out uint Status) { }
+};
+
+/// A read/write resource.
+struct RWTexture1DArray<T>
+{
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out UINT Width, out UINT Elements) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width, out UINT Elements) { }
+
+    /// Reads texture data.
+    /// The return type matches the type in the declaration for the RWTexture1DArray object.
+    T Load(in int Location) { }
+
+    /// Reads texture data and returns status about the operation.
+    /// The return type matches the type in the declaration for the RWTexture1DArray object.
+    T Load(in int  Location, out uint Status) { }
+};
+
+/// A read/write resource.
+struct RWTexture2D<T>
+{
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out UINT Width, out UINT Height) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width, out float Height) { }
+
+    /// Reads texture data.
+    /// The return type matches the type in the declaration for the RWTexture2D object.
+    T Load(in int Location) { }
+
+    /// Reads texture data and returns status about the operation.
+    /// The return type matches the type in the declaration for the RWTexture2D object.
+    T Load(in int  Location, out uint Status) { }
+};
+
+/// A read/write resource.
+struct RWTexture2DArray<T>
+{
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out UINT Width, out UINT Height, out UINT Elements) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width, out float Height, out float Elements) { }
+
+    /// Reads texture data.
+    /// The return type matches the type in the declaration for the RWTexture2DArray object.
+    T Load(in int Location) { }
+
+    /// Reads texture data and returns status about the operation.
+    /// The return type matches the type in the declaration for the RWTexture2DArray object.
+    T Load(in int  Location, out uint Status) { }
+};
+
+/// A read/write resource.
+struct RWTexture3D<T>
+{
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out UINT Width, out UINT Height, out UINT Depth) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width, out float Height, out float Depth) { }
+
+    /// Reads texture data.
+    /// The return type matches the type in the declaration for the RWTexture3D object.
+    T Load(in int Location) { }
+
+    /// Reads texture data and returns status about the operation.
+    /// The return type matches the type in the declaration for the RWTexture3D object.
+    T Load(in int  Location, out uint Status) { }
+};
+
+/// A read-only buffer, which can take a T type that is a structure.
+struct StructuredBuffer<T>
+{
+    /// Gets the resource dimensions.
+    void GetDimensions(out uint numStructs, out uint stride) { }
+
+    /// Reads buffer data.
+    /// The return type matches the type in the declaration for the RWTexture3D object.
+    T Load(in int Location) { }
+
+    /// Reads buffer data and returns status about the operation.
+    /// The return type matches the type in the declaration for the RWTexture3D object.
+    T Load(in int  Location, out uint Status) { }
+};
+
+/// This texture object supports the following methods in addition to the methods in Shader Model 4
+struct Texture1D<T>
+{
+    /// Returns the dimensions of the resource.
+    void GetDimensions(in UINT MipLevel, out UINT Width, out UINT NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions (out UINT Width) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(UINT MipLevel, out float Width, out float NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width) { }
+    
+    /// Reads texture data.
+    T Load(int Location) { }
+
+    /// Reads texture data and returns status of the operation.
+    /// The return type matches the type in the declaration for the Texture1D object.
+    T Load(in int Location, in int  Offset, out uint Status) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location, int Offset) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to, and returns status of the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(sampler_state S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an 
+    /// optional value to clamp sample level-of-detail (LOD) values to. The return type is 
+    /// texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(SamplerState S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to 
+    /// clamp sample level-of-detail (LOD) values to. The return type is texture format, which is one of the 
+    /// typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to clamp sample 
+    /// level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, using a comparison value to reject samples.
+    /// Returns a floating-point value in the range [0..1].
+    float SampleCmp(SamplerComparisonState S, float Location, float CompareValue) { }
+
+    /// Samples a texture, using a comparison value to reject samples.
+    /// Returns a floating-point value in the range [0..1].
+    float SampleCmp(SamplerComparisonState S, float Location, float CompareValue, int Offset) { }
+
+    /// Samples a texture, using a comparison value to reject samples, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmp(in SamplerState S, in float Location, in float CompareValue, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a comparison value to reject samples, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmp(in SamplerState S, in float Location, in float CompareValue, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture on mipmap level 0 only and compares the result to a comparison value.
+    /// This function is identical to calling SampleCmp on mipmap level 0 only.
+    float SampleCmpLevelZero(SamplerComparisonState S, float Location, float CompareValue, int Offset) { }
+
+    /// Samples a texture on mipmap level 0 only and compares the result to a comparison value. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmpLevelZero(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY, int Offset) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in  float Clamp, out uint Status) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD, int Offset) { }
+
+    /// Samples a texture on the specified mipmap level and returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(in SamplerState S, in float Location, in float LOD, in int Offset, out uint Status) { }
+};
+
+/// Texture1DArray type (as it exists in Shader Model 4) plus resource variables. This texture object supports 
+/// the following methods in addition to the methods in Shader Model 4.
+struct Texture1DArray<T>
+{
+    /// Returns the dimensions of the resource.
+    void GetDimensions(in UINT MipLevel, out UINT Width, out UINT Elements, out UINT NumberOfLevels) { }
+    
+    /// Returns the dimensions of the resource.
+    void GetDimensions(UINT MipLevel, out UINT Width, out UINT NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions (out UINT Width) { }
+    
+    /// Returns the dimensions of the resource.
+    void GetDimensions(UINT MipLevel, out float Width, out float NumberOfLevels) { }
+    
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width) { }
+
+    /// Reads texture data.
+    T Load(int Location) { }
+
+    /// Reads texture data and returns status of the operation.
+    /// The return type matches the type in the declaration for the Texture1D object.
+    T Load(in int Location, in int  Offset, out uint Status) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location, int Offset) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to, and returns status of the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(sampler_state S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an 
+    /// optional value to clamp sample level-of-detail (LOD) values to. The return type is 
+    /// texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(SamplerState S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to 
+    /// clamp sample level-of-detail (LOD) values to. The return type is texture format, which is one of the 
+    /// typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to clamp sample 
+    /// level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, using a comparison value to reject samples.
+    /// Returns a floating-point value in the range [0..1].
+    float SampleCmp(SamplerComparisonState S, float Location, float CompareValue) { }
+
+    /// Samples a texture, using a comparison value to reject samples.
+    /// Returns a floating-point value in the range [0..1].
+    float SampleCmp(SamplerComparisonState S, float Location, float CompareValue, int Offset) { }
+
+    /// Samples a texture, using a comparison value to reject samples, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmp(in SamplerState S, in float Location, in float CompareValue, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a comparison value to reject samples, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmp(in SamplerState S, in float Location, in float CompareValue, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture on mipmap level 0 only and compares the result to a comparison value.
+    /// This function is identical to calling SampleCmp on mipmap level 0 only.
+    float SampleCmpLevelZero(SamplerComparisonState S, float Location, float CompareValue, int Offset) { }
+
+    /// Samples a texture on mipmap level 0 only and compares the result to a comparison value. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmpLevelZero(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY, int Offset) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in  float Clamp, out uint Status) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD, int Offset) { }
+
+    /// Samples a texture on the specified mipmap level and returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(in SamplerState S, in float Location, in float LOD, in int Offset, out uint Status) { }
+};
+
+/// Texture2D type (as it exists in Shader Model 4) plus resource variables. This texture object supports the following methods in addition to the methods in Shader Model 4.
+struct Texture2D<T>
+{
+    /// Returns the four texel values that would be used in a bi-linear filtering operation.
+    T Gather(in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T Gather(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue( in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen( in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed( in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns all four components.
+    float4 GatherCmp(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+
+    /// Samples and compares a texture and returns all four components along with status about the operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherCmp(in SamplerState S, in float Location, in float CompareValue, in int2 Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the alpha component.
+    float4 GatherCmpAlpha(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the alpha component along with status about the operation.
+    T GatherCmpAlpha(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the alpha component.
+    T GatherCmpAlpha(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the alpha component along with status about the operation.
+    T GatherCmpAlpha(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns the blue component.
+    float4 GatherCmpBlue(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the blue component along with status about the operation.
+    T GatherCmpBlue(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the blue component.
+    T GatherCmpBlue(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the blue component along with status about the operation.
+    T GatherCmpBlue(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns the green component.
+    float4 GatherCmpGreen(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the green component along with status about the operation.
+    T GatherCmpGreen(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the green component.
+    T GatherCmpGreen(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the green component along with status about the operation.
+    T GatherCmpGreen(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns the red component.
+    float4 GatherCmpRed(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the red component along with status about the operation.
+    T GatherCmpRed(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the red component.
+    T GatherCmpRed(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the red component along with status about the operation.
+    T GatherCmpRed(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(in uint MipLevel, out uint Width, out uint Height, out uint NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(uint MipLevel, out uint Width, out uint Height, out uint NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions (out uint Width, out uint Height) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(uint MipLevel, out float Width, out float Height, out float NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width, out float Height) { }
+
+    /// Reads texture data.
+    T Load(int Location) { }
+
+    /// Reads texture data and returns status of the operation.
+    /// The return type matches the type in the declaration for the Texture1D object.
+    T Load(in int Location, in int  Offset, out uint Status) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location, int Offset) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to, and returns status of the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(sampler_state S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an 
+    /// optional value to clamp sample level-of-detail (LOD) values to. The return type is 
+    /// texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(SamplerState S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to 
+    /// clamp sample level-of-detail (LOD) values to. The return type is texture format, which is one of the 
+    /// typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to clamp sample 
+    /// level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, using a comparison value to reject samples.
+    /// Returns a floating-point value in the range [0..1].
+    float SampleCmp(SamplerComparisonState S, float Location, float CompareValue) { }
+
+    /// Samples a texture, using a comparison value to reject samples.
+    /// Returns a floating-point value in the range [0..1].
+    float SampleCmp(SamplerComparisonState S, float Location, float CompareValue, int Offset) { }
+
+    /// Samples a texture, using a comparison value to reject samples, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmp(in SamplerState S, in float Location, in float CompareValue, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a comparison value to reject samples, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmp(in SamplerState S, in float Location, in float CompareValue, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture on mipmap level 0 only and compares the result to a comparison value.
+    /// This function is identical to calling SampleCmp on mipmap level 0 only.
+    float SampleCmpLevelZero(SamplerComparisonState S, float Location, float CompareValue, int Offset) { }
+
+    /// Samples a texture on mipmap level 0 only and compares the result to a comparison value. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmpLevelZero(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY, int Offset) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in  float Clamp, out uint Status) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD, int Offset) { }
+
+    /// Samples a texture on the specified mipmap level and returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(in SamplerState S, in float Location, in float LOD, in int Offset, out uint Status) { }
+};
+
+/// Texture2DArray type (as it exists in Shader Model 4) plus resource variables
+struct Texture2DArray<T>
+{
+    /// Returns the four texel values that would be used in a bi-linear filtering operation.
+    T Gather(in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T Gather(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue( in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen( in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed( in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns all four components.
+    float4 GatherCmp(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+
+    /// Samples and compares a texture and returns all four components along with status about the operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherCmp(in SamplerState S, in float Location, in float CompareValue, in int2 Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the alpha component.
+    float4 GatherCmpAlpha(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the alpha component along with status about the operation.
+    T GatherCmpAlpha(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the alpha component.
+    T GatherCmpAlpha(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the alpha component along with status about the operation.
+    T GatherCmpAlpha(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns the blue component.
+    float4 GatherCmpBlue(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the blue component along with status about the operation.
+    T GatherCmpBlue(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the blue component.
+    T GatherCmpBlue(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the blue component along with status about the operation.
+    T GatherCmpBlue(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns the green component.
+    float4 GatherCmpGreen(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the green component along with status about the operation.
+    T GatherCmpGreen(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the green component.
+    T GatherCmpGreen(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the green component along with status about the operation.
+    T GatherCmpGreen(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns the red component.
+    float4 GatherCmpRed(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the red component along with status about the operation.
+    T GatherCmpRed(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the red component.
+    T GatherCmpRed(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the red component along with status about the operation.
+    T GatherCmpRed(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(in uint MipLevel, out uint Width, out uint Height, out uint NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(uint MipLevel, out uint Width, out uint Height, out uint NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions (out uint Width, out uint Height) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(uint MipLevel, out float Width, out float Height, out float NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width, out float Height) { }
+
+    /// Reads texture data.
+    T Load(int Location) { }
+
+    /// Reads texture data and returns status of the operation.
+    /// The return type matches the type in the declaration for the Texture1D object.
+    T Load(in int Location, in int  Offset, out uint Status) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location, int Offset) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to, and returns status of the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(sampler_state S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an 
+    /// optional value to clamp sample level-of-detail (LOD) values to. The return type is 
+    /// texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(SamplerState S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to 
+    /// clamp sample level-of-detail (LOD) values to. The return type is texture format, which is one of the 
+    /// typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to clamp sample 
+    /// level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, using a comparison value to reject samples.
+    /// Returns a floating-point value in the range [0..1].
+    float SampleCmp(SamplerComparisonState S, float Location, float CompareValue) { }
+
+    /// Samples a texture, using a comparison value to reject samples.
+    /// Returns a floating-point value in the range [0..1].
+    float SampleCmp(SamplerComparisonState S, float Location, float CompareValue, int Offset) { }
+
+    /// Samples a texture, using a comparison value to reject samples, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmp(in SamplerState S, in float Location, in float CompareValue, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a comparison value to reject samples, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmp(in SamplerState S, in float Location, in float CompareValue, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture on mipmap level 0 only and compares the result to a comparison value.
+    /// This function is identical to calling SampleCmp on mipmap level 0 only.
+    float SampleCmpLevelZero(SamplerComparisonState S, float Location, float CompareValue, int Offset) { }
+
+    /// Samples a texture on mipmap level 0 only and compares the result to a comparison value. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmpLevelZero(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY, int Offset) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in  float Clamp, out uint Status) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD, int Offset) { }
+
+    /// Samples a texture on the specified mipmap level and returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(in SamplerState S, in float Location, in float LOD, in int Offset, out uint Status) { }
+};
+
+/// Texture3D type (as it exists in Shader Model 4) plus resource variables
+struct Texture3D<T>
+{
+    /// Returns the dimensions of the resource.
+    void GetDimensions(in UINT MipLevel, out UINT Width, out UINT Height, out UINT Depth, out UINT NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(UINT MipLevel, out UINT Width, out UINT Height, out UINT Depth, out UINT NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions (out UINT Width, out UINT Height, out UINT Depth) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(UINT MipLevel, out float Width, out float Height, out float Depth, out float NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width, out float Height, out float Depth) { }
+
+    /// Reads texture data.
+    T Load(int Location) { }
+
+    /// Reads texture data and returns status of the operation.
+    /// The return type matches the type in the declaration for the Texture1D object.
+    T Load(in int Location, in int Offset, out uint Status) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location, int Offset) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to, and returns status of the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(sampler_state S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an 
+    /// optional value to clamp sample level-of-detail (LOD) values to. The return type is 
+    /// texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(SamplerState S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to 
+    /// clamp sample level-of-detail (LOD) values to. The return type is texture format, which is one of the 
+    /// typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to clamp sample 
+    /// level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY, int Offset) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in  float Clamp, out uint Status) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD, int Offset) { }
+
+    /// Samples a texture on the specified mipmap level and returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(in SamplerState S, in float Location, in float LOD, in int Offset, out uint Status) { }
+};
+
+/// Texture2DMS type (as it exists in Shader Model 4) plus resource variables.
+struct Texture2DMS<T>
+{
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out UINT Width, out UINT Height, out UINT NumberOfSamples) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width, out float Height, out float NumberOfSamples) { }
+
+    /// Returns the sample position for the sample index provided.
+    float2 GetSamplePosition(in int sampleindex) { }
+
+    /// Reads texture data.
+    T Load(in int2 coord, in int sampleindex) { }
+
+    /// Reads texture data.
+    T Load(int Location) { }
+
+    /// Reads texture data.
+    T Load(in int2 Location, in int  sampleindex) { }
+
+    /// Reads texture data.
+    T Load(in int2 Location, in int  sampleindex, in int2 Offset) { }
+
+    /// Reads texture data and returns status of the operation.
+    T Load(in int2 Location, in int  sampleindex, in int2 Offset, out uint Status) { }
+};
+
+struct Texture2DMSArray<T>
+{
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out UINT Width, out UINT Height, out UINT NumberOfSamples) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width, out float Height, out float NumberOfSamples) { }
+
+    /// Returns the sample position for the sample index provided.
+    float2 GetSamplePosition(in int sampleindex) { }
+
+    /// Reads texture data.
+    T Load(in int2 coord, in int sampleindex) { }
+
+    /// Reads texture data.
+    T Load(int2 Location) { }
+
+    /// Reads texture data.
+    T Load(in int2 Location, in int sampleindex) { }
+
+    /// Reads texture data.
+    T Load(in int2 Location, in int sampleindex, in int2 Offset) { }
+
+    /// Reads texture data and returns status of the operation.
+    T Load(in int2 Location, in int sampleindex, in int2 Offset, out uint Status) { }
+};
+
+/// TextureCube type (as it exists in Shader Model 4) plus resource variables
+struct TextureCube<T>
+{
+    /// Returns the four texel values that would be used in a bi-linear filtering operation.
+    T Gather(in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T Gather(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue( in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen( in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed( in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns all four components.
+    float4 GatherCmp(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+
+    /// Samples and compares a texture and returns all four components along with status about the operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherCmp(in SamplerState S, in float Location, in float CompareValue, in int2 Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the alpha component.
+    float4 GatherCmpAlpha(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the alpha component along with status about the operation.
+    T GatherCmpAlpha(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the alpha component.
+    T GatherCmpAlpha(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the alpha component along with status about the operation.
+    T GatherCmpAlpha(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns the blue component.
+    float4 GatherCmpBlue(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the blue component along with status about the operation.
+    T GatherCmpBlue(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the blue component.
+    T GatherCmpBlue(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the blue component along with status about the operation.
+    T GatherCmpBlue(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns the green component.
+    float4 GatherCmpGreen(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the green component along with status about the operation.
+    T GatherCmpGreen(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the green component.
+    T GatherCmpGreen(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the green component along with status about the operation.
+    T GatherCmpGreen(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns the red component.
+    float4 GatherCmpRed(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the red component along with status about the operation.
+    T GatherCmpRed(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the red component.
+    T GatherCmpRed(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the red component along with status about the operation.
+    T GatherCmpRed(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(in uint MipLevel, out uint Width, out uint Height, out uint NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(uint MipLevel, out uint Width, out uint Height, out uint NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions (out uint Width, out uint Height) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(uint MipLevel, out float Width, out float Height, out float NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width, out float Height) { }
+
+    /// Reads texture data.
+    T Load(int Location) { }
+
+    /// Reads texture data and returns status of the operation.
+    /// The return type matches the type in the declaration for the Texture1D object.
+    T Load(in int Location, in int  Offset, out uint Status) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location, int Offset) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to, and returns status of the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(sampler_state S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an 
+    /// optional value to clamp sample level-of-detail (LOD) values to. The return type is 
+    /// texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(SamplerState S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to 
+    /// clamp sample level-of-detail (LOD) values to. The return type is texture format, which is one of the 
+    /// typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to clamp sample 
+    /// level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, using a comparison value to reject samples.
+    /// Returns a floating-point value in the range [0..1].
+    float SampleCmp(SamplerComparisonState S, float Location, float CompareValue) { }
+
+    /// Samples a texture, using a comparison value to reject samples.
+    /// Returns a floating-point value in the range [0..1].
+    float SampleCmp(SamplerComparisonState S, float Location, float CompareValue, int Offset) { }
+
+    /// Samples a texture, using a comparison value to reject samples, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmp(in SamplerState S, in float Location, in float CompareValue, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a comparison value to reject samples, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmp(in SamplerState S, in float Location, in float CompareValue, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture on mipmap level 0 only and compares the result to a comparison value.
+    /// This function is identical to calling SampleCmp on mipmap level 0 only.
+    float SampleCmpLevelZero(SamplerComparisonState S, float Location, float CompareValue, int Offset) { }
+
+    /// Samples a texture on mipmap level 0 only and compares the result to a comparison value. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmpLevelZero(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY, int Offset) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in  float Clamp, out uint Status) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD, int Offset) { }
+
+    /// Samples a texture on the specified mipmap level and returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(in SamplerState S, in float Location, in float LOD, in int Offset, out uint Status) { }
+};
+
+/// TextureCubeArray type (as it exists in Shader Model 4) plus resource variables
+struct TextureCubeArray<T>
+{
+    /// Returns the four texel values that would be used in a bi-linear filtering operation.
+    T Gather(in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T Gather(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the alpha components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherAlpha(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue( in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the blue components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherBlue(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen( in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the green components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherGreen(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed( in sampler s, in float2 location, in int2 offset) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed(in SamplerState S, in float Location, in int Offset, out uint Status) { }
+
+    /// Returns the red components of the four texel values that would be used in a bi-linear filtering operation, along with tile-mapping status.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherRed(in SamplerState S, in float Location, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns all four components.
+    float4 GatherCmp(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+
+    /// Samples and compares a texture and returns all four components along with status about the operation.
+    /// The return type is a four-component value whose type is the same as the template type.
+    T GatherCmp(in SamplerState S, in float Location, in float CompareValue, in int2 Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the alpha component.
+    float4 GatherCmpAlpha(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the alpha component along with status about the operation.
+    T GatherCmpAlpha(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the alpha component.
+    T GatherCmpAlpha(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the alpha component along with status about the operation.
+    T GatherCmpAlpha(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns the blue component.
+    float4 GatherCmpBlue(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the blue component along with status about the operation.
+    T GatherCmpBlue(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the blue component.
+    T GatherCmpBlue(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the blue component along with status about the operation.
+    T GatherCmpBlue(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns the green component.
+    float4 GatherCmpGreen(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the green component along with status about the operation.
+    T GatherCmpGreen(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the green component.
+    T GatherCmpGreen(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the green component along with status about the operation.
+    T GatherCmpGreen(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Samples and compares a texture and returns the red component.
+    float4 GatherCmpRed(in SamplerComparisonState s, in float2 location, in float compare_value, in int2 offset) { }
+    
+    /// Samples and compares a texture and returns the red component along with status about the operation.
+    T GatherCmpRed(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4) { }
+
+    /// Samples and compares a texture and returns the red component.
+    T GatherCmpRed(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples and compares a texture and returns the red component along with status about the operation.
+    T GatherCmpRed(in SamplerState S, in float Location, in float CompareValue, in int2 Offset1, in int2 Offset2, in int2 Offset3, in int2 Offset4, out uint Status) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(in uint MipLevel, out uint Width, out uint Height, out uint NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(uint MipLevel, out uint Width, out uint Height, out uint NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions (out uint Width, out uint Height) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(uint MipLevel, out float Width, out float Height, out float NumberOfLevels) { }
+
+    /// Returns the dimensions of the resource.
+    void GetDimensions(out float Width, out float Height) { }
+
+    /// Reads texture data.
+    T Load(int Location) { }
+
+    /// Reads texture data and returns status of the operation.
+    /// The return type matches the type in the declaration for the Texture1D object.
+    T Load(in int Location, in int  Offset, out uint Status) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location) { }
+
+    /// Samples a texture.
+    /// The return is the texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT Sample(SamplerState S, float Location, int Offset) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp) { }
+
+    /// Samples a texture with an optional value to clamp sample level-of-detail (LOD) values to, and returns status of the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT Sample(in SamplerState S, in float Location, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. 
+    /// The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(sampler_state S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an 
+    /// optional value to clamp sample level-of-detail (LOD) values to. The return type is 
+    /// texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(SamplerState S, float Location, float Bias) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to 
+    /// clamp sample level-of-detail (LOD) values to. The return type is texture format, which is one of the 
+    /// typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, after applying the bias value to the mipmap level, with an optional value to clamp sample 
+    /// level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleBias(in SamplerState S, in float Location, in float Bias, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture, using a comparison value to reject samples.
+    /// Returns a floating-point value in the range [0..1].
+    float SampleCmp(SamplerComparisonState S, float Location, float CompareValue) { }
+
+    /// Samples a texture, using a comparison value to reject samples.
+    /// Returns a floating-point value in the range [0..1].
+    float SampleCmp(SamplerComparisonState S, float Location, float CompareValue, int Offset) { }
+
+    /// Samples a texture, using a comparison value to reject samples, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmp(in SamplerState S, in float Location, in float CompareValue, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a comparison value to reject samples, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmp(in SamplerState S, in float Location, in float CompareValue, in int Offset, in float Clamp, out uint Status) { }
+
+    /// Samples a texture on mipmap level 0 only and compares the result to a comparison value.
+    /// This function is identical to calling SampleCmp on mipmap level 0 only.
+    float SampleCmpLevelZero(SamplerComparisonState S, float Location, float CompareValue, int Offset) { }
+
+    /// Samples a texture on mipmap level 0 only and compares the result to a comparison value. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleCmpLevelZero(in SamplerState S, in float Location, in float CompareValue, in int Offset, out uint Status) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(SamplerState S, float Location, float DDX, float DDY, int Offset) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in float Clamp) { }
+
+    /// Samples a texture, using a gradient to influence the way the sample location is calculated, with an optional value to clamp sample level-of-detail (LOD) values to. Returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleGrad(in SamplerState S, in float Location, in float DDX, in float DDY, in int Offset, in  float Clamp, out uint Status) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD) { }
+
+    /// Samples a texture on the specified mipmap level.
+    /// The texture's template type, which may be a single- or multi-component vector. The format is based on the texture's DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(SamplerState S, float Location, float LOD, int Offset) { }
+
+    /// Samples a texture on the specified mipmap level and returns status about the operation.
+    /// The return type is texture format, which is one of the typed values listed in DXGI_FORMAT.
+    DXGI_FORMAT SampleLevel(in SamplerState S, in float Location, in float LOD, in int Offset, out uint Status) { }
+};

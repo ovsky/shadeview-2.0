@@ -1,0 +1,171 @@
+{
+  "name": "shadeview",
+  "displayName": "ShadeView",
+  "description": "Complete Support for Shader Programming [HLSL/GLSL/Compute]",
+  "version": "2.0.25",
+  "publisher": "awwsky",
+  "icon": "images/icon_512.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ovsky/shadeview-2.0.git"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Extension Packs",
+    "Language Packs",
+    "Visualization",
+    "Programming Languages",
+    "Linters",
+    "Snippets",
+    "Formatters",
+    "Debuggers",
+    "Testing",
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/src/main",
+  "scripts": {
+    "vscode:prepublish": "sh ./compile.sh",
+    "vscode:prepublish1": "tsc -P ./",
+    "compile": "tsc -watch -p ./",
+    "test": "node ./node_modules/vscode/bin/test",
+    "json": "copyfiles src/**/*.json out/",
+    "inc": "copyfiles src/**/*.std out/"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "shaderPreview.renderShader",
+        "title": "Render Shader Preview in VSCode [WIP]"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "shaderPreview.renderShader",
+        "key": "ctrl+alt+v"
+      }
+    ],
+    "languages": [
+      {
+        "id": "ShadeView",
+        "aliases": [
+          "ShadeView",
+          "ShaderLab",
+          "ShadeView",
+          "shadeview",
+          "HLSL/GLSL/Compute",
+          "ShadeView",
+          "ShaderView",
+          "Shader"
+        ],
+        "extensions": [
+          ".shader",
+          ".cginc",
+          ".glslinc",
+          ".hlsl",
+          ".cg",
+          ".compute",
+          ".vfxshader",
+          ".surfshader",
+          ".std",
+          ".shadergraph"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ShadeView",
+        "scopeName": "source.shader",
+        "path": "./syntaxes/shadeview.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "ShadeView",
+        "path": "./snippets/shadeview.json"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "ShadeView Configuration",
+        "properties": {
+          "formatting.alignMacros": {
+            "title": "Macro Alignment Modes",
+            "type": "string",
+            "enum": [
+              "Hierachy Indentation",
+              "Hierachy Without Indentation",
+              "No Indentation but leave Hierachy",
+              "Without Hierachy and Indentation"
+            ],
+            "default": "Hierachy Indentation",
+            "description": "Shader macro alignment setup."
+          },
+          "diagnostics.enable": {
+            "title": "Enable Shader Diagnostics",
+            "type": "boolean",
+            "default": false,
+            "description": "Enable/disable diagnostics, currently in WIP state."
+          },
+          "formatting.bracestyle": {
+            "title": "Open the brace on a new line",
+            "type": "boolean",
+            "default": true,
+            "description": "Open the brace on a new line"
+          },
+          "formatting.tags.singleline": {
+            "title": "Write tags in single line.",
+            "type": "boolean",
+            "default": true,
+            "description": "Write tags in single line. Otherwise format tags into multiple lines."
+          },
+          "formatting.cbuffer": {
+            "title": "Indent with UNITY_INSTANCING_CBUFFER and CBUFFER code.",
+            "type": "boolean",
+            "default": true,
+            "description": "Indent with UNITY_INSTANCING_CBUFFER and CBUFFER code."
+          },
+          "shaderCompile.disable": {
+            "title": "Disable time cost features in compiled or generated shader file from Unity.",
+            "type": "boolean",
+            "default": true,
+            "description": "Disable time cost features in compiled or generated shader file from Unity."
+          },
+          "shaderViewer.enablePreview": {
+            "title": "Enable preview of currently written shader code inside VSCode [Work in Progress].",
+            "type": "boolean",
+            "default": false,
+            "keybindings": [
+              "ctrl+shift+v"
+            ],
+            "description": "Enable preview of currently written shader code inside VSCode. Due to WIP state, it may not work as expected on all platforms."
+          }
+        }
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.10.66",
+    "@types/vscode": "^1.13.0",
+    "copyfiles": "^1.2.0",
+    "mocha": "^3.4.2",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@vscode/test-electron": "^2.0.3",
+    "axios": "^0.21.1",
+    "opn": "^6.0.0"
+  },
+  "__metadata": {
+    "isApplicationScoped": false,
+    "installedTimestamp": 1739093100089,
+    "pinned": true,
+    "source": "vsix",
+    "size": 81501375
+  }
+}

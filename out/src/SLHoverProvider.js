@@ -1,0 +1,1 @@
+"use strict"; Object.defineProperty(exports, "__esModule", { value: !0 }); const ShadeView_1 = require("./ShadeView"); class ShadeViewHoverProvider { provideHover(e, r, a) { let d = new ShadeView_1.ShadeView(e, r); return d.provideHover() } } exports.default = ShadeViewHoverProvider;

@@ -1,0 +1,2785 @@
+{
+  "Version": 4,
+  "ItemKind": 1,
+  "Items": {
+    "abs": {
+      "detail": "cg",
+      "documentation": "returns absolute value of scalars and vectors.",
+      "Synopsis": [
+        "float  abs(float  a)",
+        "float1 abs(float1 a)",
+        "float2 abs(float2 a)",
+        "float3 abs(float3 a)",
+        "float4 abs(float4 a)",
+        "half   abs(half  a)",
+        "half1  abs(half1 a)",
+        "half2  abs(half2 a)",
+        "half3  abs(half3 a)",
+        "half4  abs(half4 a)",
+        "fixed  abs(fixed  a)",
+        "fixed1 abs(fixed1 a)",
+        "fixed2 abs(fixed2 a)",
+        "fixed3 abs(fixed3 a)",
+        "fixed4 abs(fixed4 a)"
+      ]
+    },
+    "acos": {
+      "detail": "cg",
+      "documentation": "returns arccosine of scalars and vectors.",
+      "Synopsis": [
+        "float  acos(float a)",
+        "float1 acos(float1 a)",
+        "float2 acos(float2 a)",
+        "float3 acos(float3 a)",
+        "float4 acos(float4 a)",
+        "half   acos(half a)",
+        "half1  acos(half1 a)",
+        "half2  acos(half2 a)",
+        "half3  acos(half3 a)",
+        "half4  acos(half4 a)",
+        "fixed  acos(fixed a)",
+        "fixed1 acos(fixed1 a)",
+        "fixed2 acos(fixed2 a)",
+        "fixed3 acos(fixed3 a)",
+        "fixed4 acos(fixed4 a)"
+      ]
+    },
+    "all": {
+      "detail": "cg",
+      "documentation": "returns true if a boolean scalar or all components of a boolean vector are true.",
+      "Synopsis": [
+        "bool all(bool a)",
+        "bool all(bool1 a)",
+        "bool all(bool2 a)",
+        "bool all(bool3 a)",
+        "bool all(bool4 a)"
+      ]
+    },
+    "any": {
+      "detail": "cg",
+      "documentation": "returns arcsine of scalars and vectors.",
+      "Synopsis": [
+        "float  asin(float a)",
+        "float1 asin(float1 a)",
+        "float2 asin(float2 a)",
+        "float3 asin(float3 a)",
+        "float4 asin(float4 a)",
+        "half   asin(half a)",
+        "half1  asin(half1 a)",
+        "half2  asin(half2 a)",
+        "half3  asin(half3 a)",
+        "half4  asin(half4 a)",
+        "fixed  asin(fixed a)",
+        "fixed1 asin(fixed1 a)",
+        "fixed2 asin(fixed2 a)",
+        "fixed3 asin(fixed3 a)",
+        "fixed4 asin(fixed4 a)"
+      ]
+    },
+    "vert": {
+      "detail": "cg",
+      "documentation": "Vertex shader function entry point",
+      "Synopsis": [
+        "void vert()",
+        "void vert(inout appdata_full IN, out appdata_full OUT)",
+        "void vert(inout appdata_tanget IN, out appdata_tangent OUT)",
+        "void vert(inout appdata_full IN, out appdata_full OUT, out float4 gl_Position)",
+        "void vert(inout appdata_tangent IN, out appdata_tangent OUT, out float4 gl_Position)",
+        "void vert(inout appdata_full IN, out appdata_full OUT, out float4 gl_Position, out float4 gl_ClipPos)",
+        "void vert(inout appdata_tangent IN, out appdata_tangent OUT, out float4 gl_Position, out float4 gl_ClipPos)",
+        "void vert(inout appdata_full IN, out appdata_full OUT, out float4 gl_Position, out float4 gl_ClipPos, out float4 gl_FragCoord)",
+        "void vert(inout appdata_tangent IN, out appdata_tangent OUT, out float4 gl_Position, out float4 gl_ClipPos, out float4 gl_FragCoord)"
+      ]
+    },
+    "atan2": {
+      "detail": "cg",
+      "documentation": "returns arctangent of scalars and vectors.",
+      "Synopsis": [
+        "float  atan2(float y, float x)",
+        "float1 atan2(float1 y, float1 x)",
+        "float2 atan2(float2 y, float2 x)",
+        "float3 atan2(float3 y, float3 x)",
+        "float4 atan2(float4 y, float4 x)",
+        "half   atan2(half y, half x)",
+        "half1  atan2(half1 y, half1 x)",
+        "half2  atan2(half2 y, half2 x)",
+        "half3  atan2(half3 y, half3 x)",
+        "half4  atan2(half4 y, half4 x)",
+        "fixed  atan2(fixed y, fixed x)",
+        "fixed1 atan2(fixed1 y, fixed1 x)",
+        "fixed2 atan2(fixed2 y, fixed2 x)",
+        "fixed3 atan2(fixed3 y, fixed3 x)",
+        "fixed4 atan2(fixed4 y, fixed4 x)"
+      ]
+    },
+    "atan": {
+      "detail": "cg",
+      "documentation": "returns arctangent of scalars and vectors.",
+      "Synopsis": [
+        "float  atan(float a)",
+        "float1 atan(float1 a)",
+        "float2 atan(float2 a)",
+        "float3 atan(float3 a)",
+        "float4 atan(float4 a)",
+        "half   atan(half a)",
+        "half1  atan(half1 a)",
+        "half2  atan(half2 a)",
+        "half3  atan(half3 a)",
+        "half4  atan(half4 a)",
+        "fixed  atan(fixed a)",
+        "fixed1 atan(fixed1 a)",
+        "fixed2 atan(fixed2 a)",
+        "fixed3 atan(fixed3 a)",
+        "fixed4 atan(fixed4 a)"
+      ]
+    },
+    "bitCount": {
+      "detail": "cg",
+      "documentation": "return the number of bits set in a bitfield.",
+      "Synopsis": [
+        "int  bitCount(int  x)",
+        "int2 bitCount(int2 x)",
+        "int3 bitCount(int3 x)",
+        "int4 bitCount(int4 x)",
+        "int  bitCount(uint  x)",
+        "int2 bitCount(uint2 x)",
+        "int3 bitCount(uint3 x)",
+        "int4 bitCount(uint4 x)"
+      ]
+    },
+    "bitfieldExtract": {
+      "detail": "cg",
+      "documentation": "return an extracted range of bits from a bitfield.",
+      "Synopsis": [
+        "int  bitfieldExtract(int  a, int b, int c)",
+        "int2 bitfieldExtract(int2 a, int b, int c)",
+        "int3 bitfieldExtract(int3 a, int b, int c)",
+        "int4 bitfieldExtract(int4 a, int b, int c)",
+        "uint  bitfieldExtract(uint  a, int b, int c)",
+        "uint2 bitfieldExtract(uint2 a, int b, int c)",
+        "uint3 bitfieldExtract(uint3 a, int b, int c)",
+        "uint4 bitfieldExtract(uint4 a, int b, int c)"
+      ]
+    },
+    "bitfieldInsert": {
+      "detail": "cg",
+      "documentation": "returns an extracted range of bits from a bitfield.",
+      "Synopsis": [
+        "int  bitfieldInsert(int  a, int b, int c, int d)",
+        "int2 bitfieldInsert(int2 a, int b, int c, int d)",
+        "int3 bitfieldInsert(int3 a, int b, int c, int d)",
+        "int4 bitfieldInsert(int4 a, int b, int c, int d)",
+        "uint  bitfieldInsert(uint  a, uint b, int c, int d)",
+        "uint2 bitfieldInsert(uint2 a, uint b, int c, int d)",
+        "uint3 bitfieldInsert(uint3 a, uint b, int c, int d)",
+        "uint4 bitfieldInsert(uint4 a, uint b, int c, int d)"
+      ]
+    },
+    "bitfieldReverse": {
+      "detail": "cg",
+      "documentation": "return the reversed bitfield.",
+      "Synopsis": [
+        "int  bitfieldReverse(int  x)",
+        "int2 bitfieldReverse(int2 x)",
+        "int3 bitfieldReverse(int3 x)",
+        "int4 bitfieldReverse(int4 x)",
+        "uint  bitfieldReverse(uint  x)",
+        "uint2 bitfieldReverse(uint2 x)",
+        "uint3 bitfieldReverse(uint3 x)",
+        "uint4 bitfieldReverse(uint4 x)"
+      ]
+    },
+    "ceil": {
+      "detail": "cg",
+      "documentation": "returns smallest integer not less than a scalar or each vector component.",
+      "Synopsis": [
+        "float  ceil(float a)",
+        "float1 ceil(float1 a)",
+        "float2 ceil(float2 a)",
+        "float3 ceil(float3 a)",
+        "float4 ceil(float4 a)",
+        "half   ceil(half a)",
+        "half1  ceil(half1 a)",
+        "half2  ceil(half2 a)",
+        "half3  ceil(half3 a)",
+        "half4  ceil(half4 a)",
+        "fixed  ceil(fixed a)",
+        "fixed1 ceil(fixed1 a)",
+        "fixed2 ceil(fixed2 a)",
+        "fixed3 ceil(fixed3 a)",
+        "fixed4 ceil(fixed4 a)"
+      ]
+    },
+    "clamp": {
+      "detail": "cg",
+      "documentation": "Returns x clamped to the range [a,b] as follows:\n 1. Returns a if x is less than a; \n 2. Returns b if x is greater than b;\n 3. Returns x otherwise.\n\n\n For vectors, the returned vector contains the clamped result of each element of the vector x clamped using the respective element of vectors a and b.",
+      "Synopsis": [
+        "float  clamp(float x, float a, float b)",
+        "float1 clamp(float1 x, float1 a, float1 b)",
+        "float2 clamp(float2 x, float2 a, float2 b)",
+        "float3 clamp(float3 x, float3 a, float3 b)",
+        "float4 clamp(float4 x, float4 a, float4 b)",
+        "half   clamp(half x, half a, half b)",
+        "half1  clamp(half1 x, half1 a, half1)",
+        "half2  clamp(half2 x, half2 a, half2 b)",
+        "half3  clamp(half3 x, half3 a, half3 b)",
+        "half4  clamp(half4 x, half4 a, half4 b)",
+        "fixed  clamp(fixed x, fixed a, fixed b)",
+        "fixed1 clamp(fixed1 x, fixed1 a, fixed1 b)",
+        "fixed2 clamp(fixed2 x, fixed2 a, fixed2 b)",
+        "fixed3 clamp(fixed3 x, fixed3 a, fixed3 b)",
+        "fixed4 clamp(fixed4 x, fixed4 a, fixed4 b)",
+        "float1 clamp(float1 x, float a, float b)",
+        "float2 clamp(float2 x, float a, float b)",
+        "float3 clamp(float3 x, float a, float b)",
+        "float4 clamp(float4 x, float a, float b)",
+        "half1  clamp(half1 x, half a, half b)",
+        "half2  clamp(half2 x, half a, half b)",
+        "half3  clamp(half3 x, half a, half b)",
+        "half4  clamp(half4 x, half a, half b)",
+        "fixed1 clamp(fixed1 x, fixed a, fixed b)",
+        "fixed2 clamp(fixed2 x, fixed a, fixed b)",
+        "fixed3 clamp(fixed3 x, fixed a, fixed b)",
+        "fixed4 clamp(fixed4 x, fixed a, fixed b)"
+      ]
+    },
+    "clip": {
+      "detail": "cg",
+      "documentation": "kills the current pixel output if any component of the given vector, or the given scalar, is negative",
+      "Synopsis": [
+        "void clip(float4 x)",
+        "void clip(float3 x)",
+        "void clip(float2 x)",
+        "void clip(float1 x)",
+        "void clip(float  x)"
+      ]
+    },
+    "cosh": {
+      "detail": "cg",
+      "documentation": "returns hyperbolic cosine of scalars and vectors.",
+      "Synopsis": [
+        "float  cosh(float a)",
+        "float1 cosh(float1 a)",
+        "float2 cosh(float2 a)",
+        "float3 cosh(float3 a)",
+        "float4 cosh(float4 a)",
+        "half   cosh(half a)",
+        "half1  cosh(half1 a)",
+        "half2  cosh(half2 a)",
+        "half3  cosh(half3 a)",
+        "half4  cosh(half4 a)",
+        "fixed  cosh(fixed a)",
+        "fixed1 cosh(fixed1 a)",
+        "fixed2 cosh(fixed2 a)",
+        "fixed3 cosh(fixed3 a)",
+        "fixed4 cosh(fixed4 a)"
+      ]
+    },
+    "cos": {
+      "detail": "cg",
+      "documentation": "returns cosine of scalars and vectors.",
+      "Synopsis": [
+        "float  cos(float a)",
+        "float1 cos(float1 a)",
+        "float2 cos(float2 a)",
+        "float3 cos(float3 a)",
+        "float4 cos(float4 a)",
+        "half   cos(half a)",
+        "half1  cos(half1 a)",
+        "half2  cos(half2 a)",
+        "half3  cos(half3 a)",
+        "half4  cos(half4 a)",
+        "fixed  cos(fixed a)",
+        "fixed1 cos(fixed1 a)",
+        "fixed2 cos(fixed2 a)",
+        "fixed3 cos(fixed3 a)",
+        "fixed4 cos(fixed4 a)"
+      ]
+    },
+    "cross": {
+      "detail": "cg",
+      "documentation": "returns the cross product of two three-component vectors",
+      "Synopsis": [
+        "float3 cross(float3 a, float3 b)",
+        "half3  cross(half3 a, half3 b)",
+        "fixed3 cross(fixed3 a, fixed3 b)"
+      ]
+    },
+    "ddx": {
+      "detail": "cg",
+      "documentation": "returns approximate partial derivative with respect to window-space X",
+      "Synopsis": [
+        "float  ddx(float a)",
+        "float1 ddx(float1 a)",
+        "float2 ddx(float2 a)",
+        "float3 ddx(float3 a)",
+        "float4 ddx(float4 a)",
+        "half   ddx(half a)",
+        "half1  ddx(half1 a)",
+        "half2  ddx(half2 a)",
+        "half3  ddx(half3 a)",
+        "half4  ddx(half4 a)",
+        "fixed  ddx(fixed a)",
+        "fixed1 ddx(fixed1 a)",
+        "fixed2 ddx(fixed2 a)",
+        "fixed3 ddx(fixed3 a)",
+        "fixed4 ddx(fixed4 a)"
+      ]
+    },
+    "ddy": {
+      "detail": "cg",
+      "documentation": "returns approximate partial derivative with respect to window-space Y",
+      "Synopsis": [
+        "float  ddy(float a)",
+        "float1 ddy(float1 a)",
+        "float2 ddy(float2 a)",
+        "float3 ddy(float3 a)",
+        "float4 ddy(float4 a)",
+        "half   ddy(half a)",
+        "half1  ddy(half1 a)",
+        "half2  ddy(half2 a)",
+        "half3  ddy(half3 a)",
+        "half4  ddy(half4 a)",
+        "fixed  ddy(fixed a)",
+        "fixed1 ddy(fixed1 a)",
+        "fixed2 ddy(fixed2 a)",
+        "fixed3 ddy(fixed3 a)",
+        "fixed4 ddy(fixed4 a)"
+      ]
+    },
+    "degrees": {
+      "detail": "cg",
+      "documentation": "converts values of scalars and vectors from radians to degrees",
+      "Synopsis": [
+        "float  degrees(float  a)",
+        "float1 degrees(float1 a)",
+        "float2 degrees(float2 a)",
+        "float3 degrees(float3 a)",
+        "float4 degrees(float4 a)",
+        "half   degrees(half  a)",
+        "half1  degrees(half1 a)",
+        "half2  degrees(half2 a)",
+        "half3  degrees(half3 a)",
+        "half4  degrees(half4 a)",
+        "fixed  degrees(fixed  a)",
+        "fixed1 degrees(fixed1 a)",
+        "fixed2 degrees(fixed2 a)",
+        "fixed3 degrees(fixed3 a)",
+        "fixed4 degrees(fixed4 a)"
+      ]
+    },
+    "determinant": {
+      "detail": "cg",
+      "documentation": "return the scalar determinant of a square matrix",
+      "Synopsis": [
+        "float determinant(float1x1 A)",
+        "float determinant(float2x2 A)",
+        "float determinant(float3x3 A)",
+        "float determinant(float4x4 A)"
+      ]
+    },
+    "distance": {
+      "detail": "cg",
+      "documentation": "return the Euclidean distance between two points",
+      "Synopsis": [
+        "float distance(float pt1, float pt2)",
+        "float distance(float1 pt1, float1 pt2)",
+        "float distance(float2 pt1, float2 pt2)",
+        "float distance(float3 pt1, float3 pt2)",
+        "float distance(float4 pt1, float4 pt2)",
+        "half distance(half pt1, half pt2)",
+        "half distance(half1 pt1, half1 pt2)",
+        "half distance(half2 pt1, half2 pt2)",
+        "half distance(half3 pt1, half3 pt2)",
+        "half distance(half4 pt1, half4 pt2)",
+        "fixed distance(fixed pt1, fixed pt2)",
+        "fixed distance(fixed1 pt1, fixed1 pt2)",
+        "fixed distance(fixed2 pt1, fixed2 pt2)",
+        "fixed distance(fixed3 pt1, fixed3 pt2)",
+        "fixed distance(fixed4 pt1, fixed4 pt2)"
+      ]
+    },
+    "dot": {
+      "detail": "cg",
+      "documentation": "returns the scalar dot product of two vectors",
+      "Synopsis": [
+        "float  dot(float  a, float  b)",
+        "float  dot(float1 a, float1 b)",
+        "float  dot(float2 a, float2 b)",
+        "float  dot(float3 a, float3 b)",
+        "float  dot(float4 a, float4 b)",
+        "half   dot(half  a, half  b)",
+        "half   dot(half1 a, half1 b)",
+        "half   dot(half2 a, half2 b)",
+        "half   dot(half3 a, half3 b)",
+        "half   dot(half4 a, half4 b)",
+        "fixed  dot(fixed  a, fixed  b)",
+        "fixed  dot(fixed1 a, fixed1 b)",
+        "fixed  dot(fixed2 a, fixed2 b)",
+        "fixed  dot(fixed3 a, fixed3 b)",
+        "fixed  dot(fixed4 a, fixed4 b)"
+      ]
+    },
+    "exp2": {
+      "detail": "cg",
+      "documentation": "returns the base-2 exponential of scalars and vectors",
+      "Synopsis": [
+        "float  exp2(float a)",
+        "float1 exp2(float1 a)",
+        "float2 exp2(float2 a)",
+        "float3 exp2(float3 a)",
+        "float4 exp2(float4 a)",
+        "half   exp2(half a)",
+        "half1  exp2(half1 a)",
+        "half2  exp2(half2 a)",
+        "half3  exp2(half3 a)",
+        "half4  exp2(half4 a)",
+        "fixed  exp2(fixed a)",
+        "fixed1 exp2(fixed1 a)",
+        "fixed2 exp2(fixed2 a)",
+        "fixed3 exp2(fixed3 a)",
+        "fixed4 exp2(fixed4 a)"
+      ]
+    },
+    "exp": {
+      "detail": "cg",
+      "documentation": "returns the base-e exponential of scalars and vectors",
+      "Synopsis": [
+        "float  exp(float a)",
+        "float1 exp(float1 a)",
+        "float2 exp(float2 a)",
+        "float3 exp(float3 a)",
+        "float4 exp(float4 a)",
+        "half   exp(half a)",
+        "half1  exp(half1 a)",
+        "half2  exp(half2 a)",
+        "half3  exp(half3 a)",
+        "half4  exp(half4 a)",
+        "fixed  exp(fixed a)",
+        "fixed1 exp(fixed1 a)",
+        "fixed2 exp(fixed2 a)",
+        "fixed3 exp(fixed3 a)",
+        "fixed4 exp(fixed4 a)"
+      ]
+    },
+    "faceforward": {
+      "detail": "cg",
+      "documentation": "returns a normal as-is if a vertex's eye-space position vector points in the opposite direction of a geometric normal, otherwise return the negated version of the normal",
+      "Synopsis": [
+        "float  faceforward(float  N, float  I, float  Ng)",
+        "float1 faceforward(float1 N, float1 I, float1 Ng)",
+        "float2 faceforward(float2 N, float2 I, float2 Ng)",
+        "float3 faceforward(float3 N, float3 I, float3 Ng)",
+        "float4 faceforward(float4 N, float4 I, float4 Ng)",
+        "half  faceforward(half  N, half  I, half  Ng)",
+        "half1 faceforward(half1 N, half1 I, half1 Ng)",
+        "half2 faceforward(half2 N, half2 I, half2 Ng)",
+        "half3 faceforward(half3 N, half3 I, half3 Ng)",
+        "half4 faceforward(half4 N, half4 I, half4 Ng)",
+        "fixed  faceforward(fixed  N, fixed  I, fixed  Ng)",
+        "fixed1 faceforward(fixed1 N, fixed1 I, fixed1 Ng)",
+        "fixed2 faceforward(fixed2 N, fixed2 I, fixed2 Ng)",
+        "fixed3 faceforward(fixed3 N, fixed3 I, fixed3 Ng)",
+        "fixed4 faceforward(fixed4 N, fixed4 I, fixed4 Ng)"
+      ]
+    },
+    "findLSB": {
+      "detail": "cg",
+      "documentation": "return the number of the least significant set bit.",
+      "Synopsis": [
+        "int  findLSB(int  x)",
+        "int2 findLSB(int2 x)",
+        "int3 findLSB(int3 x)",
+        "int4 findLSB(int4 x)",
+        "int  findLSB(uint  x)",
+        "int2 findLSB(uint2 x)",
+        "int3 findLSB(uint3 x)",
+        "int4 findLSB(uint4 x)"
+      ]
+    },
+    "findMSB": {
+      "detail": "cg",
+      "documentation": "return the number of the most significant bit.",
+      "Synopsis": [
+        "int  findMSB(int  x)",
+        "int2 findMSB(int2 x)",
+        "int3 findMSB(int3 x)",
+        "int4 findMSB(int4 x)",
+        "int  findMSB(uint  x)",
+        "int2 findMSB(uint2 x)",
+        "int3 findMSB(uint3 x)",
+        "int4 findMSB(uint4 x)"
+      ]
+    },
+    "floatToIntBits": {
+      "detail": "cg",
+      "documentation": "returns the 32-bit integer representation of an IEEE 754 floating-point scalar or vector",
+      "Synopsis": [
+        "int  floatToIntBits(float  x)",
+        "int1 floatToIntBits(float1 x)",
+        "int2 floatToIntBits(float2 x)",
+        "int3 floatToIntBits(float3 x)",
+        "int4 floatToIntBits(float4 x)"
+      ]
+    },
+    "floatToRawIntBits": {
+      "detail": "cg",
+      "documentation": "returns the raw 32-bit integer representation of an IEEE 754 floating-point scalar or vector",
+      "Synopsis": [
+        "int  floatToRawIntBits(float  x)",
+        "int1 floatToRawIntBits(float1 x)",
+        "int2 floatToRawIntBits(float2 x)",
+        "int3 floatToRawIntBits(float3 x)",
+        "int4 floatToRawIntBits(float4 x)"
+      ]
+    },
+    "floor": {
+      "detail": "cg",
+      "documentation": "returns largest integer not greater than a scalar or each vector component.",
+      "Synopsis": [
+        "float  floor(float a)",
+        "float1 floor(float1 a)",
+        "float2 floor(float2 a)",
+        "float3 floor(float3 a)",
+        "float4 floor(float4 a)",
+        "half   floor(half a)",
+        "half1  floor(half1 a)",
+        "half2  floor(half2 a)",
+        "half3  floor(half3 a)",
+        "half4  floor(half4 a)",
+        "fixed  floor(fixed a)",
+        "fixed1 floor(fixed1 a)",
+        "fixed2 floor(fixed2 a)",
+        "fixed3 floor(fixed3 a)",
+        "fixed4 floor(fixed4 a)"
+      ]
+    },
+    "fmod": {
+      "detail": "cg",
+      "documentation": "returns the remainder of x/y with the same sign as x",
+      "Synopsis": [
+        "float  fmod(float x, float y)",
+        "float1 fmod(float1 x, float1 y)",
+        "float2 fmod(float2 x, float2 y)",
+        "float3 fmod(float3 x, float3 y)",
+        "float4 fmod(float4 x, float4 y)",
+        "half   fmod(half x, half y)",
+        "half1  fmod(half1 x, half1 y)",
+        "half2  fmod(half2 x, half2 y)",
+        "half3  fmod(half3 x, half3 y)",
+        "half4  fmod(half4 x, half4 y)",
+        "fixed  fmod(fixed x, fixed y)",
+        "fixed1 fmod(fixed1 x, fixed1 y)",
+        "fixed2 fmod(fixed2 x, fixed2 y)",
+        "fixed3 fmod(fixed3 x, fixed3 y)",
+        "fixed4 fmod(fixed4 x, fixed4 y)"
+      ]
+    },
+    "frac": {
+      "detail": "cg",
+      "documentation": "returns the fractional portion of a scalar or each vector component.",
+      "Synopsis": [
+        "float  frac(float a)",
+        "float1 frac(float1 a)",
+        "float2 frac(float2 a)",
+        "float3 frac(float3 a)",
+        "float4 frac(float4 a)",
+        "half   frac(half a)",
+        "half1  frac(half1 a)",
+        "half2  frac(half2 a)",
+        "half3  frac(half3 a)",
+        "half4  frac(half4 a)",
+        "fixed  frac(fixed a)",
+        "fixed1 frac(fixed1 a)",
+        "fixed2 frac(fixed2 a)",
+        "fixed3 frac(fixed3 a)",
+        "fixed4 frac(fixed4 a)"
+      ]
+    },
+    "frexp": {
+      "detail": "cg",
+      "documentation": "splits scalars and vectors into normalized fraction and a power of 2",
+      "Synopsis": [
+        "float  frexp(float x, out float e)",
+        "float1 frexp(float1 x, out float1 e)",
+        "float2 frexp(float2 x, out float2 e)",
+        "float3 frexp(float3 x, out float3 e)",
+        "float4 frexp(float4 x, out float4 e)",
+        "half   frexp(half x, out half e)",
+        "half1  frexp(half1 x, out half1 e)",
+        "half2  frexp(half2 x, out half2 e)",
+        "half3  frexp(half3 x, out half3 e)",
+        "half4  frexp(half4 x, out half4 e)",
+        "fixed  frexp(fixed x, out fixed e)",
+        "fixed1 frexp(fixed1 x, out fixed1 e)",
+        "fixed2 frexp(fixed2 x, out fixed2 e)",
+        "fixed3 frexp(fixed3 x, out fixed3 e)",
+        "fixed4 frexp(fixed4 x, out fixed4 e)"
+      ]
+    },
+    "fwidth": {
+      "detail": "cg",
+      "documentation": "returns sum of approximate window-space partial derivatives magnitudes",
+      "Synopsis": [
+        "float  fwidth(float a)",
+        "float1 fwidth(float1 a)",
+        "float2 fwidth(float2 a)",
+        "float3 fwidth(float3 a)",
+        "float4 fwidth(float4 a)",
+        "half   fwidth(half a)",
+        "half1  fwidth(half1 a)",
+        "half2  fwidth(half2 a)",
+        "half3  fwidth(half3 a)",
+        "half4  fwidth(half4 a)",
+        "fixed  fwidth(fixed a)",
+        "fixed1 fwidth(fixed1 a)",
+        "fixed2 fwidth(fixed2 a)",
+        "fixed3 fwidth(fixed3 a)",
+        "fixed4 fwidth(fixed4 a)"
+      ]
+    },
+    "intBitsToFloat": {
+      "detail": "cg",
+      "documentation": "returns the float value corresponding to a given bit represention.of a scalar int value or vector of int values",
+      "Synopsis": [
+        "float  intBitsToFloat(int  x)",
+        "float1 intBitsToFloat(int1 x)",
+        "float2 intBitsToFloat(int2 x)",
+        "float3 intBitsToFloat(int3 x)",
+        "float4 intBitsToFloat(int4 x)"
+      ]
+    },
+    "inverse": {
+      "detail": "cg",
+      "documentation": "return the inverse matrix of a matrix",
+      "Synopsis": [
+        "float4x4 inverse(float4x4 A)",
+        "float3x3 inverse(float3x3 A)",
+        "float2x2 inverse(float2x2 A)"
+      ]
+    },
+    "isfinite": {
+      "detail": "cg",
+      "documentation": "test whether or not a scalar or each vector component is a finite value",
+      "Synopsis": [
+        "bool  isfinite(float x)",
+        "bool1 isfinite(float1 x)",
+        "bool2 isfinite(float2 x)",
+        "bool3 isfinite(float3 x)",
+        "bool4 isfinite(float4 x)",
+        "bool   isfinite(half x)",
+        "bool1  isfinite(half1 x)",
+        "bool2  isfinite(half2 x)",
+        "bool3  isfinite(half3 x)",
+        "bool4  isfinite(half4 x)",
+        "bool  isfinite(fixed x)",
+        "bool1 isfinite(fixed1 x)",
+        "bool2 isfinite(fixed2 x)",
+        "bool3 isfinite(fixed3 x)",
+        "bool4 isfinite(fixed4 x)"
+      ]
+    },
+    "isinf": {
+      "detail": "cg",
+      "documentation": "test whether or not a scalar or each vector component is infinite",
+      "Synopsis": [
+        "bool  isinf(float x)",
+        "bool1 isinf(float1 x)",
+        "bool2 isinf(float2 x)",
+        "bool3 isinf(float3 x)",
+        "bool4 isinf(float4 x)",
+        "bool   isinf(half x)",
+        "bool1  isinf(half1 x)",
+        "bool2  isinf(half2 x)",
+        "bool3  isinf(half3 x)",
+        "bool4  isinf(half4 x)",
+        "bool  isinf(fixed x)",
+        "bool1 isinf(fixed1 x)",
+        "bool2 isinf(fixed2 x)",
+        "bool3 isinf(fixed3 x)",
+        "bool4 isinf(fixed4 x)"
+      ]
+    },
+    "isnan": {
+      "detail": "cg",
+      "documentation": "test whether or not a scalar or each vector component is not-a-number",
+      "Synopsis": [
+        "bool  isnan(float x)",
+        "bool1 isnan(float1 x)",
+        "bool2 isnan(float2 x)",
+        "bool3 isnan(float3 x)",
+        "bool4 isnan(float4 x)",
+        "bool   isnan(half x)",
+        "bool1  isnan(half1 x)",
+        "bool2  isnan(half2 x)",
+        "bool3  isnan(half3 x)",
+        "bool4  isnan(half4 x)",
+        "bool  isnan(fixed x)",
+        "bool1 isnan(fixed1 x)",
+        "bool2 isnan(fixed2 x)",
+        "bool3 isnan(fixed3 x)",
+        "bool4 isnan(fixed4 x)"
+      ]
+    },
+    "ldexp": {
+      "detail": "cg",
+      "documentation": "returns x times 2 rained to n",
+      "Synopsis": [
+        "float  ldexp(float x, float n)",
+        "float1 ldexp(float1 x, float1 n)",
+        "float2 ldexp(float2 x, float2 n)",
+        "float3 ldexp(float3 x, float3 n)",
+        "float4 ldexp(float4 x, float4 n)",
+        "half   ldexp(half x, half n)",
+        "half1  ldexp(half1 x, half1 n)",
+        "half2  ldexp(half2 x, half2 n)",
+        "half3  ldexp(half3 x, half3 n)",
+        "half4  ldexp(half4 x, half4 n)",
+        "fixed  ldexp(fixed x, fixed n)",
+        "fixed1 ldexp(fixed1 x, fixed1 n)",
+        "fixed2 ldexp(fixed2 x, fixed2 n)",
+        "fixed3 ldexp(fixed3 x, fixed3 n)",
+        "fixed4 ldexp(fixed4 x, fixed4 n)"
+      ]
+    },
+    "length": {
+      "detail": "cg",
+      "documentation": "return scalar Euclidean length of a vector",
+      "Synopsis": [
+        "float length(float v)",
+        "float length(float1 v)",
+        "float length(float2 v)",
+        "float length(float3 v)",
+        "float length(float4 v)",
+        "half length(half v)",
+        "half length(half1 v)",
+        "half length(half2 v)",
+        "half length(half3 v)",
+        "half length(half4 v)",
+        "fixed length(fixed v)",
+        "fixed length(fixed1 v)",
+        "fixed length(fixed2 v)",
+        "fixed length(fixed3 v)",
+        "fixed length(fixed4 v)"
+      ]
+    },
+    "float3": {
+      "detail": "cg",
+      "documentation": "defines a float3 from three scalars.",
+      "Synopsis": [
+        "float3 float3(float x, float y, float z)",
+        "float3 float3(float2 xy, float z)",
+        "float3 float3(float x, float2 yz)",
+        "float3 float3(float x)",
+        "float3 float3(float2 xy)",
+        "float3 float3(float4 xyz)",
+        "float3 float3(float3 xyz)"
+      ]
+    },
+    "lerp": {
+      "detail": "cg",
+      "documentation": "returns linear interpolation of two scalars or vectors based on a weight",
+      "Synopsis": [
+        "float  lerp(float a, float b, float w)",
+        "float1 lerp(float1 a, float1 b, float1 w)",
+        "float2 lerp(float2 a, float2 b, float2 w)",
+        "float3 lerp(float3 a, float3 b, float3 w)",
+        "float4 lerp(float4 a, float4 b, float4 w)",
+        "float1 lerp(float1 a, float1 b, float w)",
+        "float2 lerp(float2 a, float2 b, float w)",
+        "float3 lerp(float3 a, float3 b, float w)",
+        "float4 lerp(float4 a, float4 b, float w)",
+        "half   lerp(half a, half b, half w)",
+        "half1  lerp(half1 a, half1 b, half1 w)",
+        "half2  lerp(half2 a, half2 b, half2 w)",
+        "half3  lerp(half3 a, half3 b, half3 w)",
+        "half4  lerp(half4 a, half4 b, half4 w)",
+        "half1  lerp(half1 a, half1 b, half w)",
+        "half2  lerp(half2 a, half2 b, half w)",
+        "half3  lerp(half3 a, half3 b, half w)",
+        "half4  lerp(half4 a, half4 b, half w)",
+        "fixed  lerp(fixed a, fixed b, fixed w)",
+        "fixed1 lerp(fixed1 a, fixed1 b, fixed1 w)",
+        "fixed2 lerp(fixed2 a, fixed2 b, fixed2 w)",
+        "fixed3 lerp(fixed3 a, fixed3 b, fixed3 w)",
+        "fixed4 lerp(fixed4 a, fixed4 b, fixed4 w)",
+        "fixed1 lerp(fixed1 a, fixed1 b, fixed w)",
+        "fixed2 lerp(fixed2 a, fixed2 b, fixed w)",
+        "fixed3 lerp(fixed3 a, fixed3 b, fixed w)",
+        "fixed4 lerp(fixed4 a, fixed4 b, fixed w)"
+      ]
+    },
+    "lit": {
+      "detail": "cg",
+      "documentation": "computes lighting coefficients for ambient, diffuse, and specular lighting contributions",
+      "Synopsis": [
+        "float4 lit(float NdotL, float NdotH, float m)",
+        "half4 lit(half NdotL, half NdotH, half m)",
+        "fixed4 lit(fixed NdotL, fixed NdotH, fixed m)"
+      ]
+    },
+    "log10": {
+      "detail": "cg",
+      "documentation": "returns the base-10 logarithm of scalars and vectors",
+      "Synopsis": [
+        "float  log10(float a)",
+        "float1 log10(float1 a)",
+        "float2 log10(float2 a)",
+        "float3 log10(float3 a)",
+        "float4 log10(float4 a)",
+        "half   log10(half a)",
+        "half1  log10(half1 a)",
+        "half2  log10(half2 a)",
+        "half3  log10(half3 a)",
+        "half4  log10(half4 a)",
+        "fixed  log10(fixed a)",
+        "fixed1 log10(fixed1 a)",
+        "fixed2 log10(fixed2 a)",
+        "fixed3 log10(fixed3 a)",
+        "fixed4 log10(fixed4 a)"
+      ]
+    },
+    "log2": {
+      "detail": "cg",
+      "documentation": "returns the base-2 logarithm of scalars and vectors",
+      "Synopsis": [
+        "float  log2(float a)",
+        "float1 log2(float1 a)",
+        "float2 log2(float2 a)",
+        "float3 log2(float3 a)",
+        "float4 log2(float4 a)",
+        "half   log2(half a)",
+        "half1  log2(half1 a)",
+        "half2  log2(half2 a)",
+        "half3  log2(half3 a)",
+        "half4  log2(half4 a)",
+        "fixed  log2(fixed a)",
+        "fixed1 log2(fixed1 a)",
+        "fixed2 log2(fixed2 a)",
+        "fixed3 log2(fixed3 a)",
+        "fixed4 log2(fixed4 a)"
+      ]
+    },
+    "log": {
+      "detail": "cg",
+      "documentation": "returns the natural logarithm of scalars and vectors",
+      "Synopsis": [
+        "float  log(float a)",
+        "float1 log(float1 a)",
+        "float2 log(float2 a)",
+        "float3 log(float3 a)",
+        "float4 log(float4 a)",
+        "half   log(half a)",
+        "half1  log(half1 a)",
+        "half2  log(half2 a)",
+        "half3  log(half3 a)",
+        "half4  log(half4 a)",
+        "fixed  log(fixed a)",
+        "fixed1 log(fixed1 a)",
+        "fixed2 log(fixed2 a)",
+        "fixed3 log(fixed3 a)",
+        "fixed4 log(fixed4 a)"
+      ]
+    },
+    "max": {
+      "detail": "cg",
+      "documentation": "returns the maximum of two scalars or each respective component of two vectors",
+      "Synopsis": [
+        "float  max(float  a, float  b)",
+        "float1 max(float1 a, float1 b)",
+        "float2 max(float2 a, float2 b)",
+        "float3 max(float3 a, float3 b)",
+        "float4 max(float4 a, float4 b)",
+        "half   max(half  a, half  b)",
+        "half1  max(half1 a, half1 b)",
+        "half2  max(half2 a, half2 b)",
+        "half3  max(half3 a, half3 b)",
+        "half4  max(half4 a, half4 b)",
+        "fixed  max(fixed  a, fixed  b)",
+        "fixed1 max(fixed1 a, fixed1 b)",
+        "fixed2 max(fixed2 a, fixed2 b)",
+        "fixed3 max(fixed3 a, fixed3 b)",
+        "fixed4 max(fixed4 a, fixed4 b)"
+      ]
+    },
+    "min": {
+      "detail": "cg",
+      "documentation": "returns the minimum of two scalars or each respective component of two vectors",
+      "Synopsis": [
+        "float  min(float  a, float  b)",
+        "float1 min(float1 a, float1 b)",
+        "float2 min(float2 a, float2 b)",
+        "float3 min(float3 a, float3 b)",
+        "float4 min(float4 a, float4 b)",
+        "half   min(half  a, half  b)",
+        "half1  min(half1 a, half1 b)",
+        "half2  min(half2 a, half2 b)",
+        "half3  min(half3 a, half3 b)",
+        "half4  min(half4 a, half4 b)",
+        "fixed  min(fixed  a, fixed  b)",
+        "fixed1 min(fixed1 a, fixed1 b)",
+        "fixed2 min(fixed2 a, fixed2 b)",
+        "fixed3 min(fixed3 a, fixed3 b)",
+        "fixed4 min(fixed4 a, fixed4 b)"
+      ]
+    },
+    "modf": {
+      "detail": "cg",
+      "documentation": "decompose a float into integer and fractional parts",
+      "Synopsis": [
+        "float  modf(float  x, out float  i)",
+        "float1 modf(float1 x, out float1 i)",
+        "float2 modf(float2 x, out float2 i)",
+        "float3 modf(float3 x, out float3 i)",
+        "float4 modf(float4 x, out float4 i)",
+        "half   modf(half  x, out half  i)",
+        "half1  modf(half1 x, out half1 i)",
+        "half2  modf(half2 x, out half2 i)",
+        "half3  modf(half3 x, out half3 i)",
+        "half4  modf(half4 x, out half4 i)",
+        "fixed  modf(fixed  x, out fixed  i)",
+        "fixed1 modf(fixed1 x, out fixed1 i)",
+        "fixed2 modf(fixed2 x, out fixed2 i)",
+        "fixed3 modf(fixed3 x, out fixed3 i)",
+        "fixed4 modf(fixed4 x, out fixed4 i)"
+      ]
+    },
+    "mul": {
+      "detail": "cg",
+      "documentation": "multiply a matrix by a column vector, row vector by a matrix, or matrix by a matrix",
+      "Synopsis": [
+        "float4 mul(float4x4 M, float4 v)",
+        "float4 mul(float4x3 M, float3 v)",
+        "float4 mul(float4x2 M, float2 v)",
+        "float4 mul(float4x1 M, float1 v)",
+        "float3 mul(float3x4 M, float4 v)",
+        "float3 mul(float3x3 M, float3 v)",
+        "float3 mul(float3x2 M, float2 v)",
+        "float3 mul(float3x1 M, float1 v)",
+        "float2 mul(float2x4 M, float4 v)",
+        "float2 mul(float2x3 M, float3 v)",
+        "float2 mul(float2x2 M, float2 v)",
+        "float2 mul(float2x1 M, float1 v)",
+        "float1 mul(float1x4 M, float4 v)",
+        "float1 mul(float1x3 M, float3 v)",
+        "float1 mul(float1x2 M, float2 v)",
+        "float1 mul(float1x1 M, float1 v)",
+        "float4 mul(float4 v, float4x4 M)",
+        "float4 mul(float3 v, float3x4 M)",
+        "float4 mul(float2 v, float2x4 M)",
+        "float4 mul(float1 v, float1x4 M)",
+        "float3 mul(float4 v, float4x3 M)",
+        "float3 mul(float3 v, float3x3 M)",
+        "float3 mul(float2 v, float2x3 M)",
+        "float3 mul(float1 v, float1x3 M)",
+        "float2 mul(float4 v, float4x2 M)",
+        "float2 mul(float3 v, float3x2 M)",
+        "float2 mul(float2 v, float2x2 M)",
+        "float2 mul(float1 v, float1x2 M)",
+        "float1 mul(float4 v, float4x1 M)",
+        "float1 mul(float3 v, float3x1 M)",
+        "float1 mul(float2 v, float2x1 M)",
+        "float1 mul(float1 v, float1x1 M)",
+        "half4 mul(half4x4 M, half4 v)",
+        "half4 mul(half4x3 M, half3 v)",
+        "half4 mul(half4x2 M, half2 v)",
+        "half4 mul(half4x1 M, half1 v)",
+        "half3 mul(half3x4 M, half4 v)",
+        "half3 mul(half3x3 M, half3 v)",
+        "half3 mul(half3x2 M, half2 v)",
+        "half3 mul(half3x1 M, half1 v)",
+        "half2 mul(half2x4 M, half4 v)",
+        "half2 mul(half2x3 M, half3 v)",
+        "half2 mul(half2x2 M, half2 v)",
+        "half2 mul(half2x1 M, half1 v)",
+        "half1 mul(half1x4 M, half4 v)",
+        "half1 mul(half1x3 M, half3 v)",
+        "half1 mul(half1x2 M, half2 v)",
+        "half1 mul(half1x1 M, half1 v)",
+        "half4 mul(half4 v, half4x4 M)",
+        "half4 mul(half3 v, half3x4 M)",
+        "half4 mul(half2 v, half2x4 M)",
+        "half4 mul(half1 v, half1x4 M)",
+        "half3 mul(half4 v, half4x3 M)",
+        "half3 mul(half3 v, half3x3 M)",
+        "half3 mul(half2 v, half2x3 M)",
+        "half3 mul(half1 v, half1x3 M)",
+        "half2 mul(half4 v, half4x2 M)",
+        "half2 mul(half3 v, half3x2 M)",
+        "half2 mul(half2 v, half2x2 M)",
+        "half2 mul(half1 v, half1x2 M)",
+        "half1 mul(half4 v, half4x1 M)",
+        "half1 mul(half3 v, half3x1 M)",
+        "half1 mul(half2 v, half2x1 M)",
+        "half1 mul(half1 v, half1x1 M)",
+        "fixed4 mul(fixed4x4 M, fixed4 v)",
+        "fixed4 mul(fixed4x3 M, fixed3 v)",
+        "fixed4 mul(fixed4x2 M, fixed2 v)",
+        "fixed4 mul(fixed4x1 M, fixed1 v)",
+        "fixed3 mul(fixed3x4 M, fixed4 v)",
+        "fixed3 mul(fixed3x3 M, fixed3 v)",
+        "fixed3 mul(fixed3x2 M, fixed2 v)",
+        "fixed3 mul(fixed3x1 M, fixed1 v)",
+        "fixed2 mul(fixed2x4 M, fixed4 v)",
+        "fixed2 mul(fixed2x3 M, fixed3 v)",
+        "fixed2 mul(fixed2x2 M, fixed2 v)",
+        "fixed2 mul(fixed2x1 M, fixed1 v)",
+        "fixed1 mul(fixed1x4 M, fixed4 v)",
+        "fixed1 mul(fixed1x3 M, fixed3 v)",
+        "fixed1 mul(fixed1x2 M, fixed2 v)",
+        "fixed1 mul(fixed1x1 M, fixed1 v)",
+        "fixed4 mul(fixed4 v, fixed4x4 M)",
+        "fixed4 mul(fixed3 v, fixed3x4 M)",
+        "fixed4 mul(fixed2 v, fixed2x4 M)",
+        "fixed4 mul(fixed1 v, fixed1x4 M)",
+        "fixed3 mul(fixed4 v, fixed4x3 M)",
+        "fixed3 mul(fixed3 v, fixed3x3 M)",
+        "fixed3 mul(fixed2 v, fixed2x3 M)",
+        "fixed3 mul(fixed1 v, fixed1x3 M)",
+        "fixed2 mul(fixed4 v, fixed4x2 M)",
+        "fixed2 mul(fixed3 v, fixed3x2 M)",
+        "fixed2 mul(fixed2 v, fixed2x2 M)",
+        "fixed2 mul(fixed1 v, fixed1x2 M)",
+        "fixed1 mul(fixed4 v, fixed4x1 M)",
+        "fixed1 mul(fixed3 v, fixed3x1 M)",
+        "fixed1 mul(fixed2 v, fixed2x1 M)",
+        "fixed1 mul(fixed1 v, fixed1x1 M)",
+        "float1x1 mul(float1x1 A, float1x1 B)",
+        "float1x2 mul(float1x1 A, float1x2 B)",
+        "float1x3 mul(float1x1 A, float1x3 B)",
+        "float1x4 mul(float1x1 A, float1x4 B)",
+        "float1x1 mul(float1x2 A, float2x1 B)",
+        "float1x2 mul(float1x2 A, float2x2 B)",
+        "float1x3 mul(float1x2 A, float2x3 B)",
+        "float1x4 mul(float1x2 A, float2x4 B)",
+        "float1x1 mul(float1x3 A, float3x1 B)",
+        "float1x2 mul(float1x3 A, float3x2 B)",
+        "float1x3 mul(float1x3 A, float3x3 B)",
+        "float1x4 mul(float1x3 A, float3x4 B)",
+        "float1x1 mul(float1x4 A, float4x1 B)",
+        "float1x2 mul(float1x4 A, float4x2 B)",
+        "float1x3 mul(float1x4 A, float4x3 B)",
+        "float1x4 mul(float1x4 A, float4x4 B)",
+        "float2x1 mul(float2x1 A, float1x1 B)",
+        "float2x2 mul(float2x1 A, float1x2 B)",
+        "float2x3 mul(float2x1 A, float1x3 B)",
+        "float2x4 mul(float2x1 A, float1x4 B)",
+        "float2x1 mul(float2x2 A, float2x1 B)",
+        "float2x2 mul(float2x2 A, float2x2 B)",
+        "float2x3 mul(float2x2 A, float2x3 B)",
+        "float2x4 mul(float2x2 A, float2x4 B)",
+        "float2x1 mul(float2x3 A, float3x1 B)",
+        "float2x2 mul(float2x3 A, float3x2 B)",
+        "float2x3 mul(float2x3 A, float3x3 B)",
+        "float2x4 mul(float2x3 A, float3x4 B)",
+        "float2x1 mul(float2x4 A, float4x1 B)",
+        "float2x2 mul(float2x4 A, float4x2 B)",
+        "float2x3 mul(float2x4 A, float4x3 B)",
+        "float2x4 mul(float2x4 A, float4x4 B)",
+        "float3x1 mul(float3x1 A, float1x1 B)",
+        "float3x2 mul(float3x1 A, float1x2 B)",
+        "float3x3 mul(float3x1 A, float1x3 B)",
+        "float3x4 mul(float3x1 A, float1x4 B)",
+        "float3x1 mul(float3x2 A, float2x1 B)",
+        "float3x2 mul(float3x2 A, float2x2 B)",
+        "float3x3 mul(float3x2 A, float2x3 B)",
+        "float3x4 mul(float3x2 A, float2x4 B)",
+        "float3x1 mul(float3x3 A, float3x1 B)",
+        "float3x2 mul(float3x3 A, float3x2 B)",
+        "float3x3 mul(float3x3 A, float3x3 B)",
+        "float3x4 mul(float3x3 A, float3x4 B)",
+        "float3x1 mul(float3x4 A, float4x1 B)",
+        "float3x2 mul(float3x4 A, float4x2 B)",
+        "float3x3 mul(float3x4 A, float4x3 B)",
+        "float3x4 mul(float3x4 A, float4x4 B)",
+        "float4x1 mul(float4x1 A, float1x1 B)",
+        "float4x2 mul(float4x1 A, float1x2 B)",
+        "float4x3 mul(float4x1 A, float1x3 B)",
+        "float4x4 mul(float4x1 A, float1x4 B)",
+        "float4x1 mul(float4x2 A, float2x1 B)",
+        "float4x2 mul(float4x2 A, float2x2 B)",
+        "float4x3 mul(float4x2 A, float2x3 B)",
+        "float4x4 mul(float4x2 A, float2x4 B)",
+        "float4x1 mul(float4x3 A, float3x1 B)",
+        "float4x2 mul(float4x3 A, float3x2 B)",
+        "float4x3 mul(float4x3 A, float3x3 B)",
+        "float4x4 mul(float4x3 A, float3x4 B)",
+        "float4x1 mul(float4x4 A, float4x1 B)",
+        "float4x2 mul(float4x4 A, float4x2 B)",
+        "float4x3 mul(float4x4 A, float4x3 B)",
+        "float4x4 mul(float4x4 A, float4x4 B)"
+      ]
+    },
+    "normalize": {
+      "detail": "cg",
+      "documentation": "normalizes a vector",
+      "Synopsis": [
+        "float normalize(float v)",
+        "float normalize(float1 v)",
+        "float normalize(float2 v)",
+        "float normalize(float3 v)",
+        "float normalize(float4 v)",
+        "half normalize(half v)",
+        "half normalize(half1 v)",
+        "half normalize(half2 v)",
+        "half normalize(half3 v)",
+        "half normalize(half4 v)",
+        "fixed normalize(fixed v)",
+        "fixed normalize(fixed1 v)",
+        "fixed normalize(fixed2 v)",
+        "fixed normalize(fixed3 v)",
+        "fixed normalize(fixed4 v)"
+      ]
+    },
+    "pack_2half": {
+      "detail": "cg",
+      "documentation": "packs mutiple values into a single 32-bit result",
+      "Synopsis": ["float pack_2half(float2 a)", "float pack_2half(half2 a)"]
+    },
+    "pack_2ushort": {
+      "detail": "cg",
+      "documentation": "packs mutiple values into a single 32-bit result",
+      "Synopsis": [
+        "float pack_2ushort(float2 a)",
+        "float pack_2ushort(half2 a)"
+      ]
+    },
+    "pack_4byte": {
+      "detail": "cg",
+      "documentation": "packs mutiple values into a single 32-bit result",
+      "Synopsis": ["float pack_4byte(float4 a)", "float pack_4byte(half4 a)"]
+    },
+    "pack_4ubyte": {
+      "detail": "cg",
+      "documentation": "packs mutiple values into a single 32-bit result",
+      "Synopsis": ["float pack_4ubyte(float4 a)", "float pack_4ubyte(half4 a)"]
+    },
+    "pow": {
+      "detail": "cg",
+      "documentation": "returns x to the y-th power of scalars and vectors",
+      "Synopsis": [
+        "float  pow(float  x, float  y)",
+        "float1 pow(float1 x, float1 y)",
+        "float2 pow(float2 x, float2 y)",
+        "float3 pow(float3 x, float3 y)",
+        "float4 pow(float4 x, float4 y)",
+        "half   pow(half  x, half  y)",
+        "half1  pow(half1 x, half1 y)",
+        "half2  pow(half2 x, half2 y)",
+        "half3  pow(half3 x, half3 y)",
+        "half4  pow(half4 x, half4 y)",
+        "fixed  pow(fixed  x, fixed  y)",
+        "fixed1 pow(fixed1 x, fixed1 y)",
+        "fixed2 pow(fixed2 x, fixed2 y)",
+        "fixed3 pow(fixed3 x, fixed3 y)",
+        "fixed4 pow(fixed4 x, fixed4 y)"
+      ]
+    },
+    "radians": {
+      "detail": "cg",
+      "documentation": "converts values of scalars and vectors from degrees to radians",
+      "Synopsis": [
+        "float  radians(float  a)",
+        "float1 radians(float1 a)",
+        "float2 radians(float2 a)",
+        "float3 radians(float3 a)",
+        "float4 radians(float4 a)",
+        "half   radians(half  a)",
+        "half1  radians(half1 a)",
+        "half2  radians(half2 a)",
+        "half3  radians(half3 a)",
+        "half4  radians(half4 a)",
+        "fixed  radians(fixed  a)",
+        "fixed1 radians(fixed1 a)",
+        "fixed2 radians(fixed2 a)",
+        "fixed3 radians(fixed3 a)",
+        "fixed4 radians(fixed4 a)"
+      ]
+    },
+    "reflect": {
+      "detail": "cg",
+      "documentation": "returns the reflectiton vector given an incidence vector and a normal vector.",
+      "Synopsis": [
+        "float  reflect(float  i, float  n)",
+        "float2 reflect(float2 i, float2 n)",
+        "float3 reflect(float3 i, float3 n)",
+        "float4 reflect(float4 i, float4 n)"
+      ]
+    },
+    "refract": {
+      "detail": "cg",
+      "documentation": "computes a refraction vector.",
+      "Synopsis": [
+        "fixed3 refract(fixed3 i, fixed3 n, fixed eta)",
+        "half3  refract(half3  i, half3  n, half  eta)",
+        "float3 refract(float3 i, float3 n, float eta)"
+      ]
+    },
+    "round": {
+      "detail": "cg",
+      "documentation": "returns the rounded value of scalars or vectors",
+      "Synopsis": [
+        "float  round(float  a)",
+        "float1 round(float1 a)",
+        "float2 round(float2 a)",
+        "float3 round(float3 a)",
+        "float4 round(float4 a)",
+        "half   round(half  a)",
+        "half1  round(half1 a)",
+        "half2  round(half2 a)",
+        "half3  round(half3 a)",
+        "half4  round(half4 a)",
+        "fixed  round(fixed  a)",
+        "fixed1 round(fixed1 a)",
+        "fixed2 round(fixed2 a)",
+        "fixed3 round(fixed3 a)",
+        "fixed4 round(fixed4 a)"
+      ]
+    },
+    "rsqrt": {
+      "detail": "cg",
+      "documentation": "returns reciprocal square root of scalars and vectors.",
+      "Synopsis": [
+        "float  rsqrt(float a)",
+        "float1 rsqrt(float1 a)",
+        "float2 rsqrt(float2 a)",
+        "float3 rsqrt(float3 a)",
+        "float4 rsqrt(float4 a)",
+        "half   rsqrt(half a)",
+        "half1  rsqrt(half1 a)",
+        "half2  rsqrt(half2 a)",
+        "half3  rsqrt(half3 a)",
+        "half4  rsqrt(half4 a)",
+        "fixed  rsqrt(fixed a)",
+        "fixed1 rsqrt(fixed1 a)",
+        "fixed2 rsqrt(fixed2 a)",
+        "fixed3 rsqrt(fixed3 a)",
+        "fixed4 rsqrt(fixed4 a)"
+      ]
+    },
+    "saturate": {
+      "detail": "cg",
+      "documentation": "Returns x saturated to the range [0,1] as follows:\n 1. Returns 0 if x is less than 0;  \n 2. Returns 1 if x is greater than 1; \n 3. Returns x otherwise.\n\n For vectors, the returned vector contains the saturated result of each element of the vector x saturated to [0,1].",
+      "Synopsis": [
+        "float  saturate(float x)",
+        "float1 saturate(float1 x)",
+        "float2 saturate(float2 x)",
+        "float3 saturate(float3 x)",
+        "float4 saturate(float4 x)",
+        "half   saturate(half x)",
+        "half1  saturate(half1 x)",
+        "half2  saturate(half2 x)",
+        "half3  saturate(half3 x)",
+        "half4  saturate(half4 x)",
+        "fixed  saturate(fixed x)",
+        "fixed1 saturate(fixed1 x)",
+        "fixed2 saturate(fixed2 x)",
+        "fixed3 saturate(fixed3 x)",
+        "fixed4 saturate(fixed4 x)"
+      ]
+    },
+    "sign": {
+      "detail": "cg",
+      "documentation": "returns sign of scalar or each vector component.",
+      "Synopsis": [
+        "float  sign(float x)",
+        "float1 sign(float1 x)",
+        "float2 sign(float2 x)",
+        "float3 sign(float3 x)",
+        "float4 sign(float4 x)",
+        "half   sign(half x)",
+        "half1  sign(half1 x)",
+        "half2  sign(half2 x)",
+        "half3  sign(half3 x)",
+        "half4  sign(half4 x)",
+        "fixed  sign(fixed x)",
+        "fixed1 sign(fixed1 x)",
+        "fixed2 sign(fixed2 x)",
+        "fixed3 sign(fixed3 x)",
+        "fixed4 sign(fixed4 x)"
+      ]
+    },
+    "sincos": {
+      "detail": "cg",
+      "documentation": "returns sine of scalars and vectors.",
+      "Synopsis": [
+        "void sincos(float a, out float s, out float c)",
+        "void sincos(float1 a, out float1 s, out float1 c)",
+        "void sincos(float2 a, out float2 s, out float2 c)",
+        "void sincos(float3 a, out float3 s, out float3 c)",
+        "void sincos(float4 a, out float4 s, out float4 c)",
+        "void sincos(half a, out half s, out half c)",
+        "void sincos(half1 a, out half1 s, out half1 c)",
+        "void sincos(half2 a, out half2 s, out half2 c)",
+        "void sincos(half3 a, out half3 s, out half3 c)",
+        "void sincos(half4 a, out half4 s, out half4 c)",
+        "void sincos(fixed a, out fixed s, out fixed c)",
+        "void sincos(fixed1 a, out fixed1 s, out fixed1 c)",
+        "void sincos(fixed2 a, out fixed2 s, out fixed2 c)",
+        "void sincos(fixed3 a, out fixed3 s, out fixed3 c)",
+        "void sincos(fixed4 a, out fixed4 s, out fixed4 c)"
+      ]
+    },
+    "sinh": {
+      "detail": "cg",
+      "documentation": "returns hyperbolic sine of scalars and vectors.",
+      "Synopsis": [
+        "float  sinh(float a)",
+        "float1 sinh(float1 a)",
+        "float2 sinh(float2 a)",
+        "float3 sinh(float3 a)",
+        "float4 sinh(float4 a)",
+        "half   sinh(half a)",
+        "half1  sinh(half1 a)",
+        "half2  sinh(half2 a)",
+        "half3  sinh(half3 a)",
+        "half4  sinh(half4 a)",
+        "fixed  sinh(fixed a)",
+        "fixed1 sinh(fixed1 a)",
+        "fixed2 sinh(fixed2 a)",
+        "fixed3 sinh(fixed3 a)",
+        "fixed4 sinh(fixed4 a)"
+      ]
+    },
+    "sin": {
+      "detail": "cg",
+      "documentation": "returns sine of scalars and vectors.",
+      "Synopsis": [
+        "float  sin(float a)",
+        "float1 sin(float1 a)",
+        "float2 sin(float2 a)",
+        "float3 sin(float3 a)",
+        "float4 sin(float4 a)",
+        "half   sin(half a)",
+        "half1  sin(half1 a)",
+        "half2  sin(half2 a)",
+        "half3  sin(half3 a)",
+        "half4  sin(half4 a)",
+        "fixed  sin(fixed a)",
+        "fixed1 sin(fixed1 a)",
+        "fixed2 sin(fixed2 a)",
+        "fixed3 sin(fixed3 a)",
+        "fixed4 sin(fixed4 a)"
+      ]
+    },
+    "smoothstep": {
+      "detail": "cg",
+      "documentation": "interpolate smoothly between two input values based on a third",
+      "Synopsis": [
+        "float  smoothstep(float  a, float  b, float  x)",
+        "float1 smoothstep(float1 a, float1 b, float1 x)",
+        "float2 smoothstep(float2 a, float2 b, float2 x)",
+        "float3 smoothstep(float3 a, float3 b, float3 x)",
+        "float4 smoothstep(float4 a, float4 b, float4 x)",
+        "half   smoothstep(half  a, half  b, half  x)",
+        "half1  smoothstep(half1 a, half1 b, half1 x)",
+        "half2  smoothstep(half2 a, half2 b, half2 x)",
+        "half3  smoothstep(half3 a, half3 b, half3 x)",
+        "half4  smoothstep(half4 a, half4 b, half4 x)",
+        "fixed  smoothstep(fixed  a, fixed  b, fixed  x)",
+        "fixed1 smoothstep(fixed1 a, fixed1 b, fixed1 x)",
+        "fixed2 smoothstep(fixed2 a, fixed2 b, fixed2 x)",
+        "fixed3 smoothstep(fixed3 a, fixed3 b, fixed3 x)",
+        "fixed4 smoothstep(fixed4 a, fixed4 b, fixed4 x)"
+      ]
+    },
+    "sqrt": {
+      "detail": "cg",
+      "documentation": "returns square root of scalars and vectors.",
+      "Synopsis": [
+        "float  sqrt(float a)",
+        "float1 sqrt(float1 a)",
+        "float2 sqrt(float2 a)",
+        "float3 sqrt(float3 a)",
+        "float4 sqrt(float4 a)",
+        "half   sqrt(half a)",
+        "half1  sqrt(half1 a)",
+        "half2  sqrt(half2 a)",
+        "half3  sqrt(half3 a)",
+        "half4  sqrt(half4 a)",
+        "fixed  sqrt(fixed a)",
+        "fixed1 sqrt(fixed1 a)",
+        "fixed2 sqrt(fixed2 a)",
+        "fixed3 sqrt(fixed3 a)",
+        "fixed4 sqrt(fixed4 a)"
+      ]
+    },
+    "step": {
+      "detail": "cg",
+      "documentation": "implement a step function returning either zero or one",
+      "Synopsis": [
+        "float  step(float  a, float  x)",
+        "float1 step(float1 a, float1 x)",
+        "float2 step(float2 a, float2 x)",
+        "float3 step(float3 a, float3 x)",
+        "float4 step(float4 a, float4 x)",
+        "half   step(half  a, half  x)",
+        "half1  step(half1 a, half1 x)",
+        "half2  step(half2 a, half2 x)",
+        "half3  step(half3 a, half3 x)",
+        "half4  step(half4 a, half4 x)",
+        "fixed  step(fixed  a, fixed  x)",
+        "fixed1 step(fixed1 a, fixed1 x)",
+        "fixed2 step(fixed2 a, fixed2 x)",
+        "fixed3 step(fixed3 a, fixed3 x)",
+        "fixed4 step(fixed4 a, fixed4 x)"
+      ]
+    },
+    "tanh": {
+      "detail": "cg",
+      "documentation": "returns hyperbolic tangent of scalars and vectors.",
+      "Synopsis": [
+        "float  tanh(float a)",
+        "float1 tanh(float1 a)",
+        "float2 tanh(float2 a)",
+        "float3 tanh(float3 a)",
+        "float4 tanh(float4 a)",
+        "half   tanh(half a)",
+        "half1  tanh(half1 a)",
+        "half2  tanh(half2 a)",
+        "half3  tanh(half3 a)",
+        "half4  tanh(half4 a)",
+        "fixed  tanh(fixed a)",
+        "fixed1 tanh(fixed1 a)",
+        "fixed2 tanh(fixed2 a)",
+        "fixed3 tanh(fixed3 a)",
+        "fixed4 tanh(fixed4 a)"
+      ]
+    },
+    "tan": {
+      "detail": "cg",
+      "documentation": "returns tangent of scalars and vectors.",
+      "Synopsis": [
+        "float  tan(float a)",
+        "float1 tan(float1 a)",
+        "float2 tan(float2 a)",
+        "float3 tan(float3 a)",
+        "float4 tan(float4 a)",
+        "half   tan(half a)",
+        "half1  tan(half1 a)",
+        "half2  tan(half2 a)",
+        "half3  tan(half3 a)",
+        "half4  tan(half4 a)",
+        "fixed  tan(fixed a)",
+        "fixed1 tan(fixed1 a)",
+        "fixed2 tan(fixed2 a)",
+        "fixed3 tan(fixed3 a)",
+        "fixed4 tan(fixed4 a)"
+      ]
+    },
+    "tex1DARRAYbias": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with bias in a given sampler array.",
+      "Synopsis": [
+        "float4 tex1DARRAYbias(sampler1DARRAY samp, float4 s)",
+        "float4 tex1DARRAYbias(sampler1DARRAY samp, float4 s, int texelOff)",
+        "int4 tex1DARRAYbias(isampler1DARRAY samp, float4 s)",
+        "int4 tex1DARRAYbias(isampler1DARRAY samp, float4 s, int texelOff)",
+        "unsigned int4 tex1DARRAYbias(usampler1DARRAY samp, float4 s)",
+        "unsigned int4 tex1DARRAYbias(usampler1DARRAY samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex1DARRAYcmpbias": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with shadow compare and bias in a given sampler array.",
+      "Synopsis": [
+        "float4 tex1DARRAYcmpbias(sampler1DARRAY samp, float4 s)",
+        "float4 tex1DARRAYcmpbias(sampler1DARRAY samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex1DARRAYcmplod": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with shadow compare and a level of detail in a given sampler array.",
+      "Synopsis": [
+        "float4 tex1DARRAYcmplod(sampler1DARRAY samp, float4 s)",
+        "float4 tex1DARRAYcmplod(sampler1DARRAY samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex1DARRAYfetch": {
+      "detail": "cg",
+      "documentation": "performs an unfiltered texture lookup in a given sampler array.",
+      "Synopsis": [
+        "float4 tex1DARRAYfetch(sampler1DARRAY samp, int4 s)",
+        "float4 tex1DARRAYfetch(sampler1DARRAY samp, int4 s, int texelOff)",
+        "int4 tex1DARRAYfetch(isampler1DARRAY samp, int4 s)",
+        "int4 tex1DARRAYfetch(isampler1DARRAY samp, int4 s, int texelOff)",
+        "unsigned int4 tex1DARRAYfetch(usampler1DARRAY samp, int4 s)",
+        "unsigned int4 tex1DARRAYfetch(usampler1DARRAY samp, int4 s, int texelOff)"
+      ]
+    },
+    "tex1DARRAYlod": {
+      "detail": "cg",
+      "documentation": "1D texture array lookup with specified level of detail and optional texel offset.",
+      "Synopsis": [
+        "float4 tex1DARRAYlod(sampler1DARRAY samp, float4 s)",
+        "float4 tex1DARRAYlod(sampler1DARRAY samp, float4 s, int texelOff)",
+        "int4 tex1DARRAYlod(isampler1DARRAY samp, float4 s)",
+        "int4 tex1DARRAYlod(isampler1DARRAY samp, float4 s, int texelOff)",
+        "unsigned int4 tex1DARRAYlod(usampler1DARRAY samp, float4 s)",
+        "unsigned int4 tex1DARRAYlod(usampler1DARRAY samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex1DARRAY": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup in a given sampler array may use pre computed derivatives and, in some cases, perform a shadow comparison.",
+      "Synopsis": [
+        "float4 tex1DARRAY(sampler1DARRAY samp, float2 s)",
+        "float4 tex1DARRAY(sampler1DARRAY samp, float2 s, int texelOff)",
+        "float4 tex1DARRAY(sampler1DARRAY samp, float3 s)",
+        "float4 tex1DARRAY(sampler1DARRAY samp, float3 s, int texelOff)",
+        "float4 tex1DARRAY(sampler1DARRAY samp, float2 s, float dx, float dy)",
+        "float4 tex1DARRAY(sampler1DARRAY samp, float2 s, float dx, float dy, int texelOff)",
+        "float4 tex1DARRAY(sampler1DARRAY samp, float3 s, float dx, float dy)",
+        "float4 tex1DARRAY(sampler1DARRAY samp, float3 s, float dx, float dy, int texelOff)",
+        "int4 tex1DARRAY(isampler1DARRAY samp, float2 s)",
+        "int4 tex1DARRAY(isampler1DARRAY samp, float2 s, int texelOff)",
+        "int4 tex1DARRAY(isampler1DARRAY samp, float2 s, float dx, float dy)",
+        "int4 tex1DARRAY(isampler1DARRAY samp, float2 s, float dx, float dy, int texelOff)",
+        "unsigned int4 tex1DARRAY(usampler1DARRAY samp, float2 s)",
+        "unsigned int4 tex1DARRAY(usampler1DARRAY samp, float2 s, int texelOff)",
+        "unsigned int4 tex1DARRAY(usampler1DARRAY samp, float2 s, float dx, float dy)",
+        "unsigned int4 tex1DARRAY(usampler1DARRAY samp, float2 s, float dx, float dy, int texelOff)"
+      ]
+    },
+    "tex1DARRAYproj": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with projection in a given sampler array. May perform a shadow comparison if argument for shadow comparison is provided.",
+      "Synopsis": [
+        "float4 tex1DARRAYproj(sampler1DARRAY samp, float3 s)",
+        "float4 tex1DARRAYproj(sampler1DARRAY samp, float3 s, int texelOff)",
+        "float4 tex1DARRAYproj(sampler1DARRAY samp, float4 s)",
+        "float4 tex1DARRAYproj(sampler1DARRAY samp, float4 s, int texelOff)",
+        "int4 tex1DARRAYproj(isampler1DARRAY samp, float3 s)",
+        "int4 tex1DARRAYproj(isampler1DARRAY samp, float3 s, int texelOff)",
+        "unsigned int4 tex1DARRAYproj(usampler1DARRAY samp, float3 s)",
+        "unsgined int4 tex1DARRAYproj(usampler1DARRAY samp, float3 s, int texelOff)"
+      ]
+    },
+    "tex1DARRAYsize": {
+      "detail": "cg",
+      "documentation": "returns the size of a given texture array image for a given level of detail.",
+      "Synopsis": [
+        "int3 tex1DARRAYsize(sampler1DARRAY samp, int lod)",
+        "int3 tex1DARRAYsize(isampler1DARRAY samp, int lod)",
+        "int3 tex1DARRAYsize(usampler1DARRAY samp, int lod)"
+      ]
+    },
+    "tex1Dbias": {
+      "detail": "cg",
+      "documentation": "1D texture lookup with bias and optional texel offset.",
+      "Synopsis": [
+        "float4 tex1Dbias(sampler1D samp, float4 s)",
+        "float4 tex1Dbias(sampler1D samp, float4 s, int texelOff)",
+        "int4 tex1Dbias(isampler1D samp, float4 s)",
+        "int4 tex1Dbias(isampler1D samp, float4 s, int texelOff)",
+        "unsigned int4 tex1Dbias(usampler1D samp, float4 s)",
+        "unsigned int4 tex1Dbias(usampler1D samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex1Dcmpbias": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with bias and shadow compare in a given sampler.",
+      "Synopsis": [
+        "float4 tex1Dcmpbias(sampler1D samp, float4 s)",
+        "float4 tex1Dcmpbias(sampler1D samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex1Dcmplod": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with a specified level of detail and a shadow compare in a given sampler.",
+      "Synopsis": [
+        "float4 tex1Dcmplod(sampler1D samp, float4 s)",
+        "float4 tex1Dcmplod(sampler1D samp, float4 s, int texelOff)",
+        "int4 tex1Dcmplod(isampler1D samp, float4 s)",
+        "int4 tex1Dcmplod(isampler1D samp, float4 s, int texelOff)",
+        "unsigned int4 tex1Dcmplod(usampler1D samp, float4 s)",
+        "unsigned int4 tex1Dcmplod(usampler1D samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex1Dfetch": {
+      "detail": "cg",
+      "documentation": "performs an unfiltered texture lookup in a given sampler.",
+      "Synopsis": [
+        "float4 tex1Dfetch(sampler1D samp, int4 s)",
+        "float4 tex1Dfetch(sampler1D samp, int4 s, int texelOff)",
+        "int4 tex1Dfetch(isampler1D samp, int4 s)",
+        "int4 tex1Dfetch(isampler1D samp, int4 s, int texelOff)",
+        "unsigned int4 tex1Dfetch(usampler1D samp, int4 s)",
+        "unsigned int4 tex1Dfetch(usampler1D samp, int4 s, int texelOff)"
+      ]
+    },
+    "tex1Dlod": {
+      "detail": "cg",
+      "documentation": "1D texture lookup with specified level of detail and optional texel offset.",
+      "Synopsis": [
+        "float4 tex1Dlod(sampler1D samp, float4 s)",
+        "float4 tex1Dlod(sampler1D samp, float4 s, int texelOff)",
+        "int4 tex1Dlod(isampler1D samp, float4 s)",
+        "int4 tex1Dlod(isampler1D samp, float4 s, int texelOff)",
+        "unsigned int4 tex1Dlod(usampler1D samp, float4 s)",
+        "unsigned int4 tex1Dlod(usampler1D samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex1D": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup in a given 1D sampler and, in some cases, a shadow comparison. May also use pre computed derivatives if those are provided.",
+      "Synopsis": [
+        "float4 tex1D(sampler1D samp, float  s)",
+        "float4 tex1D(sampler1D samp, float  s, int texelOff)",
+        "float4 tex1D(sampler1D samp, float2 s)",
+        "float4 tex1D(sampler1D samp, float2 s, int texelOff)",
+        "float4 tex1D(sampler1D samp, float  s, float dx, float dy)",
+        "float4 tex1D(sampler1D samp, float  s, float dx, float dy, int texelOff)",
+        "float4 tex1D(sampler1D samp, float2 s, float dx, float dy)",
+        "float4 tex1D(sampler1D samp, float2 s, float dx, float dy, int texelOff)",
+        "int4 tex1D(isampler1D samp, float  s)",
+        "int4 tex1D(isampler1D samp, float  s, int texelOff)",
+        "int4 tex1D(isampler1D samp, float  s, float dx, float dy)",
+        "int4 tex1D(isampler1D samp, float  s, float dx, float dy, int texelOff)",
+        "unsigned int4 tex1D(usampler1D samp, float  s)",
+        "unsigned int4 tex1D(usampler1D samp, float  s, int texelOff)",
+        "unsigned int4 tex1D(usampler1D samp, float  s, float dx, float dy)",
+        "unsigned int4 tex1D(usampler1D samp, float  s, float dx, float dy, int texelOff)"
+      ]
+    },
+    "tex1Dproj": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with projection in a given sampler. May perform a shadow comparison if argument for shadow comparison is provided.",
+      "Synopsis": [
+        "float4 tex1Dproj(sampler1D samp, float2 s)",
+        "float4 tex1Dproj(sampler1D samp, float2 s, int texelOff)",
+        "float4 tex1Dproj(sampler1D samp, float3 s)",
+        "float4 tex1Dproj(sampler1D samp, float3 s, int texelOff)",
+        "int4 tex1Dproj(isampler1D samp, float2 s)",
+        "int4 tex1Dproj(isampler1D samp, float2 s, int texelOff)",
+        "unsigned int4 tex1Dproj(usampler1D samp, float2 s)",
+        "unsgined int4 tex1Dproj(usampler1D samp, float2 s, int texelOff)"
+      ]
+    },
+    "tex1Dsize": {
+      "detail": "cg",
+      "documentation": "returns the size of a given texture image for a given level of detail.",
+      "Synopsis": [
+        "int3 tex1Dsize(sampler1D samp, int lod)",
+        "int3 tex1Dsize(isampler1D samp, int lod)",
+        "int3 tex1Dsize(usampler1D samp, int lod)"
+      ]
+    },
+    "tex2DARRAYbias": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with bias in a given sampler array.",
+      "Synopsis": [
+        "float4 tex2DARRAYbias(sampler2DARRAY samp, float4 s)",
+        "float4 tex2DARRAYbias(sampler2DARRAY samp, float4 s, int texelOff)",
+        "int4 tex2DARRAYbias(isampler2DARRAY samp, float4 s)",
+        "int4 tex2DARRAYbias(isampler2DARRAY samp, float4 s, int texelOff)",
+        "unsigned int4 tex2DARRAYbias(usampler2DARRAY samp, float4 s)",
+        "unsigned int4 tex2DARRAYbias(usampler2DARRAY samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex2DARRAYfetch": {
+      "detail": "cg",
+      "documentation": "performs an unfiltered texture lookup in a given sampler array.",
+      "Synopsis": [
+        "float4 tex2DARRAYfetch(sampler2DARRAY samp, int4 s)",
+        "float4 tex2DARRAYfetch(sampler2DARRAY samp, int4 s, int texelOff)",
+        "int4 tex2DARRAYfetch(isampler2DARRAY samp, int4 s)",
+        "int4 tex2DARRAYfetch(isampler2DARRAY samp, int4 s, int texelOff)",
+        "unsigned int4 tex2DARRAYfetch(usampler2DARRAY samp, int4 s)",
+        "unsigned int4 tex2DARRAYfetch(usampler2DARRAY samp, int4 s, int texelOff)"
+      ]
+    },
+    "tex2DARRAYlod": {
+      "detail": "cg",
+      "documentation": "2D texture array lookup with specified level of detail.",
+      "Synopsis": [
+        "float4 tex2DARRAYlod(sampler2DARRAY samp, float4 s)",
+        "float4 tex2DARRAYlod(sampler2DARRAY samp, float4 s, int texelOff)",
+        "int4 tex2DARRAYlod(isampler2DARRAY samp, float4 s)",
+        "int4 tex2DARRAYlod(isampler2DARRAY samp, float4 s, int texelOff)",
+        "unsigned int4 tex2DARRAYlod(usampler2DARRAY samp, float4 s)",
+        "unsigned int4 tex2DARRAYlod(usampler2DARRAY samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex2DARRAY": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup in a given sampler array may use pre computed derivatives and, in some cases, perform a shadow comparison. ",
+      "Synopsis": [
+        "float4 tex2DARRAY(sampler2DARRAY samp, float3 s)",
+        "float4 tex2DARRAY(sampler2DARRAY samp, float3 s, int texelOff)",
+        "float4 tex2DARRAY(sampler2DARRAY samp, float4 s)",
+        "float4 tex2DARRAY(sampler2DARRAY samp, float4 s, int texelOff)",
+        "float4 tex2DARRAY(sampler2DARRAY samp, float3 s, float dx, float dy)",
+        "float4 tex2DARRAY(sampler2DARRAY samp, float3 s, float dx, float dy, int texelOff)",
+        "float4 tex2DARRAY(sampler2DARRAY samp, float4 s, float dx, float dy)",
+        "float4 tex2DARRAY(sampler2DARRAY samp, float4 s, float dx, float dy, int texelOff)",
+        "int4 tex2DARRAY(isampler2DARRAY samp, float3 s)",
+        "int4 tex2DARRAY(isampler2DARRAY samp, float3 s, int texelOff)",
+        "int4 tex2DARRAY(isampler2DARRAY samp, float3 s, float dx, float dy)",
+        "int4 tex2DARRAY(isampler2DARRAY samp, float3 s, float dx, float dy, int texelOff)",
+        "unsigned int4 tex2DARRAY(usampler2DARRAY samp, float3 s)",
+        "unsigned int4 tex2DARRAY(usampler2DARRAY samp, float3 s, int texelOff)",
+        "unsigned int4 tex2DARRAY(usampler2DARRAY samp, float3 s, float dx, float dy)",
+        "unsigned int4 tex2DARRAY(usampler2DARRAY samp, float3 s, float dx, float dy, int texelOff)"
+      ]
+    },
+    "tex2DARRAYproj": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with projection in a given sampler array.",
+      "Synopsis": [
+        "float4 tex2DARRAYproj(sampler2DARRAY samp, float4 s)",
+        "float4 tex2DARRAYproj(sampler2DARRAY samp, float4 s, int texelOff)",
+        "int4 tex2DARRAYproj(isampler2DARRAY samp, float4 s)",
+        "int4 tex2DARRAYproj(isampler2DARRAY samp, float4 s, int texelOff)",
+        "unsigned int4 tex2DARRAYproj(usampler2DARRAY samp, float4 s)",
+        "unsigned int4 tex2DARRAYproj(usampler2DARRAY samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex2DARRAYsize": {
+      "detail": "cg",
+      "documentation": "returns the size of a given texture array image for a given level of detail.",
+      "Synopsis": [
+        "int3 tex2DARRAYsize(sampler2DARRAY samp, int lod)",
+        "int3 tex2DARRAYsize(isampler2DARRAY samp, int lod)",
+        "int3 tex2DARRAYsize(usampler2DARRAY samp, int lod)"
+      ]
+    },
+    "tex2Dbias": {
+      "detail": "cg",
+      "documentation": "2D texture lookup with bias and optional texel offset.",
+      "Synopsis": [
+        "float4 tex2Dbias(sampler2D samp, float4 s)",
+        "float4 tex2Dbias(sampler2D samp, float4 s, int texelOff)",
+        "int4 tex2Dbias(isampler2D samp, float4 s)",
+        "int4 tex2Dbias(isampler2D samp, float4 s, int texelOff)",
+        "unsigned int4 tex2Dbias(usampler2D samp, float4 s)",
+        "unsigned int4 tex2Dbias(usampler2D samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex2Dcmpbias": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with bias and shadow compare in a given sampler.",
+      "Synopsis": [
+        "float4 tex2Dcmpbias(sampler2D samp, float4 s)",
+        "float4 tex2Dcmpbias(sampler2D samp, float4 s, int2 texelOff)"
+      ]
+    },
+    "tex2Dcmplod": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with a specified level of detail and a shadow compare in a given sampler. ",
+      "Synopsis": [
+        "float4 tex2Dcmplod(sampler2D samp, float4 s)",
+        "float4 tex2Dcmplod(sampler2D samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex2Dfetch": {
+      "detail": "cg",
+      "documentation": "performs an unfiltered texture lookup in a given sampler.",
+      "Synopsis": [
+        "float4 tex2Dfetch(sampler2D samp, int4 s)",
+        "float4 tex2Dfetch(sampler2D samp, int4 s, int texelOff)",
+        "int4 tex2Dfetch(isampler2D samp, int4 s)",
+        "int4 tex2Dfetch(isampler2D samp, int4 s, int texelOff)",
+        "unsigned int4 tex2Dfetch(usampler2D samp, int4 s)",
+        "unsigned int4 tex2Dfetch(usampler2D samp, int4 s, int texelOff)"
+      ]
+    },
+    "tex2Dlod": {
+      "detail": "cg",
+      "documentation": "2D texture lookup with specified level of detail and optional texel offset.",
+      "Synopsis": [
+        "float4 tex2Dlod(sampler2D samp, float4 s)",
+        "float4 tex2Dlod(sampler2D samp, float4 s, int texelOff)",
+        "int4 tex2Dlod(isampler2D samp, float4 s)",
+        "int4 tex2Dlod(isampler2D samp, float4 s, int texelOff)",
+        "unsigned int4 tex2Dlod(usampler2D samp, float4 s)",
+        "unsigned int4 tex2Dlod(usampler2D samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex2DMSARRAYfetch": {
+      "detail": "cg",
+      "documentation": "performs an unfiltered texture lookup in a given multisample texture sampler.",
+      "Synopsis": [
+        "float4 tex2DMSARRAYfetch(sampler2DMSARRAY samp, int3 s, int n)",
+        "int4 tex2DMSARRAYfetch(isampler2DMSARRAY samp, int3 s, int n)",
+        "unsigned int4 tex2DMSARRAYfetch(usampler2DMSARRAY samp, int3 s, int n)"
+      ]
+    },
+    "tex2DMSARRAYsize": {
+      "detail": "cg",
+      "documentation": "returns the size of a given multisample texture image for a given level of detail.",
+      "Synopsis": [
+        "int3 tex2DMSARRAYsize(sampler2DMSARRAY samp)",
+        "int3 tex2DMSARRAYsize(isampler2DMSARRAY samp)",
+        "int3 tex2DMSARRAYsize(usampler2DMSARRAY samp)"
+      ]
+    },
+    "tex2DMSfetch": {
+      "detail": "cg",
+      "documentation": "performs an unfiltered texture lookup in a given multisample texture sampler.",
+      "Synopsis": [
+        "float4 tex2DMSfetch(sampler2DMS samp, int2 s, int n)",
+        "int4 tex2DMSfetch(isampler2DMS samp, int2 s, int n)",
+        "unsigned int4 tex2DMSfetch(usampler2DMS samp, int2 s, int n)"
+      ]
+    },
+    "tex2DMSsize": {
+      "detail": "cg",
+      "documentation": "returns the size of a given multisample texture image for a given level of detail.",
+      "Synopsis": [
+        "int3 tex2DMSsize(sampler2DMS samp)",
+        "int3 tex2DMSsize(isampler2DMS samp)",
+        "int3 tex2DMSsize(usampler2DMS samp)"
+      ]
+    },
+    "tex2D": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup in a given 2D sampler and, in some cases, a shadow comparison. May also use pre computed derivatives if those are provided.",
+      "Synopsis": [
+        "float4 tex2D(sampler2D samp, float2 s)",
+        "float4 tex2D(sampler2D samp, float2 s, int texelOff)",
+        "float4 tex2D(sampler2D samp, float3 s)",
+        "float4 tex2D(sampler2D samp, float3 s, int texelOff)",
+        "float4 tex2D(sampler2D samp, float2 s, float2 dx, float2 dy)",
+        "float4 tex2D(sampler2D samp, float2 s, float2 dx, float2 dy, int texelOff)",
+        "float4 tex2D(sampler2D samp, float3 s, float2 dx, float2 dy)",
+        "float4 tex2D(sampler2D samp, float3 s, float2 dx, float2 dy, int texelOff)",
+        "int4 tex2D(isampler2D samp, float2 s)",
+        "int4 tex2D(isampler2D samp, float2 s, int texelOff)",
+        "int4 tex2D(isampler2D samp, float2 s, float2 dx, float2 dy)",
+        "int4 tex2D(isampler2D samp, float2 s, float2 dx, float2 dy, int texelOff)",
+        "unsigned int4 tex2D(usampler2D samp, float2 s)",
+        "unsigned int4 tex2D(usampler2D samp, float2 s, int texelOff)",
+        "unsigned int4 tex2D(usampler2D samp, float2 s, float2 dx, float2 dy)",
+        "unsigned int4 tex2D(usampler2D samp, float2 s, float2 dx, float2 dy, int texelOff)"
+      ]
+    },
+    "tex2Dproj": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with projection in a given sampler. May perform a shadow comparison if argument for shadow comparison is provided. ",
+      "Synopsis": [
+        "float4 tex2Dproj(sampler2D samp, float3 s)",
+        "float4 tex2Dproj(sampler2D samp, float3 s, int texelOff)",
+        "float4 tex2Dproj(sampler2D samp, float4 s)",
+        "float4 tex2Dproj(sampler2D samp, float4 s, int texelOff)",
+        "int4 tex2Dproj(isampler2D samp, float3 s)",
+        "int4 tex2Dproj(isampler2D samp, float3 s, int texelOff)",
+        "unsigned int4 tex2Dproj(usampler2D samp, float3 s)",
+        "unsgined int4 tex2Dproj(usampler2D samp, float3 s, int texelOff)"
+      ]
+    },
+    "tex2Dsize": {
+      "detail": "cg",
+      "documentation": "returns the size of a given texture image for a given level of detail.",
+      "Synopsis": [
+        "int3 tex2Dsize(sampler2D samp, int lod)",
+        "int3 tex2Dsize(isampler2D samp, int lod)",
+        "int3 tex2Dsize(usampler2D samp, int lod)"
+      ]
+    },
+    "tex3Dbias": {
+      "detail": "cg",
+      "documentation": "3D texture lookup with bias and optional texel offset.",
+      "Synopsis": [
+        "float4 tex3Dbias(sampler3D samp, float4 s)",
+        "float4 tex3Dbias(sampler3D samp, float4 s, int texelOff)",
+        "int4 tex3Dbias(isampler3D samp, float4 s)",
+        "int4 tex3Dbias(isampler3D samp, float4 s, int texelOff)",
+        "unsigned int4 tex3Dbias(usampler3D samp, float4 s)",
+        "unsigned int4 tex3Dbias(usampler3D samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex3Dfetch": {
+      "detail": "cg",
+      "documentation": "performs an unfiltered texture lookup in a given sampler.",
+      "Synopsis": [
+        "float4 tex3Dfetch(sampler3D samp, int4 s)",
+        "float4 tex3Dfetch(sampler3D samp, int4 s, int texelOff)",
+        "int4 tex3Dfetch(isampler3D samp, int4 s)",
+        "int4 tex3Dfetch(isampler3D samp, int4 s, int texelOff)",
+        "unsigned int4 tex3Dfetch(usampler3D samp, int4 s)",
+        "unsigned int4 tex3Dfetch(usampler3D samp, int4 s, int texelOff)"
+      ]
+    },
+    "tex3Dlod": {
+      "detail": "cg",
+      "documentation": "3D texture lookup with specified level of detail and optional texel offset.",
+      "Synopsis": [
+        "float4 tex3Dlod(sampler3D samp, float4 s)",
+        "float4 tex3Dlod(sampler3D samp, float4 s, int texelOff)",
+        "int4 tex3Dlod(isampler3D samp, float4 s)",
+        "int4 tex3Dlod(isampler3D samp, float4 s, int texelOff)",
+        "unsigned int4 tex3Dlod(usampler3D samp, float4 s)",
+        "unsgined int4 tex3Dlod(usampler3D samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex3D": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup in a given 3D sampler. May also use pre computed derivatives if those are provided.",
+      "Synopsis": [
+        "float4 tex3D(sampler3D samp, float3 s)",
+        "float4 tex3D(sampler3D samp, float3 s, int texelOff)",
+        "float4 tex3D(sampler3D samp, float3 s, float3 dx, float3 dy)",
+        "float4 tex3D(sampler3D samp, float3 s, float3 dx, float3 dy, int texelOff)",
+        "int4 tex3D(isampler3D samp, float3 s)",
+        "int4 tex3D(isampler3D samp, float3 s, int texelOff)",
+        "int4 tex3D(isampler3D samp, float3 s, float3 dx, float3 dy)",
+        "int4 tex3D(isampler3D samp, float3 s, float3 dx, float3 dy, int texelOff)",
+        "unsigned int4 tex3D(usampler3D samp, float3 s)",
+        "unsigned int4 tex3D(usampler3D samp, float3 s, int texelOff)",
+        "unsigned int4 tex3D(usampler3D samp, float3 s, float3 dx, float3 dy)",
+        "unsigned int4 tex3D(usampler3D samp, float3 s, float3 dx, float3 dy, int texelOff)"
+      ]
+    },
+    "tex3Dproj": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with projection in a given sampler.}",
+      "Synopsis": [
+        "float4 tex3Dproj(sampler3D samp, float4 s)",
+        "float4 tex3Dproj(sampler3D samp, float4 s, int texelOff)",
+        "int4 tex3Dproj(isampler3D samp, float4 s)",
+        "int4 tex3Dproj(isampler3D samp, float4 s, int texelOff)",
+        "unsigned int4 tex3Dproj(usampler3D samp, float4 s)",
+        "unsigned int4 tex3Dproj(usampler3D samp, float4 s, int texelOff)"
+      ]
+    },
+    "tex3Dsize": {
+      "detail": "cg",
+      "documentation": "returns the size of a given texture image for a given level of detail.",
+      "Synopsis": [
+        "int3 tex3Dsize(sampler3D samp, int lod)",
+        "int3 tex3Dsize(isampler3D samp, int lod)",
+        "int3 tex3Dsize(usampler3D samp, int lod)"
+      ]
+    },
+    "texBUF": {
+      "detail": "cg",
+      "documentation": "performs an unfiltered texture lookup in a given texture buffer sampler.",
+      "Synopsis": [
+        "float4 texBUF(samplerBUF samp, int s)",
+        "int4 texBUF(isamplerBUF samp, int s)",
+        "unsigned int4 texBUF(usamplerBUF samp, int s)"
+      ]
+    },
+    "texBUFsize": {
+      "detail": "cg",
+      "documentation": "returns the size of a given texture image for a given level of detail.",
+      "Synopsis": [
+        "int3 texBUFsize(samplerBUF samp, int lod)",
+        "int3 texBUFsize(isamplerBUF samp, int lod)",
+        "int3 texBUFsize(usamplerBUF samp, int lod)"
+      ]
+    },
+    "texCUBEARRAYbias": {
+      "detail": "cg",
+      "documentation": "cube array texture lookup with bias.",
+      "Synopsis": [
+        "float4 texCUBEARRAYbias(samplerCUBEARRAY samp, float4 s, float bias)",
+        "int4 texCUBEARRAYbias(isamplerCUBEARRAY samp, float4 s, float bias)",
+        "unsigned int4 texCUBEARRAYbias(usamplerCUBEARRAY samp, float4 s, float bias)"
+      ]
+    },
+    "texCUBEARRAYlod": {
+      "detail": "cg",
+      "documentation": "cube array texture lookup with specified level of detail.",
+      "Synopsis": [
+        "float4 texCUBEARRAYlod(samplerCUBEARRAY samp, float4 s, float lod)",
+        "int4 texCUBEARRAYlod(isamplerCUBEARRAY samp, float4 s, float lod)",
+        "unsigned int4 texCUBEARRAYlod(usamplerCUBEARRAY samp, float4 s, float lod)"
+      ]
+    },
+    "texCUBEARRAY": {
+      "detail": "cg",
+      "documentation": "cube array texture lookup with optional pre-computed derivatives.",
+      "Synopsis": [
+        "float4 texCUBEARRAY(samplerCUBEARRAY samp, float4 s)",
+        "float4 texCUBEARRAY(samplerCUBEARRAY samp, float4 s, float3 dx, float3 dy)",
+        "int4 texCUBEARRAY(isamplerCUBEARRAY samp, float4 s)",
+        "int4 texCUBEARRAY(isamplerCUBEARRAY samp, float4 s, float3 dx, float3 dy)",
+        "unsigned int4 texCUBEARRAY(usamplerCUBEARRAY samp, float4 s)",
+        "unsigned int4 texCUBEARRAY(usamplerCUBEARRAY samp, float4 s, float3 dx, float3 dy)"
+      ]
+    },
+    "texCUBEARRAYsize": {
+      "detail": "cg",
+      "documentation": "returns the size of a given texture array image for a given level of detail.",
+      "Synopsis": [
+        "int3 texCUBEARRAYsize(samplerCUBEARRAY samp, int lod)",
+        "int3 texCUBEARRAYsize(isamplerCUBEARRAY samp, int lod)",
+        "int3 texCUBEARRAYsize(usamplerCUBEARRAY samp, int lod)"
+      ]
+    },
+    "texCUBEbias": {
+      "detail": "cg",
+      "documentation": "cube texture lookup with bias.",
+      "Synopsis": [
+        "float4 texCUBEbias(samplerCUBE samp, float4 s)",
+        "int4 texCUBEbias(isamplerCUBE samp, float4 s)",
+        "unsigned int4 texCUBEbias(usamplerCUBE samp, float4 s)"
+      ]
+    },
+    "texCUBElod": {
+      "detail": "cg",
+      "documentation": "cube texture lookup with specified level of detail.",
+      "Synopsis": [
+        "float4 texCUBElod(samplerCUBE samp, float4 s)",
+        "int4 texCUBElod(isamplerCUBE samp, float4 s)",
+        "unsigned int4 texCUBElod(usamplerCUBE samp, float4 s)"
+      ]
+    },
+    "texCUBE": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup in a given CUBE sampler and, in some cases, a shadow comparison. May also use pre computed derivatives if those are provided. ",
+      "Synopsis": [
+        "float4 texCUBE(samplerCUBE samp, float3 s)",
+        "float4 texCUBE(samplerCUBE samp, float4 s)",
+        "float4 texCUBE(samplerCUBE samp, float3 s, float3 dx, float3 dy)",
+        "float4 texCUBE(samplerCUBE samp, float4 s, float3 dx, float3 dy)",
+        "int4 texCUBE(isamplerCUBE samp, float3 s)",
+        "int4 texCUBE(isamplerCUBE samp, float3 s, float3 dx, float3 dy)",
+        "unsigned int4 texCUBE(usamplerCUBE samp, float3 s)",
+        "unsigned int4 texCUBE(usamplerCUBE samp, float3 s, float3 dx, float3 dy)"
+      ]
+    },
+    "texCUBEproj": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with projection in a given sampler.",
+      "Synopsis": [
+        "float4 texCUBEproj(samplerCUBE samp, float4 s)",
+        "int4 texCUBEproj(isamplerCUBE samp, float4 s)",
+        "unsigned int4 texCUBEproj(usamplerCUBE samp, float4 s)"
+      ]
+    },
+    "texCUBEsize": {
+      "detail": "cg",
+      "documentation": "returns the size of a given texture image for a given level of detail.",
+      "Synopsis": [
+        "int3 texCUBEsize(samplerCUBE samp, int lod)",
+        "int3 texCUBEsize(isamplerCUBE samp, int lod)",
+        "int3 texCUBEsize(usamplerCUBE samp, int lod)"
+      ]
+    },
+    "texRBUF": {
+      "detail": "cg",
+      "documentation": "performs an unfiltered multisample texture lookup in a given renderbuffer sampler.",
+      "Synopsis": [
+        "float4 texRBUF(samplerBUF samp, int2 c, int s)",
+        "int4 texRBUF(isamplerBUF samp, int2 c, int s)",
+        "uint4 texBUF(usamplerRBUF samp, int2 c, int s)"
+      ]
+    },
+    "texRBUFsize": {
+      "detail": "cg",
+      "documentation": "rectangle texture lookup with bias and optional texel offset.",
+      "Synopsis": [
+        "float4 texRECTbias(samplerRECT samp, float4 s)",
+        "float4 texRECTbias(samplerRECT samp, float4 s, int2 texelOff)",
+        "int4 texRECTbias(isamplerRECT samp, float4 s)",
+        "int4 texRECTbias(isamplerRECT samp, float4 s, int2 texelOff)",
+        "unsigned int4 texRECTbias(usamplerRECT samp, float4 s)",
+        "unsigned int4 texRECTbias(usamplerRECT samp, float4 s, int2 texelOff)"
+      ]
+    },
+    "texRECTfetch": {
+      "detail": "cg",
+      "documentation": "unfiltered rectangle texture lookup.",
+      "Synopsis": [
+        "float4 texRECTfetch(samplerRECT samp, int4 s)",
+        "float4 texRECTfetch(samplerRECT samp, int4 s, int2 texelOff)",
+        "int4 texRECTfetch(isamplerRECT samp, int4 s)",
+        "int4 texRECTfetch(isamplerRECT samp, int4 s, int2 texelOff)",
+        "unsigned int4 texRECTfetch(usamplerRECT samp, int4 s)",
+        "unsigned int4 texRECTfetch(usamplerRECT samp, int4 s, int2 texelOff)"
+      ]
+    },
+    "texRECTlod": {
+      "detail": "cg",
+      "documentation": "rectangle texture lookup with specified level of detail and optional texel offset.",
+      "Synopsis": [
+        "float4 texRECTlod(samplerRECT samp, float4 s)",
+        "float4 texRECTlod(samplerRECT samp, float4 s, int texelOff)",
+        "int4 texRECTlod(isamplerRECT samp, float4 s)",
+        "int4 texRECTlod(isamplerRECT samp, float4 s, int texelOff)",
+        "unsigned int4 texRECTlod(usamplerRECT samp, float4 s)",
+        "unsigned int4 texRECTlod(usamplerRECT samp, float4 s, int texelOff)"
+      ]
+    },
+    "texRECT": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup in a given RECT sampler and, in some cases, a shadow comparison. May also use pre computed derivatives if those are provided.",
+      "Synopsis": [
+        "float4 texRECT(samplerRECT samp, float2 s)",
+        "float4 texRECT(samplerRECT samp, float2 s, int texelOff)",
+        "float4 texRECT(samplerRECT samp, float3 s)",
+        "float4 texRECT(samplerRECT samp, float3 s, int texelOff)",
+        "float4 texRECT(samplerRECT samp, float2 s, float2 dx, float2 dy)",
+        "float4 texRECT(samplerRECT samp, float2 s, float2 dx, float2 dy, int texelOff)",
+        "float4 texRECT(samplerRECT samp, float3 s, float2 dx, float2 dy)",
+        "float4 texRECT(samplerRECT samp, float3 s, float2 dx, float2 dy, int texelOff)",
+        "int4 texRECT(isamplerRECT samp, float2 s)",
+        "int4 texRECT(isamplerRECT samp, float2 s, int texelOff)",
+        "int4 texRECT(isamplerRECT samp, float2 s, float2 dx, float2 dy)",
+        "int4 texRECT(isamplerRECT samp, float2 s, float2 dx, float2 dy, int texelOff)",
+        "unsigned int4 texRECT(usamplerRECT samp, float2 s)",
+        "unsigned int4 texRECT(usamplerRECT samp, float2 s, int texelOff)",
+        "unsigned int4 texRECT(usamplerRECT samp, float2 s, float2 dx, float2 dy)",
+        "unsigned int4 texRECT(usamplerRECT samp, float2 s, float2 dx, float2 dy, int texelOff)"
+      ]
+    },
+    "texRECTproj": {
+      "detail": "cg",
+      "documentation": "performs a texture lookup with projection in a given sampler. May perform a shadow comparison if argument for shadow comparison is provided.",
+      "Synopsis": [
+        "float4 texRECTproj(samplerRECT samp, float3 s)",
+        "float4 texRECTproj(samplerRECT samp, float3 s, int texelOff)",
+        "float4 texRECTproj(samplerRECT samp, float4 s)",
+        "float4 texRECTproj(samplerRECT samp, float4 s, int texelOff)",
+        "int4 texRECTproj(isamplerRECT samp, float3 s)",
+        "int4 texRECTproj(isamplerRECT samp, float3 s, int texelOff)",
+        "unsigned int4 texRECTproj(usamplerRECT samp, float3 s)",
+        "unsigned int4 texRECTproj(usamplerRECT samp, float3 s, int texelOff)"
+      ]
+    },
+    "texRECTsize": {
+      "detail": "cg",
+      "documentation": "returns the size of a given texture image for a given level of detail.",
+      "Synopsis": [
+        "int3 texRECTsize(samplerRECT samp, int lod)",
+        "int3 texRECTsize(isamplerRECT samp, int lod)",
+        "int3 texRECTsize(usamplerRECT samp, int lod)"
+      ]
+    },
+    "transpose": {
+      "detail": "cg",
+      "documentation": "returns transpose matrix of a matrix.",
+      "Synopsis": [
+        "float4x4 transpose(float4x4 A)",
+        "float3x4 transpose(float4x3 A)",
+        "float2x4 transpose(float4x2 A)",
+        "float1x4 transpose(float4x1 A)",
+        "float4x3 transpose(float3x4 A)",
+        "float3x3 transpose(float3x3 A)",
+        "float2x3 transpose(float3x2 A)",
+        "float1x3 transpose(float3x1 A)",
+        "float4x2 transpose(float2x4 A)",
+        "float3x2 transpose(float2x3 A)",
+        "float2x2 transpose(float2x2 A)",
+        "float1x2 transpose(float2x1 A)",
+        "float4x1 transpose(float1x4 A)",
+        "float3x1 transpose(float1x3 A)",
+        "float2x1 transpose(float1x2 A)",
+        "float1x1 transpose(float1x1 A)"
+      ]
+    },
+    "trunc": {
+      "detail": "cg",
+      "documentation": "returns largest integer not greater than a scalar or each vector component.",
+      "Synopsis": [
+        "float  trunc(float x)",
+        "float1 trunc(float1 x)",
+        "float2 trunc(float2 x)",
+        "float3 trunc(float3 x)",
+        "float4 trunc(float4 x)",
+        "half1  trunc(half1 x)",
+        "half2  trunc(half2 x)",
+        "half3  trunc(half3 x)",
+        "half4  trunc(half4 x)",
+        "fixed  trunc(fixed x)",
+        "fixed1 trunc(fixed1 x)",
+        "fixed2 trunc(fixed2 x)",
+        "fixed3 trunc(fixed3 x)",
+        "fixed4 trunc(fixed4 x)"
+      ]
+    },
+    "unpack_2half": {
+      "detail": "unity",
+      "documentation": "unpacks a single values into different formatted values",
+      "Synopsis": ["half2  unpack_2half(float a)"]
+    },
+    "unpack_2ushort": {
+      "detail": "unity",
+      "documentation": "unpacks a single values into different formatted values",
+      "Synopsis": ["float2 unpack_2ushort(float a)"]
+    },
+    "unpack_4byte": {
+      "detail": "unity",
+      "documentation": "unpacks a single values into different formatted values",
+      "Synopsis": ["half4  unpack_4byte(float a)"]
+    },
+    "unpack_4ubyte": {
+      "detail": "unity",
+      "documentation": "unpacks a single values into different formatted values",
+      "Synopsis": ["half4  unpack_4ubyte(float a)"]
+    },
+    "UnityObjectToClipPos": {
+      "detail": "unity",
+      "documentation": "Transforms a point from object space to the camera’s clip space in homogeneous coordinates. This is the equivalent of mul(UNITY_MATRIX_MVP, float4(pos, 1.0)), and should be used in its place.",
+      "Synopsis": ["float4 UnityObjectToClipPos(float3 pos)"]
+    },
+    "UnityObjectToViewPos": {
+      "detail": "unity",
+      "documentation": "Transforms a point from object space to view space. This is the equivalent of mul(UNITY_MATRIX_MV, float4(pos, 1.0)).xyz, and should be used in its place.",
+      "Synopsis": [
+        "float3 UnityObjectToViewPos(float3 pos)",
+        "float3 UnityObjectToViewPos(float4 pos)"
+      ]
+    },
+    "WorldSpaceViewDir": {
+      "detail": "unity",
+      "documentation": "Returns world space direction (not normalized) from given object space vertex position towards the camera.",
+      "Synopsis": ["float3 WorldSpaceViewDir (float4 v)"]
+    },
+    "ObjSpaceViewDir": {
+      "detail": "unity",
+      "documentation": "Returns object space direction (not normalized) from given object space vertex position towards the camera.",
+      "Synopsis": ["float3 ObjSpaceViewDir (float4 v)"]
+    },
+    "ParallaxOffset": {
+      "detail": "unity",
+      "documentation": "calculates UV offset for parallax normal mapping.",
+      "Synopsis": ["float2 ParallaxOffset (half h, half height, half3 viewDir)"]
+    },
+    "Luminance": {
+      "detail": "unity",
+      "documentation": "Converts color to luminance (grayscale).",
+      "Synopsis": ["fixed Luminance (fixed3 c)"]
+    },
+    "DecodeLightmap": {
+      "detail": "unity",
+      "documentation": "Decodes color from Unity lightmap (RGBM or dLDR depending on platform).",
+      "Synopsis": ["fixed3 DecodeLightmap (fixed4 color)"]
+    },
+    "EncodeFloatRGBA": {
+      "detail": "unity",
+      "documentation": "Encodes [0..1) range float into RGBA color, for storage in low precision render target.",
+      "Synopsis": ["float4 EncodeFloatRGBA (float v)"]
+    },
+    "DecodeFloatRGBA": {
+      "detail": "unity",
+      "documentation": "Decodes RGBA color into a float.",
+      "Synopsis": ["float DecodeFloatRGBA (float4 enc)"]
+    },
+    "EncodeFloatRG": {
+      "detail": "unity",
+      "documentation": "Encodes [0..1) range float into a float2.",
+      "Synopsis": ["float2 EncodeFloatRG (float v)"]
+    },
+    "DecodeFloatRG": {
+      "detail": "unity",
+      "documentation": "Decodes a previously-encoded RG float.",
+      "Synopsis": ["float DecodeFloatRG (float2 enc)"]
+    },
+    "EncodeViewNormalStereo": {
+      "detail": "unity",
+      "documentation": "Encodes view space normal into two numbers in 0..1 range.",
+      "Synopsis": ["float2 EncodeViewNormalStereo (float3 n)"]
+    },
+    "DecodeViewNormalStereo": {
+      "detail": "unity",
+      "documentation": "Decodes view space normal from enc4.xy.",
+      "Synopsis": ["float3 DecodeViewNormalStereo (float4 enc4)"]
+    },
+    "WorldSpaceLightDir": {
+      "detail": "unity",
+      "documentation": "Computes world space direction (not normalized) to light, given object space vertex position.",
+      "Synopsis": ["float3 WorldSpaceLightDir (float4 v)"]
+    },
+    "ObjSpaceLightDir": {
+      "detail": "unity",
+      "documentation": "Computes object space direction (not normalized) to light, given object space vertex position.",
+      "Synopsis": ["float3 ObjSpaceLightDir (float4 v)"]
+    },
+    "Shade4PointLights": {
+      "detail": "unity",
+      "documentation": "Computes illumination from four point lights, with light data tightly packed into vectors. Forward rendering uses this to compute per-vertex lighting.",
+      "Synopsis": [
+        "float3 Shade4PointLights (float4 lightPosX, float4 lightPosY, float4 lightPosZ, float3 lightColor0, float3 lightColor1, float3 lightColor2, float3 lightColor3, float4 lightAttenSq, float3 pos, float3 normal)"
+      ]
+    },
+    "ComputeScreenPos": {
+      "detail": "unity",
+      "documentation": "Computes texture coordinate for doing a screenspace-mapped texture sample. Input is clip space position.",
+      "Synopsis": ["float4 ComputeScreenPos (float4 clipPos)"]
+    },
+    "ComputeGrabScreenPos": {
+      "detail": "unity",
+      "documentation": "Computes texture coordinate for sampling a GrabPass texure. Input is clip space position.",
+      "Synopsis": ["float4 ComputeGrabScreenPos (float4 clipPos)"]
+    },
+    "ShadeVertexLights": {
+      "detail": "unity",
+      "documentation": "Computes illumination from four per-vertex lights and ambient, given object space position & normal.",
+      "Synopsis": ["float3 ShadeVertexLights (float4 vertex, float3 normal)"]
+    },
+    "UnpackNormal": {
+      "detail": "unity",
+      "documentation": "Unpack normal from texture.",
+      "Synopsis": ["float3 UnpackNormal (tex2D t2d)"]
+    },
+    "TRANSFORM_TEX": {
+      "detail": "unity",
+      "documentation": "Transforms 2D UV by scale/bias property",
+      "Synopsis": ["float2 TRANSFORM_TEX(texure, name)"]
+    },
+    "UnityWorldSpaceViewDir": {
+      "detail": "unity",
+      "documentation": "Computes world space view direction from object position in world space",
+      "Synopsis": ["float3 UnityWorldSpaceViewDir(in float3 worldPos)"]
+    },
+    "UnityWorldToClipPos": {
+      "detail": "unity",
+      "documentation": "Tranforms position from world to homogenous space",
+      "Synopsis": ["float4 UnityWorldToClipPos(in float3 pos)"]
+    },
+    "UnityViewToClipPos": {
+      "detail": "unity",
+      "documentation": "Tranforms position from view to homogenous space",
+      "Synopsis": ["float4 UnityViewToClipPos(in float3 pos)"]
+    },
+    "UnityWorldToViewPos": {
+      "detail": "unity",
+      "documentation": "Tranforms position from world to camera space",
+      "Synopsis": ["float3 UnityWorldToViewPos(in float3 pos)"]
+    },
+    "UnityObjectToWorldDir": {
+      "detail": "unity",
+      "documentation": "Transforms direction from object to world space",
+      "Synopsis": ["float3 UnityObjectToWorldDir(in float3 dir)"]
+    },
+    "UnityWorldToObjectDir": {
+      "detail": "unity",
+      "documentation": "Transforms direction from world to object space",
+      "Synopsis": ["float3 UnityWorldToObjectDir(in float3 dir)"]
+    },
+    "UnityObjectToWorldNormal": {
+      "detail": "untiy",
+      "documentation": "Transforms normal from object to world space",
+      "Synopsis": ["float3 UnityObjectToWorldNormal(in float3 norm)"]
+    },
+    "UnityWorldSpaceLightDir": {
+      "detail": "unity",
+      "documentation": "Computes world space light direction, from world space position",
+      "Synopsis": ["float3 UnityWorldSpaceLightDir(in float3 worldPos)"]
+    },
+    "TransformViewToProjection": {
+      "detail": "unity",
+      "documentation": "Transform view space to projection space",
+      "Synopsis": [
+        "float2 TransformViewToProjection (float2 v)",
+        "float3 TransformViewToProjection (float3 v)"
+      ]
+    },
+    "UNITY_INSTANCING_BUFFER_START": {
+      "detail": "unity",
+      "documentation": "Every per-instance property must be defined in a specially named constant buffer. Use UNITY_INSTANCING_BUFFER_START(name) / UNITY_INSTANCING_BUFFER_END(name) pair of macros to wrap the properties you want to be made unique to each instance.",
+      "Synopsis": ["UNITY_INSTANCING_BUFFER_START(name)"]
+    },
+    "UNITY_INSTANCING_BUFFER_END": {
+      "detail": "unity",
+      "documentation": "Every per-instance property must be defined in a specially named constant buffer. Use UNITY_INSTANCING_BUFFER_START(name) / UNITY_INSTANCING_BUFFER_END(name) pair of macros to wrap the properties you want to be made unique to each instance.",
+      "Synopsis": ["UNITY_INSTANCING_BUFFER_END(name)"]
+    },
+    "UNITY_DEFINE_INSTANCED_PROP": {
+      "detail": "unity",
+      "documentation": "Use this to define a per-instance Shader property with a type and a name.",
+      "Synopsis": ["UNITY_DEFINE_INSTANCED_PROP(float4, _Color)"]
+    },
+    "UNITY_SETUP_INSTANCE_ID": {
+      "detail": "unity",
+      "documentation": "Use this to make the instance ID accessible to Shader functions. It must be used at the very beginning of a vertex Shader, and is optional for fragment Shaders.",
+      "Synopsis": ["UNITY_SETUP_INSTANCE_ID(v)"]
+    },
+    "UNITY_TRANSFER_INSTANCE_ID": {
+      "detail": "unity",
+      "documentation": "Use this to copy the instance ID from the input structure to the output structure in the vertex Shader. This is only necessary if you need to access per-instance data in the fragment Shader.",
+      "Synopsis": ["UNITY_TRANSFER_INSTANCE_ID(v, o)"]
+    },
+    "UNITY_ACCESS_INSTANCED_PROP": {
+      "detail": "unity",
+      "documentation": "Use this to access a per-instance Shader property declared in an instancing constant buffer. It uses an instance ID to index into the instance data array. The arrayName in the macro must match the one in UNITY_INSTANCING_BUFFER_END(name) macro.",
+      "Synopsis": ["UNITY_ACCESS_INSTANCED_PROP(arrayName, color)"]
+    },
+    "abort": {
+      "detail": "hlsl",
+      "documentation": "Submits an error message to the information queue and terminates the current draw or dispatch call being executed.",
+      "Synopsis": ["void abort()"]
+    },
+    "AllMemoryBarrier": {
+      "detail:": "hlsl",
+      "documentation": "Blocks execution of all threads in a group until all memory accesses have been completed.",
+      "Synopsis": ["void AllMemoryBarrier()"]
+    },
+    "AllMemoryBarrierWithGroupSync": {
+      "detail:": "hlsl",
+      "documentation": "Blocks execution of all threads in a group until all memory accesses have been completed and all threads in the group have reached this call.",
+      "Synopsis": ["void AllMemoryBarrierWithGroupSync()"]
+    },
+    "asdouble": {
+      "detail:": "hlsl",
+      "documentation": "Reinterprets a cast value (two 32-bit values) into a double.",
+      "Synopsis": ["double asdouble(in uint lowbits, in uint highbits)"]
+    },
+    "asfloat": {
+      "detail:": "hlsl",
+      "documentation": "Interprets the bit pattern of x as a floating-point number.",
+      "Synopsis": [
+        "float asfloat(float x)",
+        "float asfloat(int x)",
+        "float asfloat(uint x)",
+        "float2 asfloat(float2 x)",
+        "float2 asfloat(int2 x)",
+        "float2 asfloat(uint2 x)",
+        "float3 asfloat(float3 x)",
+        "float3 asfloat(int3 x)",
+        "float3 asfloat(uint3 x)",
+        "float4 asfloat(float4 x)",
+        "float4 asfloat(int4 x)",
+        "float4 asfloat(uint x)"
+      ]
+    },
+    "asint": {
+      "detail:": "hlsl",
+      "documentation": "Interprets the bit pattern of x as an integer.",
+      "Synopsis": [
+        "int asint(float x)",
+        "int asint(uint x)",
+        "int2 asint(float2 x)",
+        "int2 asint(uint2 x)",
+        "int3 asint(float3 x)",
+        "int3 asint(uint3 x)",
+        "int4 asint(float4 x)",
+        "int4 asint(uint4 x)"
+      ]
+    },
+    "asuint": {
+      "detail:": "hlsl",
+      "documentation": "Reinterprets the bit pattern of a 64-bit value as two unsigned 32-bit integers. Or Interprets the bit pattern of x as an unsigned integer.",
+      "Synopsis": [
+        "void asuint(in double value, out uint lowbits, out uint highbits)",
+        "uint asuint(float x)",
+        "uint asunit(int x)",
+        "uint2 asuint(float2 x)",
+        "uint2 asunit(int2 x)",
+        "uint3 asuint(float3 x)",
+        "uint3 asunit(int3 x)",
+        "uint4 asuint(float4 x)",
+        "uint4 asunit(int4 x)"
+      ]
+    },
+    "CheckAccessFullyMapped": {
+      "detail:": "hlsl",
+      "documentation": "Determines whether all values from a Sample, Gather, or Load operation accessed mapped tiles in a tiled resource.",
+      "Synopsis": ["bool CheckAccessFullyMapped(in uint_only status)"]
+    },
+    "countbits": {
+      "detail:": "hlsl",
+      "documentation": "Counts the number of bits (per component) in the input integer.",
+      "Synopsis": ["uint countbits(in uint value)"]
+    },
+    "D3DCOLORtoUBYTE4": {
+      "detail:": "hlsl",
+      "documentation": "Converts a floating-point, 4D vector set by a D3DCOLOR to a UBYTE4.",
+      "Synopsis": ["UBYTE4 D3DCOLORtoUBYTE4(float4 x)"]
+    },
+    "ddx_coarse": {
+      "detail:": "hlsl",
+      "documentation": "Computes a low precision partial derivative with respect to the screen-space x-coordinate.",
+      "Synopsis": ["float ddx_coarse(in float value)"]
+    },
+    "ddx_fine": {
+      "detail:": "hlsl",
+      "documentation": "Computes a high precision partial derivative with respect to the screen-space x-coordinate.",
+      "Synopsis": ["float ddx_fine(in float value)"]
+    },
+    "ddy_coarse": {
+      "detail:": "hlsl",
+      "documentation": "Computes a low precision partial derivative with respect to the screen-space y-coordinate.",
+      "Synopsis": ["float ddy_coarse(in float value)"]
+    },
+    "ddy_fine": {
+      "detail:": "hlsl",
+      "documentation": "Computes a high precision partial derivative with respect to the screen-space x-coordinate",
+      "Synopsis": ["float ddy_fine(in float value)"]
+    },
+    "DeviceMemoryBarrier": {
+      "detail:": "hlsl",
+      "documentation": "Blocks execution of all threads in a group until all device memory accesses have been completed",
+      "Synopsis": ["void DeviceMemoryBarrier()"]
+    },
+    "DeviceMemoryBarrierWithGroupSync": {
+      "detail:": "hlsl",
+      "documentation": "Blocks execution of all threads in a group until all device memory accesses have been completed and all threads in the group have reached this call.",
+      "Synopsis": ["void DeviceMemoryBarrierWithGroupSync()"]
+    },
+    "dst": {
+      "detail:": "hlsl",
+      "documentation": "Calculates a distance vector.",
+      "Synopsis": [
+        "float2 dst(in float2 src0, in float2 src1)",
+        "float3 dst(in float3 src0, in float3 src1)",
+        "float4 dst(in float4 src0, in float4 src1)"
+      ]
+    },
+    "errorf": {
+      "detail:": "hlsl",
+      "documentation": "Submits an error message to the information queue.",
+      "Synopsis": ["void errorf(string format, argument ...)"]
+    },
+    "EvaluateAttributeAtCentroid": {
+      "detail:": "hlsl",
+      "documentation": "Evaluates at the pixel centroid.",
+      "Synopsis": [
+        "numeric EvaluateAttributeAtCentroid(in attrib numeric value)"
+      ]
+    },
+    "EvaluateAttributeAtSample": {
+      "detail:": "hlsl",
+      "documentation": "Evaluates at the indexed sample location.",
+      "Synopsis": [
+        "numeric EvaluateAttributeAtSample(in attrib numeric value, in uint sampleindex)"
+      ]
+    },
+    "EvaluateAttributeSnapped": {
+      "detail:": "hlsl",
+      "documentation": "Evaluates at the pixel centroid with an offset.",
+      "Synopsis": [
+        "numeric EvaluateAttributeSnapped(in attrib numeric value, in int2 offset)"
+      ]
+    },
+    "f16tof32": {
+      "detail:": "hlsl",
+      "documentation": "Converts the float16 stored in the low-half of the uint to a float.",
+      "Synopsis": ["float f16tof32(in uint value)"]
+    },
+    "f32tof16": {
+      "detail:": "hlsl",
+      "documentation": "Converts an input into a float16 type.",
+      "Synopsis": ["uint f32tof16(in float value)"]
+    },
+    "firstbithigh": {
+      "detail:": "hlsl",
+      "documentation": "Gets the location of the first set bit starting from the highest order bit and working downward, per component.",
+      "Synopsis": ["int firstbithigh(in int value)"]
+    },
+    "firstbitlow": {
+      "detail:": "hlsl",
+      "documentation": "Returns the location of the first set bit starting from the lowest order bit and working upward, per component.",
+      "Synopsis": ["int firstbitlow(in int value)"]
+    },
+    "fma": {
+      "detail:": "hlsl",
+      "documentation": "Returns the double-precision fused multiply-addition of a * b + c. The returned value must be accurate to 0.5 units of least precision (ULP).",
+      "Synopsis": [
+        "double fma(double a, double b, double c)",
+        "double2 fma(double2 a, double2 b, double2 c)",
+        "double3 fma(double3 a, double3 b, double3 c)",
+        "double4 fma(double4 a, double4 b, double4 c)",
+        "matrix fma(matrix a, matrix b, matrix c)"
+      ]
+    },
+    "GetRenderTargetSampleCount": {
+      "detail:": "hlsl",
+      "documentation": "Gets the number of samples for a render target.",
+      "Synopsis": ["UINT GetRenderTargetSampleCount()"]
+    },
+    "GetRenderTargetSamplePosition": {
+      "detail:": "hlsl",
+      "documentation": "Gets the sampling position (x,y) for a given sample index.",
+      "Synopsis": ["float<2> GetRenderTargetSamplePosition(in int<1> Index)"]
+    },
+    "GroupMemoryBarrier": {
+      "detail:": "hlsl",
+      "documentation": "Blocks execution of all threads in a group until all group shared accesses have been completed.",
+      "Synopsis": ["void GroupMemoryBarrier()"]
+    },
+    "GroupMemoryBarrierWithGroupSync": {
+      "detail:": "hlsl",
+      "documentation": "Blocks execution of all threads in a group until all group shared accesses have been completed and all threads in the group have reached this call",
+      "Synopsis": ["void GroupMemoryBarrierWithGroupSync()"]
+    },
+    "InterlockedAdd": {
+      "detail:": "hlsl",
+      "documentation": "Performs a guaranteed atomic add of value to the dest resource variable.",
+      "Synopsis": [
+        "void InterlockedAdd(in  R dest, in  T value, out T original_value)"
+      ]
+    },
+    "InterlockedAnd": {
+      "detail:": "hlsl",
+      "documentation": "Performs a guaranteed atomic and.",
+      "Synopsis": [
+        "void InterlockedAnd(in  R dest, in  T value, out T original_value)"
+      ]
+    },
+    "InterlockedCompareExchange": {
+      "detail:": "hlsl",
+      "documentation": "Atomically compares the destination with the comparison value. If they are identical, the destination is overwritten with the input value. The original value is set to the destination's original value.",
+      "Synopsis": [
+        "void InterlockedCompareExchange(in  R dest, in  T compare_value, in  T value, out T original_value)"
+      ]
+    },
+    "InterlockedCompareStore": {
+      "detail:": "hlsl",
+      "documentation": "Atomically compares the destination to the comparison value. If they are identical, the destination is overwritten with the input value.",
+      "Synopsis": [
+        "void InterlockedCompareStore(in R dest, in T compare_value, in T value)"
+      ]
+    },
+    "InterlockedExchange": {
+      "detail:": "hlsl",
+      "documentation": "Assigns value to dest and returns the original value.",
+      "Synopsis": [
+        "void InterlockedExchange(in  R dest, in  T value, out T original_value)"
+      ]
+    },
+    "InterlockedMax": {
+      "detail:": "hlsl",
+      "documentation": "Performs a guaranteed atomic max.",
+      "Synopsis": [
+        "void InterlockedMax(in  R dest, in  T value, out T original_value)"
+      ]
+    },
+    "InterlockedMin": {
+      "detail:": "hlsl",
+      "documentation": "Performs a guaranteed atomic min.",
+      "Synopsis": [
+        "void InterlockedMin(in  R dest, in  T value, out T original_value)"
+      ]
+    },
+    "InterlockedOr": {
+      "detail:": "hlsl",
+      "documentation": "Performs a guaranteed atomic or.",
+      "Synopsis": [
+        "void InterlockedOr(in  R dest, in  T value, out T original_value)"
+      ]
+    },
+    "InterlockedXor": {
+      "detail:": "hlsl",
+      "documentation": "Performs a guaranteed atomic xor.",
+      "Synopsis": [
+        "void InterlockedXor(in  R dest, in  T value, out T original_value)"
+      ]
+    },
+    "mad": {
+      "detail:": "hlsl",
+      "documentation": "Performs an arithmetic multiply/add operation on three values.",
+      "Synopsis": [
+        "numeric mad(in numeric mvalue, in numeric avalue, in numeric bvalue)"
+      ]
+    },
+    "msad4": {
+      "detail:": "hlsl",
+      "documentation": "Compares a 4-byte reference value and an 8-byte source value and accumulates a vector of 4 sums. Each sum corresponds to the masked sum of absolute differences of a different byte alignment between the reference value and the source value.",
+      "Synopsis": ["unit4 msad4(uint reference, uint2 source, uint4 accum)"]
+    },
+    "noise": {
+      "detail:": "hlsl",
+      "documentation": "Generates a random value using the Perlin-noise algorithm. The Perlin noise value within a range between -1 and 1.",
+      "Synopsis": [
+        "float noise(float2 x)",
+        "float noise(float3 x)",
+        "float noise(float4 x)"
+      ]
+    },
+    "printf": {
+      "detail:": "hlsl",
+      "documentation": "Submits a custom shader message to the information queue.",
+      "Synopsis": ["void printf(string format, argument ...)"]
+    },
+    "Process2DQuadTessFactorsAvg": {
+      "detail:": "hlsl",
+      "documentation": "Generates the corrected tessellation factors for a quad patch.",
+      "Synopsis": [
+        "void Process2DQuadTessFactorsAvg(in  float4 RawEdgeFactors, in  float2 InsideScale, out float4 RoundedEdgeTessFactors, out float2 RoundedInsideTessFactors, out float2 UnroundedInsideTessFactors)"
+      ]
+    },
+    "Process2DQuadTessFactorsMax": {
+      "detail:": "hlsl",
+      "documentation": "Generates the corrected tessellation factors for a quad patch",
+      "Synopsis": [
+        "void Process2DQuadTessFactorsMax(in  float4 RawEdgeFactors, in  float2 InsideScale, out float4 RoundedEdgeTessFactors, out float2 RoundedInsideTessFactors, out float2 UnroundedInsideTessFactors)"
+      ]
+    },
+    "Process2DQuadTessFactorsMin": {
+      "detail:": "hlsl",
+      "documentation": "Generates the corrected tessellation factors for a quad patch",
+      "Synopsis": [
+        "void Process2DQuadTessFactorsMin(in  float4 RawEdgeFactors, in  float2 InsideScale, out float4 RoundedEdgeTessFactors, out float2 RoundedInsideTessFactors, out float2 UnroundedInsideTessFactors)"
+      ]
+    },
+    "ProcessIsolineTessFactors": {
+      "detail:": "hlsl",
+      "documentation": "Generates the rounded tessellation factors for an isoline",
+      "Synopsis": [
+        "void ProcessIsolineTessFactors(in  float RawDetailFactor, in  float RawDensityFactor, out float RoundedDetailFactor, out float RoundedDensityFactor)"
+      ]
+    },
+    "ProcessQuadTessFactorsAvg": {
+      "detail:": "hlsl",
+      "documentation": "Generates the corrected tessellation factors for a quad patch",
+      "Synopsis": [
+        "void ProcessQuadTessFactorsAvg(in  float4 RawEdgeFactors, in  float InsideScale, out float4 RoundedEdgeTessFactors, out float2 RoundedInsideTessFactors, out float2 UnroundedInsideTessFactors)"
+      ]
+    },
+    "ProcessQuadTessFactorsMax": {
+      "detail:": "hlsl",
+      "documentation": "Generates the corrected tessellation factors for a quad patch",
+      "Synopsis": [
+        "void ProcessQuadTessFactorsMax(in  float4 RawEdgeFactors, in  float InsideScale, out float4 RoundedEdgeTessFactors, out float2 RoundedInsideTessFactors, out float2 UnroundedInsideTessFactors)"
+      ]
+    },
+    "ProcessQuadTessFactorsMin": {
+      "detail:": "hlsl",
+      "documentation": "Generates the corrected tessellation factors for a quad patch",
+      "Synopsis": [
+        "void ProcessQuadTessFactorsMin(in  float4 RawEdgeFactors, in  float InsideScale, out float4 RoundedEdgeTessFactors, out float2 RoundedInsideTessFactors, out float2 UnroundedInsideTessFactors)"
+      ]
+    },
+    "ProcessTriTessFactorsAvg": {
+      "detail:": "hlsl",
+      "documentation": "Generates the corrected tessellation factors for a tri patch.",
+      "Synopsis": [
+        "void ProcessTriTessFactorsAvg(in  float3 RawEdgeFactors, in  float InsideScale, out float3 RoundedEdgeTessFactors, out float RoundedInsideTessFactor, out float UnroundedInsideTessFactor)"
+      ]
+    },
+    "ProcessTriTessFactorsMax": {
+      "detail:": "hlsl",
+      "documentation": "Generates the corrected tessellation factors for a tri patch.",
+      "Synopsis": [
+        "void ProcessTriTessFactorsMax(in  float3 RawEdgeFactors, in  float InsideScale, out float3 RoundedEdgeTessFactors, out float RoundedInsideTessFactor, out float UnroundedInsideTessFactor)"
+      ]
+    },
+    "ProcessTriTessFactorsMin": {
+      "detail:": "hlsl",
+      "documentation": "Generates the corrected tessellation factors for a tri patch.",
+      "Synopsis": [
+        "void ProcessTriTessFactorsMin(in  float3 RawEdgeFactors, in  float InsideScale, out float3 RoundedEdgeTessFactors, out float RoundedInsideTessFactors, out float UnroundedInsideTessFactors)"
+      ]
+    },
+    "rcp": {
+      "detail:": "hlsl",
+      "documentation": "Calculates a fast, approximate, per-component reciprocal.",
+      "Synopsis": [
+        "float rcp(float x)",
+        "double rcp(double x)",
+        "matrix rcp(matrix x)",
+        "float2 rcp(float2 x)",
+        "double2 rcp(double2 x)",
+        "float2 rcp(float2 x)",
+        "double2 rcp(double2 x)",
+        "float2 rcp(float2 x)",
+        "double2 rcp(double2 x)"
+      ]
+    },
+    "reversebits": {
+      "detail:": "hlsl",
+      "documentation": "Reverses the order of the bits, per component",
+      "Synopsis": [
+        "uint reversebits(in uint value)",
+        "uint2 reversebits(in uint2 value)",
+        "uint3 reversebits(in uint3 value)",
+        "uint4 reversebits(in uint4 value)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+"use strict"; Object.defineProperty(exports, "__esModule", { value: !0 }), exports.SLFoldingRangeProvider = void 0; const ShadeView_1 = require("./ShadeView"); class SLFoldingRangeProvider { provideFoldingRanges(e, r, d) { let o = new ShadeView_1.ShadeView(e, null); return o.provideFoldingRanges() } } exports.SLFoldingRangeProvider = SLFoldingRangeProvider;
